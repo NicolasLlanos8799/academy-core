@@ -1,0 +1,549 @@
+/* ====================================================
+                ESTILOS GENERALES
+==================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ====================================================
+                LOGIN
+==================================================== */
+body.login-body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.login-container h2 {
+    color: #222;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.login-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    transition: border 0.2s;
+}
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    border: 1.5px solid #007bff;
+    outline: none;
+}
+.login-container button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.login-container button:hover {
+    background-color: #0056b3;
+}
+.login-container form p,
+.login-container form a {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+}
+.login-container input::placeholder {
+    color: #bbb;
+    opacity: 1;
+}
+
+/* ====================================================
+                NAVBAR
+==================================================== */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* ====================================================
+                CONTENEDOR PRINCIPAL
+==================================================== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ====================================================
+                SECCIONES GENERALES
+==================================================== */
+.seccion {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================================================
+                FORMULARIOS
+==================================================== */
+form input,
+form select,
+form button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* ====================================================
+                TABLAS
+==================================================== */
+.table-responsive {
+    overflow-x: auto;
+}
+.table {
+    width: 100%;
+    min-width: 0;
+    border-collapse: collapse;
+}
+.table th,
+.table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.table th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* ====================================================
+                BOTONES
+==================================================== */
+.btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.btn-warning {
+    background-color: #ffcc00;
+    border: none;
+    color: black;
+}
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+}
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* ====================================================
+                EXTRAS
+==================================================== */
+.spinner-border.spinner-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+.pago-row {
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.pago-row:hover {
+    background-color: #f1f1f1 !important;
+}
+
+/* Evitar salto de línea en la columna Fecha del modal Payment Detail */
+#tablaDetallePagoProfesor th:first-child,
+#tablaDetallePagoProfesor td:first-child {
+    white-space: nowrap;
+}
+
+.fc .fc-toolbar-chunk {
+    flex-wrap: unset !important;
+    white-space: nowrap !important;
+}
+
+/* ====================================================
+                PAGINADOR DataTables
+==================================================== */
+.dataTables_paginate {
+    font-size: 0.95rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+.dataTables_paginate .paginate_button {
+    background: none !important;
+    border: none !important;
+    color: #666 !important;
+    font-size: 0.92rem !important;
+    padding: 1px 7px !important;
+    cursor: pointer;
+    margin: 0 2px !important;
+    transition: color 0.2s;
+}
+.dataTables_paginate .paginate_button.current,
+.dataTables_paginate .paginate_button:active {
+    background: #f0f0f0 !important;
+    color: #111 !important;
+    border-radius: 4px !important;
+}
+.dataTables_paginate .paginate_button:hover {
+    color: #007bff !important;
+    text-decoration: underline;
+}
+/* Input de página: chico y centrado */
+.dataTables_paginate input[type="number"] {
+    font-size: 1rem !important;
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 6px !important;
+    border: 1px solid #e0e0e0 !important;
+    background: #f7f7f7 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-align: center !important;
+    margin: 0 4px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-weight: 500;
+    padding: 0 !important;
+}
+/* Elimina las flechas del input de número */
+.dataTables_paginate input[type="number"]::-webkit-outer-spin-button,
+.dataTables_paginate input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.dataTables_paginate input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* Responsive: aún más pequeño en móvil */
+@media (max-width: 600px) {
+    .dataTables_paginate {
+        font-size: 0.86rem !important;
+        gap: 2px;
+    }
+    .dataTables_paginate .paginate_button {
+        font-size: 0.85rem !important;
+        padding: 1px 4px !important;
+    }
+    .dataTables_paginate input[type="number"] {
+        font-size: 0.93rem !important;
+        width: 22px !important;
+        height: 22px !important;
+        border-radius: 4px !important;
+    }
+}
+
+/* ====================================================
+            BUSCADOR DataTables (FILTRO)
+==================================================== */
+.dataTables_filter {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;   /* alineado a la izquierda */
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    width: 100%;
+    padding-left: 0.5rem;
+}
+.dataTables_filter label {
+    margin-bottom: 0 !important;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px;
+    white-space: nowrap;
+}
+.dataTables_filter input[type="search"] {
+    min-width: 90px;
+    max-width: 170px;
+    height: 32px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 0;
+}
+@media (max-width: 600px) {
+    .dataTables_filter {
+        padding-left: 0.2rem;
+        gap: 4px;
+    }
+    .dataTables_filter label {
+        font-size: 0.93rem;
+    }
+    .dataTables_filter input[type="search"] {
+        min-width: 68px;
+        max-width: 100px;
+        height: 28px;
+        font-size: 0.96rem;
+    }
+}
+
+/* ====================================================
+                RESPONSIVE GENERAL
+==================================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .table-responsive {
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+    }
+    .table {
+        min-width: unset;
+    }
+    .table th, .table td {
+        min-width: 100px;
+        white-space: nowrap;
+    }
+    .seccion {
+        padding: 15px;
+        overflow-x: auto;
+    }
+    form input,
+    form select,
+    form button {
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 13px;
+    }
+}
+
+/* ====================================================
+                CALENDARIO
+==================================================== */
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 0.85rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    #calendar {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+    .fc-toolbar-title {
+        font-size: 1rem;
+    }
+    .fc-button {
+        padding: 0.3em 0.6em;
+        font-size: 0.75rem;
+    }
+    .fc-event {
+        font-size: 0.7rem;
+        padding: 4px 2px;
+        line-height: 1.1;
+        overflow: visible !important;
+        white-space: nowrap;
+        min-width: 3.5em;
+    }
+}
+/* Scroll horizontal calendario en móviles */
+@media (max-width: 768px) {
+    .contenedor-calendario-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    #calendar {
+        min-width: 900px;
+        font-size: 0.95rem;
+    }
+    .fc-daygrid-day-frame {
+        min-height: 110px;
+        padding: 10px;
+    }
+    .fc .fc-scrollgrid-sync-inner {
+        min-width: 130px;
+    }
+    .fc-event {
+        font-size: 0.85rem;
+    }
+}
+
+/* ====================================================
+   RESPONSIVE PARA PANTALLAS MUY PEQUEÑAS (IPHONE SE)
+   Y AJUSTES DE TÍTULOS
+==================================================== */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.21rem;
+    }
+    h3 {
+        font-size: 1.43rem;
+        font-weight: 600;
+        margin-bottom: 0.6em;
+    }
+    h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+    }
+}
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.15rem;
+    }
+    h2 {
+        font-size: 1.06rem;
+    }
+    h3 {
+        font-size: 1.57rem;
+        font-weight: 600;
+    }
+    h4 {
+        font-size: 0.97rem;
+        font-weight: 600;
+    }
+    .fc-toolbar-title {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .fc-toolbar-chunk {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+    .fc-button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        align-items: center;
+    }
+    .fc-button {
+        font-size: 0.7rem;
+        padding: 0.4em 0.6em;
+    }
+    .fc-daygrid-event {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 1px;
+        margin: 0;
+        font-size: 0.55rem;
+        gap: 2px;
+    }
+    .fc-daygrid-event-dot {
+        width: 1px;
+        height: 1px;
+        border-radius: 50%;
+        margin-right: 2px;
+        margin-left: 0;
+    }
+    .fc-daygrid-dot-event .fc-event-time {
+        font-size: 0.70rem;
+        margin-left: 0;
+    }
+    .fc-daygrid-day-frame {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .fc-legend,
+    .leyenda-profesores {
+        display: none;
+    }
+    .seccion,
+    #calendar {
+        padding: 8px;
+    }
+    .container {
+        padding: 8px;
+    }
+    .btn {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    .fc-toolbar-title {
+        text-transform: capitalize;
+    }
+}
+
+/* ====================================================
+    MODALES DETALLE FACTURACION EN MOBILE
+==================================================== */
+@media (max-width: 768px) {
+    #modalDetalleFacturacion .modal-dialog {
+        margin: 1rem;
+        max-width: 100%;
+    }
+    #modalDetalleFacturacion .modal-content {
+        padding: 10px;
+        font-size: 14px;
+    }
+    #modalDetalleFacturacion .table-responsive {
+        overflow-x: auto;
+    }
+    #modalDetalleFacturacion table {
+        min-width: 600px;
+        white-space: nowrap;
+    }
+    #modalDetalleFacturacion .text-end {
+        text-align: center !important;
+    }
+    #modalDetalleFacturacion .btn {
+        width: 100%;
+        max-width: 250px;
+        margin: 0.25rem auto;
+    }
+    #modalDetalleFacturacion .modal-footer {
+        justify-content: center;
+    }
+}
+@media (max-width: 576px) {
+    #modalDetalleFacturacion .btn {
+        width: auto;
+        flex: 1 1 auto;
+    }
+}

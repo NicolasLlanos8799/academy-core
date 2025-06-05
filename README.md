@@ -1,1 +1,1 @@
-# academy-core
+# surfschool
