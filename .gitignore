@@ -1,0 +1,19 @@
+# Ignora todos los archivos de configuración real
+school_config.php
+school_config_*.php
+
+# ¡NO ignores los archivos de ejemplo!
+!school_config_example.php
+
+# Si tus archivos de config están en una subcarpeta (por ejemplo, /php):
+/php/school_config.php
+/php/school_config_*.php
+!/php/school_config_example.php
+
+# Otras buenas prácticas para proyectos PHP:
+.env
+*.env
+/vendor/
+/node_modules/
+.DS_Store
+*.log
