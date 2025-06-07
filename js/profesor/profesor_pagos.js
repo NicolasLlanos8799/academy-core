@@ -181,7 +181,7 @@ document.getElementById("btnDescargarComprobanteProfesor").addEventListener("cli
 
     const finalY = doc.lastAutoTable.finalY || 85;
     doc.setFontSize(10);
-    doc.text("Thank you for your work. Name Academy", 20, finalY + 20);
+    doc.text("Thank you for your work." + NOMBRE_ESCUELA, 20, finalY + 20);
 
     doc.save(`teacher_payment_receipt_${fechaHoyNombre}.pdf`);
 });

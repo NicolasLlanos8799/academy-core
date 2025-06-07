@@ -9,7 +9,7 @@ require_once __DIR__ . '/../PHPMailer/src/SMTP.php';
 require_once __DIR__ . '/../PHPMailer/src/Exception.php';
 
 // Cargar configuración de la escuela
-$config = include __DIR__ . '/school_config_it.php';
+$config = include __DIR__ . '/school_config.php';
 
 if (!isset($GLOBALS['datos_correo'])) {
     ob_end_clean();

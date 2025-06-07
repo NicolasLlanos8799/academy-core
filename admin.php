@@ -1,5 +1,6 @@
 <?php
 session_start(); // 🔑 Siempre primero
+$config = include __DIR__ . '/php/school_config.php';
 
 // ===============================
 // 🕒 Control de inactividad
@@ -44,7 +45,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Name Academy - Admin</a>
+            <a class="navbar-brand" href="#"><?php echo $config['nombre_escuela']; ?> - Admin</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -730,6 +731,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
             }
         });
     });
+    // Esto hace disponible el nombre para todo tu JavaScript
+    const NOMBRE_ESCUELA = <?php echo json_encode($config['nombre_escuela']); ?>;
     </script>
 
 

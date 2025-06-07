@@ -1,4 +1,5 @@
 <?php
+$config = include __DIR__ . '/php/school_config.php';
 // 🔒 Prevent browser caching when navigating "back"
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
@@ -21,7 +22,7 @@ if (isset($_GET['expirada'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login - Name Academy</title>
+    <title>Login - <?php echo $config['nombre_escuela']; ?> </title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
