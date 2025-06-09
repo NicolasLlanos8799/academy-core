@@ -1,7 +1,7 @@
 <?php
 session_start(); // 🔑 Siempre primero
 $config = include __DIR__ . '/php/school_config.php';
-
+//PRUEBA CORE
 // ===============================
 // 🕒 Control de inactividad
 // ===============================
