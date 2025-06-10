@@ -6,8 +6,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --primary-accent: #218380;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -139,7 +144,7 @@ form button {
     text-align: left;
 }
 .table th {
-    background-color: #007bff;
+    background-color: var(--primary-accent);
     color: white;
 }
 
@@ -150,6 +155,13 @@ form button {
     padding: 8px 12px;
     font-size: 14px;
     border-radius: 5px;
+}
+.btn-primary {
+    background-color: var(--primary-accent);
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #1a615f;
 }
 .btn-warning {
     background-color: #ffcc00;
@@ -184,6 +196,17 @@ form button {
 }
 .pago-row:hover {
     background-color: #f1f1f1 !important;
+}
+
+/* ---------- Instructor Management ---------- */
+#profesores h3 {
+    color: var(--primary-accent);
+    font-weight: 600;
+}
+
+#profesores .modal-header {
+    background-color: var(--primary-accent);
+    color: #fff;
 }
 
 /* Evitar salto de línea en la columna Fecha del modal Payment Detail */
