@@ -92,40 +92,6 @@ function mostrarPagosRegistrados(pagos) {
     });
 }
 
-function verDetallePagoProfesor(idPago) {
-    const idProfesor = localStorage.getItem("id_profesor");
-
-    fetch(`php/profesor/obtener_detalle_pago_profesor.php?id=${idPago}&profesor_id=${idProfesor}`)
-        .then(response => response.json())
-        .then(data => {
-            const cuerpo = document.getElementById("tablaDetallePagoProfesor");
-            cuerpo.innerHTML = "";
-
-            if (!data || data.length === 0) {
-                cuerpo.innerHTML = `<tr><td colspan="4" class="text-center">No classes associated.</td></tr>`;
-            } else {
-                data.forEach(clase => {
-                    const fechaFormateada = formatearFecha(clase.fecha);
-                    const fila = `
-                        <tr>
-                            <td>${fechaFormateada}</td>
-                            <td>${clase.alumno_nombre}</td>
-                            <td>${clase.duracion} hrs</td>
-                            <td>€${parseFloat(clase.tarifa_hora).toFixed(2)}</td>
-                            <td>€${parseFloat(clase.importe).toFixed(2)}</td>
-                        </tr>
-                    `;
-                    cuerpo.innerHTML += fila;
-                });
-            }
-
-            const modal = new bootstrap.Modal(document.getElementById("modalDetallePagoProfesor"));
-            modal.show();
-        })
-        .catch(error => {
-            console.error("Error loading payment details:", error);
-        });
-}
 
 function formatearFecha(fechaISO) {
     const [anio, mes, dia] = fechaISO.split("-");
