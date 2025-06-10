@@ -38,6 +38,9 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
 
     <!-- Include Bootstrap to enhance appearance and functionality -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Modern font & icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -73,14 +76,15 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
             <h3>Instructor Management</h3>
 
             <!-- Button to open Add Modal -->
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">Add
-                Instructor</button>
+            <button class="btn btn-add-instructor" data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
+                <i class="fa-solid fa-user-plus me-1"></i> Add Instructor
+            </button>
 
             <!-- Add Instructor Modal -->
             <div class="modal fade" id="modalAgregarProfesor" tabindex="-1" aria-labelledby="modalAgregarProfesorLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content bg-light">
+                    <div class="modal-content bg-light border-0 rounded-4 shadow-sm">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalAgregarProfesorLabel">Add Instructor</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -117,7 +121,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
             <div class="modal fade" id="modalEditarProfesor" tabindex="-1" aria-labelledby="modalEditarProfesorLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content bg-light">
+                    <div class="modal-content bg-light border-0 rounded-4 shadow-sm">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalEditarProfesorLabel">Edit Instructor</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -149,8 +153,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
 
             <!-- Instructor Table -->
             <h4 class="mt-4">Instructor List</h4>
-            <div class="table-responsive">
-                <table class="table table-striped">
+            <div class="table-responsive shadow-sm rounded-3 mt-3">
+                <table class="table table-hover align-middle instructors-table">
                     <thead>
                         <tr>
                             <th>ID</th>

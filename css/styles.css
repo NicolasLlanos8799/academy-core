@@ -1,13 +1,14 @@
 /* ====================================================
                 ESTILOS GENERALES
 ==================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -546,4 +547,85 @@ form button {
         width: auto;
         flex: 1 1 auto;
     }
+}
+
+/* ====================================================
+   Instructor Management Styling
+==================================================== */
+#profesores .btn-add-instructor {
+    background-color: #fff;
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 6px 16px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#profesores .btn-add-instructor:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+#profesores .table-responsive {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+#profesores .table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #fff;
+}
+
+#profesores .table th {
+    background-color: #f0f6ff;
+    color: #333;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#profesores .table td {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+#profesores .table tbody tr:hover {
+    background-color: #f8fbff;
+}
+
+#profesores .btn-warning,
+#profesores .btn-danger {
+    background: none;
+    border: none;
+    color: #6c757d;
+    padding: 4px 8px;
+}
+
+#profesores .btn-warning:hover {
+    background-color: rgba(13,110,253,0.1);
+    color: #0d6efd;
+}
+
+#profesores .btn-danger:hover {
+    background-color: rgba(220,53,69,0.1);
+    color: #dc3545;
+}
+
+#profesores .btn-warning::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f044';
+    margin-right: 4px;
+}
+
+#profesores .btn-danger::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f1f8';
+    margin-right: 4px;
+}
+
+#profesores .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
