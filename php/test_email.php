@@ -11,14 +11,22 @@ $correo_destino = 'nicolasllanossw@gmail.com'; // <--- reemplazalo
 $nombre_destino = 'Nicolás';
 $log_file = __DIR__ . '/log_test_email.txt';
 
+$envUsername = getenv('EMAIL_USERNAME');
+$envPassword = getenv('EMAIL_PASSWORD');
+if (empty($envUsername) || empty($envPassword)) {
+    echo "\u274c Variables de entorno EMAIL_USERNAME y EMAIL_PASSWORD deben estar definidas.";
+    exit(1);
+}
+
 $mail = new PHPMailer(true);
 try {
     // Configuración SMTP de Gmail
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'rebelssicily@gmail.com '; // tu Gmail
-    $mail->Password   = 'lftbvavtlagzdxft';    // contraseña de aplicación
+    $mail->Username   = $envUsername; // tu Gmail
+    $mail->Password   = $envPassword;    // contraseña de aplicación
+
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
