@@ -66,13 +66,15 @@ function cargarProfesores() {
                     <td>${profesor.email}</td>
                     <td>${profesor.telefono ? profesor.telefono : 'Not provided'}</td>
                     <td>
-                        <button class="btn btn-warning btn-sm" onclick='editarProfesor(
-                            ${profesor.id},
-                            ${JSON.stringify(profesor.nombre)},
-                            ${JSON.stringify(profesor.email)},
-                            ${JSON.stringify(profesor.telefono || '')}
-                        )'>Edit</button>
-                        <button class="btn btn-danger btn-sm" onclick="eliminarProfesor(${profesor.id})">Delete</button>
+                        <div class="action-buttons">
+                            <button class="btn btn-warning btn-icon btn-sm" onclick='editarProfesor(
+                                ${profesor.id},
+                                ${JSON.stringify(profesor.nombre)},
+                                ${JSON.stringify(profesor.email)},
+                                ${JSON.stringify(profesor.telefono || '')}
+                            )'><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-danger btn-icon btn-sm" onclick="eliminarProfesor(${profesor.id})"><i class="bi bi-trash"></i></button>
+                        </div>
                     </td>
                 `;
                 tabla.appendChild(fila);

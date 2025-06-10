@@ -8,11 +8,13 @@
 }
 
 :root {
-    --primary-accent: #218380;
+    --primary-accent: #4c6ef5;
+    --header-gradient-start: #4c6ef5;
+    --header-gradient-end: #7c72ff;
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -96,6 +98,20 @@ body.login-body {
     margin-bottom: 20px;
 }
 
+.academy-navbar {
+    background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+    border-radius: 0 0 12px 12px;
+    padding: 0.8rem 1rem;
+}
+.academy-navbar .navbar-brand {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.academy-navbar .navbar-brand i {
+    font-size: 1.2rem;
+}
+
 /* ====================================================
                 CONTENEDOR PRINCIPAL
 ==================================================== */
@@ -110,10 +126,11 @@ body.login-body {
 ==================================================== */
 .seccion {
     display: none;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
 }
 
 /* ====================================================
@@ -135,7 +152,10 @@ form button {
 .table {
     width: 100%;
     min-width: 0;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
 }
 .table th,
 .table td {
@@ -144,8 +164,12 @@ form button {
     text-align: left;
 }
 .table th {
-    background-color: var(--primary-accent);
-    color: white;
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: 500;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fafafa;
 }
 
 /* ====================================================
@@ -154,24 +178,48 @@ form button {
 .btn {
     padding: 8px 12px;
     font-size: 14px;
-    border-radius: 5px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
 }
 .btn-primary {
     background-color: var(--primary-accent);
     border: none;
 }
 .btn-primary:hover {
-    background-color: #1a615f;
+    background-color: #3955d7;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.btn-add:hover {
+    transform: translateY(-1px);
+}
+.btn-add {
+    font-size: 1rem;
+    padding: 10px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
 }
 .btn-warning {
     background-color: #ffcc00;
     border: none;
     color: black;
 }
+.btn-warning:hover {
+    background-color: #e6b800;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
 .btn-danger {
     background-color: #dc3545;
     border: none;
     color: white;
+}
+.btn-danger:hover {
+    background-color: #b02a37;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 .btn-success {
     background-color: #28a745;
@@ -180,6 +228,24 @@ form button {
 }
 .btn:hover {
     opacity: 0.9;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 4px;
+}
+.action-buttons button {
+    transition: transform 0.2s;
+}
+.action-buttons button:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 576px) {
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
 /* ====================================================
@@ -202,6 +268,7 @@ form button {
 #profesores h3 {
     color: var(--primary-accent);
     font-weight: 600;
+    margin-bottom: 1.2rem;
 }
 
 #profesores .modal-header {
