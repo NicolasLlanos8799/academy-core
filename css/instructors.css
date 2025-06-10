@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.table thead th {
+  border: none;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.btn.text-primary:hover,
+.btn.text-danger:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.card {
+  border-radius: 1rem;
+}
