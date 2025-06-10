@@ -314,7 +314,7 @@ document.getElementById("btnDescargarPDF").addEventListener("click", function ()
 
     const finalY = doc.lastAutoTable.finalY || 85;
     doc.setFontSize(10);
-    doc.text("Thank you for your work." + NOMBRE_ESCUELA, 20, finalY + 20);
+    doc.text("Thank you for your work. " + NOMBRE_ESCUELA, 20, finalY + 20);
 
     doc.save(`payment_receipt_${profesor}_${fechaHoyNombre}.pdf`);
 });
