@@ -17,12 +17,12 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'rebelssicily@gmail.com '; // tu Gmail
+    $mail->Username   = 'rebelssicily@gmail.com'; // tu Gmail
     $mail->Password   = 'lftbvavtlagzdxft';    // contraseña de aplicación
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
-    $mail->setFrom('rebelssicily@gmail.com ', 'Escuela de Surf');
+    $mail->setFrom('rebelssicily@gmail.com', 'Escuela de Surf');
     $mail->addAddress($correo_destino, $nombre_destino);
 
     // Email
