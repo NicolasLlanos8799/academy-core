@@ -2,7 +2,7 @@
 // ===========================================================
 // File: actualizar_pago.php
 // Functionality: Updates the status of a payment in the database
-// and sends an email notification when the payment is marked as approved.
+// and sends an email notification when the payment is marked as paid.
 // ===========================================================
 
 require 'db.php'; // Import database connection
