@@ -59,24 +59,39 @@ function cargarProfesores() {
             tabla.innerHTML = "";
 
             data.forEach(profesor => {
-                const fila = document.createElement("tr");
-                fila.innerHTML = `
-                    <td>${profesor.id}</td>
-                    <td>${profesor.nombre}</td>
-                    <td>${profesor.email}</td>
-                    <td>${profesor.telefono ? profesor.telefono : 'Not provided'}</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm" onclick='editarProfesor(
-                            ${profesor.id},
-                            ${JSON.stringify(profesor.nombre)},
-                            ${JSON.stringify(profesor.email)},
-                            ${JSON.stringify(profesor.telefono || '')}
-                        )'>Edit</button>
-                        <button class="btn btn-danger btn-sm" onclick="eliminarProfesor(${profesor.id})">Delete</button>
-                    </td>
-                `;
-                tabla.appendChild(fila);
-            });
+            const fila = document.createElement("tr");
+            fila.innerHTML = `
+                <td>${profesor.nombre}</td>
+                <td>${profesor.email}</td>
+                <td>${profesor.telefono ? profesor.telefono : 'Not provided'}</td>
+                <td>
+                    <div class="action-btn-group d-flex gap-2">
+                        <button class="btn btn-action btn-edit me-2"
+                            onclick='editarProfesor(
+                                ${JSON.stringify(profesor.nombre)},
+                                ${JSON.stringify(profesor.email)},
+                                ${JSON.stringify(profesor.telefono || '')}
+                            )'
+                            data-bs-toggle="tooltip"
+                            title="Edit"
+                        >
+                            <span class="material-icons">edit</span>
+                            <span class="btn-text">Edit</span>
+                        </button>
+                        <button class="btn btn-action btn-delete"
+                            onclick="eliminarProfesor(${profesor.id})"
+                            data-bs-toggle="tooltip"
+                            title="Delete"
+                        >
+                            <span class="material-icons">delete</span>
+                            <span class="btn-text">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            `;
+            tabla.appendChild(fila);
+        });
+
         })
         .catch(error => console.error("Error loading instructors:", error));
 }
