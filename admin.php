@@ -11,14 +11,33 @@ $config = include __DIR__ . '/php/school_config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <style>body { visibility: hidden; }</style>
+    
+    <!-- Preconexión para Google Fonts e iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Include Bootstrap to enhance appearance and functionality -->
+    <!-- Frameworks CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.4/index.global.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts + Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- TU CSS PERSONALIZADO SIEMPRE ÚLTIMO -->
     <link rel="stylesheet" href="css/styles.css?v=2.0">
+
+    <!-- FOUC Fix -->
+    <style>body { display: none; }</style>
 </head>
 
+
 <body>
+  <div id="loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;display:flex;align-items:center;justify-content:center;background:#f7f8fa;">
+    <span class="material-icons" style="font-size:2.2rem; color:#2563EB;">hourglass_top</span>
+  </div>
+
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -616,28 +635,49 @@ $config = include __DIR__ . '/php/school_config.php';
     let calendarInstancia = null;
 
     function mostrarSeccion(seccion) {
-        document.querySelectorAll('.seccion').forEach(div => div.style.display = 'none');
-        const target = document.getElementById(seccion);
-        if (target) {
-            target.style.display = 'block';
-        }
+    console.log('Mostrando sección:', seccion);
+    // Oculta todas las secciones
+    document.querySelectorAll('.seccion').forEach(div => div.style.display = 'none');
 
-        if (seccion === 'clases') {
+
+    // Muestra el loader local
+    var loader = document.getElementById('loader');
+    if (loader) loader.style.display = 'flex';
+
+    // Referencia al target
+    const target = document.getElementById(seccion);
+
+    if (seccion === 'clases') {
+        // Espera a que FullCalendar esté listo antes de mostrar la sección
+        setTimeout(() => {
             if (!calendarInstancia) {
-                setTimeout(() => {
-                    calendarInstancia = inicializarCalendario();
-                }, 10);
+                calendarInstancia = inicializarCalendario();
             } else {
-                setTimeout(() => {
-                    calendarInstancia.updateSize();
-                }, 10);
+                calendarInstancia.updateSize();
             }
-        }
+            if (target) target.style.display = 'block';
+            calendarInstancia.updateSize();
 
-        if (seccion === 'pagos') {
-            cargarPagos();
-        }
+            if (loader) loader.style.display = 'none';
+        }, 120); // Ajustá este valor según la velocidad real de tu inicialización
     }
+    else if (seccion === 'pagos') {
+        // Carga pagos y espera un toque antes de mostrar
+        cargarPagos();
+        setTimeout(() => {
+            if (target) target.style.display = 'block';
+            if (loader) loader.style.display = 'none';
+        }, 180); // Ajustá este valor si es necesario
+    }
+    else {
+        // Para las demás secciones, cambio inmediato (con loader un toque)
+        setTimeout(() => {
+            if (target) target.style.display = 'block';
+            if (loader) loader.style.display = 'none';
+        }, 100);
+    }
+}
+
     </script>
 
 
@@ -740,9 +780,10 @@ $config = include __DIR__ . '/php/school_config.php';
     </script>
 
     <script>
-    window.addEventListener('DOMContentLoaded', function() {
-        document.body.style.visibility = 'visible';
-    });
+      window.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('loader').style.display = 'none';
+        document.body.style.display = 'block';
+      });
     </script>
 
 
