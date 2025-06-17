@@ -22,8 +22,6 @@ $config = include __DIR__ . '/php/school_config.php';
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.4/index.global.min.css" rel="stylesheet" />
 
     <!-- Google Fonts + Material Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- TU CSS PERSONALIZADO SIEMPRE ÚLTIMO -->
     <link rel="stylesheet" href="css/styles.css?v=2.0">
@@ -67,8 +65,6 @@ $config = include __DIR__ . '/php/school_config.php';
         <!-- Instructor Management Section -->
         <div id="profesores" class="seccion">
             <h3 class="mb-2 text-center text-md-start">Instructor Management</h3>
-            <!-- Botón: debajo del título en móvil, derecha en desktop -->
-            <!-- Botón: derecha en desktop, ancho completo en móvil -->
             <div class="d-flex justify-content-md-end justify-content-center mb-3">
                 <button class="btn btn-primary d-flex align-items-center gap-2 boton-add-instructor"
                     data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
@@ -635,57 +631,41 @@ $config = include __DIR__ . '/php/school_config.php';
     let calendarInstancia = null;
 
     function mostrarSeccion(seccion) {
-    console.log('Mostrando sección:', seccion);
-    // Oculta todas las secciones
     document.querySelectorAll('.seccion').forEach(div => div.style.display = 'none');
 
+    const loader = document.getElementById('loader');
+    const target = document.getElementById(seccion);
+    const mostrar = () => {
+        if (target) target.style.display = 'block';
+        if (loader) loader.style.display = 'none';
+    };
 
-    // Muestra el loader local
-    var loader = document.getElementById('loader');
     if (loader) loader.style.display = 'flex';
 
-    // Referencia al target
-    const target = document.getElementById(seccion);
-
     if (seccion === 'clases') {
-        // Espera a que FullCalendar esté listo antes de mostrar la sección
         setTimeout(() => {
             if (!calendarInstancia) {
                 calendarInstancia = inicializarCalendario();
             } else {
                 calendarInstancia.updateSize();
             }
-            if (target) target.style.display = 'block';
-            calendarInstancia.updateSize();
-
-            if (loader) loader.style.display = 'none';
-        }, 120); // Ajustá este valor según la velocidad real de tu inicialización
-    }
-    else if (seccion === 'pagos') {
-        // Carga pagos y espera un toque antes de mostrar
+            mostrar();
+        }, 120);
+    } else if (seccion === 'pagos') {
         cargarPagos();
-        setTimeout(() => {
-            if (target) target.style.display = 'block';
-            if (loader) loader.style.display = 'none';
-        }, 180); // Ajustá este valor si es necesario
-    }
-    else {
-        // Para las demás secciones, cambio inmediato (con loader un toque)
-        setTimeout(() => {
-            if (target) target.style.display = 'block';
-            if (loader) loader.style.display = 'none';
-        }, 100);
+        setTimeout(mostrar, 180);
+    } else {
+        setTimeout(mostrar, 100);
     }
 }
 
     </script>
 
 
-    <!-- jQuery (debe ir antes que DataTables y tus scripts) -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- DataTables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
     <script>
@@ -699,7 +679,7 @@ $config = include __DIR__ . '/php/school_config.php';
 
 
 
-    <!-- ✅ FullCalendar versión estable que FUNCIONA -->
+    <!-- FullCalendar core -->
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.4/index.global.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.4/index.global.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.4/index.global.min.js"></script>
@@ -748,7 +728,7 @@ $config = include __DIR__ . '/php/school_config.php';
             }
         });
 
-        // ✅ Destruir DataTable al cerrar el modal (limpio para recargar luego)
+        // Destroy DataTable on close to force fresh load next time
         $('#modalDetalleFacturacion').on('hidden.bs.modal', function() {
             if ($.fn.DataTable.isDataTable('#tablaDetalleMes')) {
                 $('#tablaDetalleMes').DataTable().destroy();
@@ -768,8 +748,6 @@ $config = include __DIR__ . '/php/school_config.php';
     <!-- SheetJS for Excel export -->
     <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
     <script>
