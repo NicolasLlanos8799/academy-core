@@ -102,11 +102,9 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <label for="telefono" class="form-label">Phone</label>
                                     <input type="text" id="telefono" class="form-control">
                                 </div>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-secondary w-100 w-md-auto mb-2 mb-md-0"
-                                        data-bs-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary w-100 w-md-auto"
-                                        onclick="agregarProfesor()">Save Instructor</button>
+                                <div class="modal-footer d-flex gap-2">
+                                    <button type="button" class="btn btn-secondary flex-fill" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary flex-fill" onclick="agregarProfesor()">Save Instructor</button>
                                 </div>
                             </form>
                         </div>
