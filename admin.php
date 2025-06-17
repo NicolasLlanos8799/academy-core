@@ -35,10 +35,11 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
+    <style>body { visibility: hidden; }</style>
 
     <!-- Include Bootstrap to enhance appearance and functionality -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=2.0">
 </head>
 
 <body>
@@ -69,107 +70,110 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
 
     <div class="container mt-4">
         <!-- Instructor Management Section -->
-<div id="profesores" class="seccion">
-    <h3 class="mb-2 text-center text-md-start">Instructor Management</h3>
-    <!-- Botón: debajo del título en móvil, derecha en desktop -->
-    <!-- Botón: derecha en desktop, ancho completo en móvil -->
-    <div class="d-flex justify-content-md-end justify-content-center mb-3">
-        <button class="btn btn-primary d-flex align-items-center gap-2 boton-add-instructor"
-            data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
-            <span class="material-icons" style="font-size:18px;"></span>
-            Add Instructor
-        </button>
-    </div>
+        <div id="profesores" class="seccion">
+            <h3 class="mb-2 text-center text-md-start">Instructor Management</h3>
+            <!-- Botón: debajo del título en móvil, derecha en desktop -->
+            <!-- Botón: derecha en desktop, ancho completo en móvil -->
+            <div class="d-flex justify-content-md-end justify-content-center mb-3">
+                <button class="btn btn-primary d-flex align-items-center gap-2 boton-add-instructor"
+                    data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
+                    <span class="material-icons" style="font-size:18px;"></span>
+                    Add Instructor
+                </button>
+            </div>
 
 
-    <!-- Add Instructor Modal -->
-    <div class="modal fade" id="modalAgregarProfesor" tabindex="-1" aria-labelledby="modalAgregarProfesorLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content bg-light">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalAgregarProfesorLabel">Add Instructor</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="formAgregarProfesor">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Name</label>
-                            <input type="text" id="nombre" class="form-control" required>
+            <!-- Add Instructor Modal -->
+            <div class="modal fade" id="modalAgregarProfesor" tabindex="-1" aria-labelledby="modalAgregarProfesorLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-light">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalAgregarProfesorLabel">Add Instructor</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                        <div class="modal-body">
+                            <form id="formAgregarProfesor">
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Name</label>
+                                    <input type="text" id="nombre" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" id="password" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label">Phone</label>
+                                    <input type="text" id="telefono" class="form-control">
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-secondary w-100 w-md-auto mb-2 mb-md-0"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary w-100 w-md-auto"
+                                        onclick="agregarProfesor()">Save Instructor</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefono" class="form-label">Phone</label>
-                            <input type="text" id="telefono" class="form-control">
-                        </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button class="btn btn-secondary w-100 w-md-auto mb-2 mb-md-0" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary w-100 w-md-auto" onclick="agregarProfesor()">Save Instructor</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Edit Instructor Modal -->
-    <div class="modal fade" id="modalEditarProfesor" tabindex="-1" aria-labelledby="modalEditarProfesorLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content bg-light">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalEditarProfesorLabel">Edit Instructor</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="formEditarProfesor">
-                        <input type="hidden" id="profesor_id">
-                        <div class="mb-3">
-                            <label for="editar_nombre" class="form-label">Name</label>
-                            <input type="text" id="editar_nombre" class="form-control" required>
+            <!-- Edit Instructor Modal -->
+            <div class="modal fade" id="modalEditarProfesor" tabindex="-1" aria-labelledby="modalEditarProfesorLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-light">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalEditarProfesorLabel">Edit Instructor</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="mb-3">
-                            <label for="editar_email" class="form-label">Email</label>
-                            <input type="email" id="editar_email" class="form-control" required>
+                        <div class="modal-body">
+                            <form id="formEditarProfesor">
+                                <input type="hidden" id="profesor_id">
+                                <div class="mb-3">
+                                    <label for="editar_nombre" class="form-label">Name</label>
+                                    <input type="text" id="editar_nombre" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editar_email" class="form-label">Email</label>
+                                    <input type="email" id="editar_email" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editar_telefono" class="form-label">Phone</label>
+                                    <input type="text" id="editar_telefono" class="form-control">
+                                </div>
+                                <div class="modal-footer d-flex gap-2">
+                                    <button class="btn btn-success flex-fill" onclick="guardarEdicionProfesor()">Save
+                                        Changes</button>
+                                    <button class="btn btn-secondary flex-fill" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="mb-3">
-                            <label for="editar_telefono" class="form-label">Phone</label>
-                            <input type="text" id="editar_telefono" class="form-control">
-                        </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button class="btn btn-secondary w-100 w-md-auto mb-2 mb-md-0" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-success w-100 w-md-auto" onclick="guardarEdicionProfesor()">Save Changes</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Instructor Table -->
-    <div class="table-responsive">
-        <table class="table table-striped align-middle">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th style="width: 180px;">Actions</th>
-                </tr>
-            </thead>
-            <tbody id="tablaProfesores">
-                <!-- Instructors will be loaded here -->
-            </tbody>
-        </table>
-    </div>
-</div>
+            <!-- Instructor Table -->
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th style="width: 180px;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaProfesores">
+                        <!-- Instructors will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
 
         <!-- Class Management Section -->
@@ -756,14 +760,18 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="css/styles.css?v=2.0">
 
     <script>
     const entries = performance.getEntriesByType("navigation");
     if (entries.length && entries[0].type === "back_forward") {
         location.reload(); // fuerza recarga real
     }
+    </script>
+
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        document.body.style.visibility = 'visible';
+    });
     </script>
 
 

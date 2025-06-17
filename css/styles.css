@@ -705,10 +705,18 @@ body {
     vertical-align: middle;
 }
 .table th {
-    background: #F7F8FA;
-    font-weight: 600;
-    color: #374151;
+    background: #f6f9fc !important;      /* Gris azulado ultra suave */
+    font-weight: 700;
+    color: #222;
+    font-size: 1.07rem;
+    border-bottom: 2px solid #e5e7eb !important;
+    letter-spacing: 0.35px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
+
+
+
 .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #F5F7FB;
 }
@@ -819,3 +827,31 @@ body {
 .btn .btn-text {
     display: inline;
 }
+
+.modal-footer {
+    display: flex;
+    flex-direction: row; /* Siempre fila por defecto */
+    gap: 12px;
+}
+.modal-footer .btn {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.42em 0 !important; /* Menos padding vertical en desktop */
+}
+
+/* Solo en mobile (menos de 576px), apilados */
+@media (max-width: 576px) {
+    .modal-footer {
+        flex-direction: column;
+    }
+    .modal-footer .btn {
+        padding: 0.8em 0 !important;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+}
+

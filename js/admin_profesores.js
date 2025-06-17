@@ -68,6 +68,7 @@ function cargarProfesores() {
                     <div class="action-btn-group d-flex gap-2">
                         <button class="btn btn-action btn-edit me-2"
                             onclick='editarProfesor(
+                                ${profesor.id},
                                 ${JSON.stringify(profesor.nombre)},
                                 ${JSON.stringify(profesor.email)},
                                 ${JSON.stringify(profesor.telefono || '')}
