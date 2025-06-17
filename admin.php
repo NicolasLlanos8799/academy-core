@@ -139,9 +139,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <input type="text" id="editar_telefono" class="form-control">
                                 </div>
                                 <div class="modal-footer d-flex gap-2">
-                                    <button class="btn btn-success flex-fill" onclick="guardarEdicionProfesor()">Save
-                                        Changes</button>
-                                    <button class="btn btn-secondary flex-fill" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-success flex-fill" onclick="guardarEdicionProfesor()">Save Changes</button>
+                                    <button type="button" class="btn btn-secondary flex-fill" data-bs-dismiss="modal">Cancel</button>
                                 </div>
                             </form>
                         </div>
