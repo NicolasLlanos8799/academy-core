@@ -1,31 +1,7 @@
 <?php
-session_start(); // 🔑 Siempre primero
+require_once __DIR__ . '/php/session_utils.php';
+require_role('admin');
 $config = include __DIR__ . '/php/school_config.php';
-//PRUEBA CORE
-// ===============================
-// 🕒 Control de inactividad
-// ===============================
-$tiempoInactividad = 129600; // 36 horas en segundos
-
-if (isset($_SESSION['ULTIMA_ACTIVIDAD']) && (time() - $_SESSION['ULTIMA_ACTIVIDAD']) > $tiempoInactividad) {
-    session_unset();     // Limpia variables de sesión
-    session_destroy();   // Elimina la sesión
-    header("Location: login.php?expirada=1");
-    exit;
-}
-
-$_SESSION['ULTIMA_ACTIVIDAD'] = time(); // Renueva el tiempo de actividad
-
-// 🔒 Bloquear caché del navegador
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
-header("Expires: 0");
-
-// 🔐 Validar sesión y rol
-if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
-    header("Location: login.php");
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -640,7 +616,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
     let calendarInstancia = null;
 
     function mostrarSeccion(seccion) {
-        console.log('Mostrando sección:', seccion);
         document.querySelectorAll('.seccion').forEach(div => div.style.display = 'none');
         const target = document.getElementById(seccion);
         if (target) {
@@ -746,16 +721,12 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
 
 
 
-    <!-- PDF Dowload -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-
-    <!-- SheetJS para Excel -->
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-
-    <!-- jsPDF y AutoTable para PDF -->
+    <!-- PDF Download utilities -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- SheetJS for Excel export -->
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
