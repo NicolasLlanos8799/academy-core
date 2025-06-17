@@ -1,11 +1,8 @@
 <?php
-session_start(); // 🔑 Siempre primero
 $config = include __DIR__ . '/php/school_config.php';
-//PRUEBA CORE
-// ===============================
-// 🕒 Control de inactividad
-// ===============================
-$tiempoInactividad = 129600; // 36 horas en segundos
+session_start(); // 🔑 Siempre primero
+// Control de inactividad
+$tiempoInactividad = 129600; // 36 horas
 
 if (isset($_SESSION['ULTIMA_ACTIVIDAD']) && (time() - $_SESSION['ULTIMA_ACTIVIDAD']) > $tiempoInactividad) {
     session_unset();     // Limpia variables de sesión
@@ -91,8 +88,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
         <!-- Instructor Management Section -->
         <div id="profesores" class="seccion">
             <h3 class="mb-2 text-center text-md-start">Instructor Management</h3>
-            <!-- Botón: debajo del título en móvil, derecha en desktop -->
-            <!-- Botón: derecha en desktop, ancho completo en móvil -->
             <div class="d-flex justify-content-md-end justify-content-center mb-3">
                 <button class="btn btn-primary d-flex align-items-center gap-2 boton-add-instructor"
                     data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
@@ -659,7 +654,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
     let calendarInstancia = null;
 
     function mostrarSeccion(seccion) {
-    console.log('Mostrando sección:', seccion);
     // Oculta todas las secciones
     document.querySelectorAll('.seccion').forEach(div => div.style.display = 'none');
 
@@ -784,10 +778,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
 
 
 
-    <!-- PDF Dowload -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-
     <!-- SheetJS para Excel -->
     <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 
@@ -795,8 +785,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
     <script>
