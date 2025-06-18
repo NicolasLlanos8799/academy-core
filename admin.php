@@ -7,6 +7,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 <html lang="en">
 
 <head>
+    <script>document.documentElement.classList.add('loading');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
@@ -29,17 +30,14 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
     <!-- FOUC Fix -->
     <style>
-      body.loading > * {
-        display: none;
-      }
-      body.loading #loader {
-        display: block;
+      html.loading body {
+        display: none !important;
       }
     </style>
 </head>
 
 
-<body class="loading">
+<body>
   <div id="loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;display:flex;align-items:center;justify-content:center;background:#f7f8fa;">
     <div class="loading-spinner"></div>
   </div>
@@ -780,8 +778,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
       window.addEventListener('DOMContentLoaded', function() {
         var loader = document.getElementById('loader');
         if (loader) loader.style.display = 'none';
-        document.body.classList.remove('loading');
-        document.body.style.display = 'block';
+        document.documentElement.classList.remove('loading');
       });
     </script>
 
