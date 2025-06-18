@@ -7,7 +7,19 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 <html lang="en">
 
 <head>
-    <script>document.documentElement.classList.add('loading');</script>
+    <style>
+      html.blanco::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 2147483647;
+      }
+    </style>
+    <script>document.documentElement.className += ' blanco';</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
@@ -28,12 +40,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <!-- TU CSS PERSONALIZADO SIEMPRE ÚLTIMO -->
     <link rel="stylesheet" href="css/styles.css?v=2.0">
 
-    <!-- FOUC Fix -->
-    <style>
-      html.loading body {
-        display: none !important;
-      }
-    </style>
+    <!-- Screen whiteout to avoid FOUC -->
 </head>
 
 
@@ -775,11 +782,11 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     </script>
 
     <script>
-      window.addEventListener('DOMContentLoaded', function() {
+      window.onload = function () {
         var loader = document.getElementById('loader');
         if (loader) loader.style.display = 'none';
-        document.documentElement.classList.remove('loading');
-      });
+        document.documentElement.classList.remove('blanco');
+      };
     </script>
 
 
