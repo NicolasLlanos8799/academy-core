@@ -28,11 +28,15 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <link rel="stylesheet" href="css/styles.css?v=2.0">
 
     <!-- FOUC Fix -->
-    <style>body { display: none; }</style>
+    <style>
+      body.loader-active > :not(#loader) {
+        display: none;
+      }
+    </style>
 </head>
 
 
-<body>
+<body class="loader-active">
   <div id="loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;display:flex;align-items:center;justify-content:center;background:#f7f8fa;">
     <div class="loading-spinner"></div>
   </div>
@@ -770,9 +774,10 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     </script>
 
     <script>
-      window.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('loader').style.display = 'none';
-        document.body.style.display = 'block';
+      window.addEventListener('load', function() {
+        var loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
+        document.body.classList.remove('loader-active');
       });
     </script>
 
