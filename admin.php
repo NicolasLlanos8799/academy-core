@@ -34,7 +34,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
 <body>
   <div id="loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;display:flex;align-items:center;justify-content:center;background:#f7f8fa;">
-    <div class="loading-spinner"></div>
+    <span class="material-icons" style="font-size:2.2rem; color:#2563EB;">hourglass_top</span>
   </div>
 
     <!-- Navigation bar -->
