@@ -29,14 +29,17 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
     <!-- FOUC Fix -->
     <style>
-      body.loader-active > :not(#loader) {
+      body.loading > * {
         display: none;
+      }
+      body.loading #loader {
+        display: block;
       }
     </style>
 </head>
 
 
-<body class="loader-active">
+<body class="loading">
   <div id="loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;display:flex;align-items:center;justify-content:center;background:#f7f8fa;">
     <div class="loading-spinner"></div>
   </div>
@@ -774,10 +777,11 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     </script>
 
     <script>
-      window.addEventListener('load', function() {
+      window.addEventListener('DOMContentLoaded', function() {
         var loader = document.getElementById('loader');
         if (loader) loader.style.display = 'none';
-        document.body.classList.remove('loader-active');
+        document.body.classList.remove('loading');
+        document.body.style.display = 'block';
       });
     </script>
 
