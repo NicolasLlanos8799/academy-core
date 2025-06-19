@@ -879,6 +879,12 @@ body {
     box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     padding: 1rem;
 }
+#calendar-container {
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    background-color: white;
+    padding: 1rem;
+}
 .contenedor-calendario-scroll {
     background: #fff;
     border-radius: 1rem;
@@ -912,21 +918,42 @@ body {
     color: #fff;
     opacity: 0.7;
 }
-.fc .fc-prev-button .fc-icon,
-.fc .fc-next-button .fc-icon {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 1.2rem;
-    width: auto;
-    height: auto;
-    line-height: 1;
+.fc-today-button {
+    border-radius: 999px;
+    background-color: transparent;
+    color: #2563EB;
+    border: 1px solid #2563EB;
+    padding: 6px 12px;
+    transition: 0.3s ease;
 }
-.fc .fc-prev-button .fc-icon::before {
-    content: 'chevron_left';
+.fc-today-button:hover {
+    background-color: #2563EB;
+    color: #fff;
 }
-.fc .fc-next-button .fc-icon::before {
-    content: 'chevron_right';
+.fc-prev-button,
+.fc-next-button {
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    color: #2563EB;
+    border-radius: 999px;
+    font-weight: bold;
+    padding: 6px 12px;
+    transition: 0.3s ease;
+}
+.fc-prev-button:hover,
+.fc-next-button:hover {
+    background-color: #2563EB;
+    color: #fff;
+}
+.fc-prev-button::before {
+    content: "chevron_left";
+    font-family: "Material Icons";
+    font-size: 20px;
+}
+.fc-next-button::before {
+    content: "chevron_right";
+    font-family: "Material Icons";
+    font-size: 20px;
 }
 .fc .fc-event {
     background-color: #e0f2fe !important;
@@ -939,13 +966,27 @@ body {
     transition: all 0.2s ease-in-out;
 }
 .fc .fc-event:hover {
-    background-color: #2563EB !important;
-    color: #fff !important;
     transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
 }
 @media (max-width: 768px) {
     #calendar {
         padding: 0.75rem;
+    }
+    .fc-header-toolbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .fc-button-group,
+    .fc-toolbar-chunk {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .fc-toolbar-title {
+        font-size: 1.25rem;
+        text-align: center;
     }
 }
 

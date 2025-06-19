@@ -171,7 +171,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
             <!-- Calendar -->
             <p class="text-muted small mb-2">📌 Click on a day in the calendar to schedule a new class</p>
-            <div class="contenedor-calendario-scroll mb-4">
+            <div id="calendar-container" class="contenedor-calendario-scroll mb-4">
                 <div id="calendar"></div>
             </div>
 
