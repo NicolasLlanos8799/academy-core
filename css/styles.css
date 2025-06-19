@@ -551,7 +551,7 @@ form button {
 body {
     font-family: 'Inter', 'Roboto', Arial, sans-serif;
     background-color: #F7F8FA;
-    color: #111827;
+    color: #1f2937;
 }
 * {
     margin: 0;
@@ -661,7 +661,7 @@ body {
 }
 .btn-edit {
     background: #FACC15 !important;
-    color: #111827 !important;
+    color: #1f2937 !important;
 }
 .btn-edit:hover {
     background: #F59E42 !important;
@@ -871,3 +871,58 @@ body {
     }
 }
 
+
+/* === Modern Calendar Rebranding === */
+#calendar {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 1rem;
+}
+.contenedor-calendario-scroll {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 1rem;
+}
+.fc {
+    color: #1f2937;
+}
+.fc .fc-toolbar-title {
+    color: #2563EB;
+    font-weight: 600;
+}
+.fc .fc-button {
+    background: #2563EB;
+    border: none;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.45em 0.9em;
+    box-shadow: 0 2px 6px rgba(37,99,235,0.25);
+}
+.fc .fc-button:hover,
+.fc .fc-button:focus {
+    background: #1E40AF;
+}
+.fc .fc-button:disabled {
+    background: #a5b4fc;
+    opacity: 0.7;
+}
+.fc .fc-event {
+    background-color: #93c5fd !important;
+    border: none !important;
+    color: #1f2937 !important;
+    border-radius: 0.4rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    padding: 2px 4px;
+    font-weight: 500;
+}
+.fc .fc-event:hover {
+    background-color: #2563EB !important;
+    color: #fff !important;
+}
+@media (max-width: 768px) {
+    #calendar {
+        padding: 0.75rem;
+    }
+}
