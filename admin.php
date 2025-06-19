@@ -167,10 +167,14 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
         <!-- Class Management Section -->
         <div id="clases" class="seccion" style="display: none;">
-            <h3>Class Management</h3>
+            <div class="d-flex flex-column gap-1 mb-3">
+                <h2 class="text-primary">Class Management</h2>
+                <div class="calendar-subtitle">
+                    <i class="material-icons">event</i>
+                    <span>Click on a day in the calendar to schedule a new class</span>
+                </div>
+            </div>
 
-            <!-- Calendar -->
-            <p class="text-muted small mb-2">📌 Click on a day in the calendar to schedule a new class</p>
             <div id="calendar-container" class="contenedor-calendario-scroll mb-4">
                 <div id="calendar"></div>
             </div>

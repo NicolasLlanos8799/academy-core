@@ -945,15 +945,14 @@ body {
     background-color: #2563EB;
     color: #fff;
 }
-.fc-prev-button::before {
-    content: "chevron_left";
-    font-family: "Material Icons";
-    font-size: 20px;
-}
+.fc-prev-button::before,
 .fc-next-button::before {
-    content: "chevron_right";
-    font-family: "Material Icons";
+    content: "";
+}
+.fc-prev-button .material-icons,
+.fc-next-button .material-icons {
     font-size: 20px;
+    vertical-align: middle;
 }
 .fc .fc-event {
     background-color: #e0f2fe !important;
@@ -964,6 +963,14 @@ body {
     padding: 6px 10px;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
+}
+.fc-event-title {
+    font-size: 0.82rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: inline-block;
 }
 .fc .fc-event:hover {
     transform: scale(1.02);
@@ -998,4 +1005,23 @@ body {
     .fc .fc-toolbar-title {
         font-size: 1.3rem;
     }
+}
+
+h2.text-primary {
+    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+.calendar-subtitle {
+    font-size: 0.9rem;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.calendar-subtitle i {
+    color: #2563EB;
+    font-size: 18px;
 }

@@ -466,6 +466,13 @@ function inicializarCalendario() {
     });
 
     calendar.render();
+
+    // Replace navigation text with Material Icons
+    const prevBtn = calendarEl.querySelector('.fc-prev-button');
+    const nextBtn = calendarEl.querySelector('.fc-next-button');
+    if (prevBtn) prevBtn.innerHTML = '<span class="material-icons">chevron_left</span>';
+    if (nextBtn) nextBtn.innerHTML = '<span class="material-icons">chevron_right</span>';
+
     return calendar;
 }
 
