@@ -876,13 +876,13 @@ body {
 #calendar {
     background: #fff;
     border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     padding: 1rem;
 }
 .contenedor-calendario-scroll {
     background: #fff;
     border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     padding: 1rem;
 }
 .fc {
@@ -890,39 +890,71 @@ body {
 }
 .fc .fc-toolbar-title {
     color: #2563EB;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1.75rem;
 }
 .fc .fc-button {
-    background: #2563EB;
-    border: none;
-    color: #fff;
-    border-radius: 0.5rem;
+    border: 1px solid #2563EB;
+    background: transparent;
+    color: #2563EB;
+    border-radius: 50rem;
     padding: 0.45em 0.9em;
     box-shadow: 0 2px 6px rgba(37,99,235,0.25);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .fc .fc-button:hover,
 .fc .fc-button:focus {
-    background: #1E40AF;
+    background: #2563EB;
+    color: #fff;
 }
 .fc .fc-button:disabled {
     background: #a5b4fc;
+    color: #fff;
     opacity: 0.7;
 }
+.fc .fc-prev-button .fc-icon,
+.fc .fc-next-button .fc-icon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.2rem;
+    width: auto;
+    height: auto;
+    line-height: 1;
+}
+.fc .fc-prev-button .fc-icon::before {
+    content: 'chevron_left';
+}
+.fc .fc-next-button .fc-icon::before {
+    content: 'chevron_right';
+}
 .fc .fc-event {
-    background-color: #93c5fd !important;
+    background-color: #e0f2fe !important;
     border: none !important;
     color: #1f2937 !important;
-    border-radius: 0.4rem;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    padding: 2px 4px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 6px 10px;
     font-weight: 500;
+    transition: all 0.2s ease-in-out;
 }
 .fc .fc-event:hover {
     background-color: #2563EB !important;
     color: #fff !important;
+    transform: scale(1.02);
 }
 @media (max-width: 768px) {
     #calendar {
         padding: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .fc .fc-button {
+        padding: 0.3em 0.6em;
+        font-size: 0.85rem;
+    }
+    .fc .fc-toolbar-title {
+        font-size: 1.3rem;
     }
 }
