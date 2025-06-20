@@ -98,16 +98,17 @@ function abrirModalDetalleClase(evento) {
     document.getElementById('modalDetalleClase').dataset.idClase = evento.id;
 
     const btnCompletada = document.getElementById('btnClaseCompletada');
+    const isMobile = window.matchMedia('(max-width: 576px)').matches;
 
     // Visual state of the button depending on class status
     if (datos.estado === 'completada') {
         btnCompletada.classList.remove("btn-success");
         btnCompletada.classList.add("btn-success", "opacity-50");
         btnCompletada.disabled = true;
-        btnCompletada.textContent = "✅ Class completed";
+        btnCompletada.textContent = isMobile ? "Completed" : "✅ Class completed";
     } else {
         btnCompletada.disabled = false;
-        btnCompletada.textContent = "Mark as Completed";
+        btnCompletada.textContent = isMobile ? "Completed" : "Mark as Completed";
         btnCompletada.classList.remove("btn-secondary", "opacity-50");
         btnCompletada.classList.add("btn-success");
         btnCompletada.onclick = marcarClaseComoCompletada;

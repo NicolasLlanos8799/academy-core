@@ -813,20 +813,29 @@ body {
     background-color: #4B5563;
 }
 
+#modalDetalleClase .modal-btn-row {
+    padding-bottom: 1rem;
+}
+
 @media (max-width: 576px) {
     #modalDetalleClase .modal-btn-row {
         flex-wrap: wrap;
         gap: 0.5rem;
+        justify-content: center;
     }
 
     #modalDetalleClase .modal-btn-row .btn {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 0.5rem);
         text-align: center;
     }
 
-    #modalDetalleClase .btn-success {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.6rem;
+    #btnClaseCompletada::before {
+        content: "";
+    }
+
+    #btnClaseCompletada {
+        font-size: 0.9rem;
+        padding: 0.5rem;
     }
 }
 
