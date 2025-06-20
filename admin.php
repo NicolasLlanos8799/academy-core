@@ -206,7 +206,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                 Completed</button>
                             <button id="btnEditarClase" class="btn btn-warning flex-fill me-1">Edit</button>
                             <button id="btnEliminarClase" class="btn btn-danger flex-fill me-1">Delete</button>
-                            <button type="button" class="btn btn-secondary flex-fill">Close</button>
+                            <button type="button" class="btn btn-secondary flex-fill" data-bs-dismiss="modal">Close</button>
+
                         </div>
                     </div>
                 </div>
