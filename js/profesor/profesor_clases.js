@@ -53,28 +53,23 @@ function inicializarCalendario() {
             if (tituloEl) {
                 tituloEl.textContent = capitalizado;
             }
+
+            const prevBtn = document.querySelector('.fc-prev-button');
+            const nextBtn = document.querySelector('.fc-next-button');
+
+            if (prevBtn && !prevBtn.dataset.iconSet) {
+                prevBtn.innerHTML = '<span class="material-icons">chevron_left</span>';
+                prevBtn.dataset.iconSet = "true";
+            }
+
+            if (nextBtn && !nextBtn.dataset.iconSet) {
+                nextBtn.innerHTML = '<span class="material-icons">chevron_right</span>';
+                nextBtn.dataset.iconSet = "true";
+            }
         },
     });
 
     calendar.render();
-    const prevBtn = document.querySelector(".fc-prev-button");
-    const nextBtn = document.querySelector(".fc-next-button");
-
-    if (prevBtn) {
-      prevBtn.textContent = "";
-      const icon = document.createElement("span");
-      icon.className = "material-icons";
-      icon.textContent = "chevron_left";
-      prevBtn.appendChild(icon);
-    }
-
-    if (nextBtn) {
-      nextBtn.textContent = "";
-      const icon = document.createElement("span");
-      icon.className = "material-icons";
-      icon.textContent = "chevron_right";
-      nextBtn.appendChild(icon);
-    }
     return calendar;
 }
 
