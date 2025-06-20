@@ -21,7 +21,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.4/index.global.min.css" rel="stylesheet" />
 
     <!-- Google Fonts + Material Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- TU CSS PERSONALIZADO SIEMPRE ÚLTIMO -->
