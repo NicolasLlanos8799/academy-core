@@ -345,6 +345,20 @@ function inicializarCalendario() {
             minute: '2-digit',
             hour12: false
         },
+        datesSet: function () {
+            const prevBtn = document.querySelector('.fc-prev-button');
+            const nextBtn = document.querySelector('.fc-next-button');
+
+            if (prevBtn && !prevBtn.dataset.iconSet) {
+                prevBtn.innerHTML = '<span class="material-icons">chevron_left</span>';
+                prevBtn.dataset.iconSet = 'true';
+            }
+
+            if (nextBtn && !nextBtn.dataset.iconSet) {
+                nextBtn.innerHTML = '<span class="material-icons">chevron_right</span>';
+                nextBtn.dataset.iconSet = 'true';
+            }
+        },
         events: function (fetchInfo, successCallback, failureCallback) {
             fetch('php/listar_clases.php')
                 .then(res => res.json())
@@ -466,12 +480,6 @@ function inicializarCalendario() {
     });
 
     calendar.render();
-
-    // Replace navigation text with Material Icons
-    const prevBtn = calendarEl.querySelector('.fc-prev-button');
-    const nextBtn = calendarEl.querySelector('.fc-next-button');
-    if (prevBtn) prevBtn.innerHTML = '<span class="material-icons">chevron_left</span>';
-    if (nextBtn) nextBtn.innerHTML = '<span class="material-icons">chevron_right</span>';
 
     return calendar;
 }

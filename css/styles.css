@@ -679,6 +679,7 @@ body {
 .material-icons {
     vertical-align: middle;
     font-size: 20px !important;
+    color: #2563EB;
 }
 
 /* ===== TABLA MODERNA ===== */
@@ -944,10 +945,6 @@ body {
 .fc-next-button:hover {
     background-color: #2563EB;
     color: #fff;
-}
-.fc-prev-button::before,
-.fc-next-button::before {
-    content: "";
 }
 .fc-prev-button .material-icons,
 .fc-next-button .material-icons {
