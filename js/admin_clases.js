@@ -462,10 +462,33 @@ function inicializarCalendario() {
 
             const modal = new bootstrap.Modal(document.getElementById('modalDetalleClase'));
             modal.show();
+        },
+        datesSet: function () {
+            // reserved for potential future logic when view dates change
         }
     });
 
     calendar.render();
+    const toolbar = document.querySelector('.fc-header-toolbar');
+
+    if (toolbar) {
+        const observer = new MutationObserver(() => {
+            const prevBtn = document.querySelector('.fc-prev-button');
+            const nextBtn = document.querySelector('.fc-next-button');
+
+            if (prevBtn && !prevBtn.classList.contains('icon-replaced')) {
+                prevBtn.innerHTML = '<span class="material-icons">chevron_left</span>';
+                prevBtn.classList.add('icon-replaced');
+            }
+
+            if (nextBtn && !nextBtn.classList.contains('icon-replaced')) {
+                nextBtn.innerHTML = '<span class="material-icons">chevron_right</span>';
+                nextBtn.classList.add('icon-replaced');
+            }
+        });
+
+        observer.observe(toolbar, { childList: true, subtree: true });
+    }
     return calendar;
 }
 

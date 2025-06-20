@@ -871,3 +871,90 @@ body {
     }
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f8fa;
+  color: #1f2937;
+}
+
+#calendar {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+#clases h3 {
+  font-weight: 700;
+  color: #2563EB;
+  font-size: 1.75rem;
+}
+
+#clases p.text-muted {
+  font-size: 0.95rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.fc-prev-button,
+.fc-next-button,
+.fc-today-button {
+  border-radius: 999px !important;
+  background-color: transparent;
+  border: 1px solid #2563EB;
+  color: #2563EB;
+  transition: all 0.2s ease;
+  font-size: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fc-prev-button:hover,
+.fc-next-button:hover,
+.fc-today-button:hover {
+  background-color: #2563EB;
+  color: white;
+}
+
+.fc-today-button {
+  font-size: 0.85rem;
+  width: auto;
+  padding: 6px 12px;
+}
+
+.material-icons {
+  font-size: 20px;
+  color: inherit;
+  vertical-align: middle;
+}
+
+.fc-event {
+  border-radius: 0.5rem;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.fc-event:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .fc-header-toolbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .fc-toolbar-title {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}
