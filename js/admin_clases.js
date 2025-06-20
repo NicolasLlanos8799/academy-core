@@ -432,9 +432,9 @@ function inicializarCalendario() {
             }
 
             document.getElementById('btnEditarClase').onclick = function () {
-                abrirFormularioEdicion(evento.id);
                 const modal = bootstrap.Modal.getInstance(document.getElementById('modalDetalleClase'));
                 if (modal) modal.hide();
+                setTimeout(() => abrirFormularioEdicion(evento.id), 200);
             };
 
             document.getElementById('btnEliminarClase').onclick = function () {

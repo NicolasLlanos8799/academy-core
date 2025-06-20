@@ -813,6 +813,23 @@ body {
     background-color: #4B5563;
 }
 
+@media (max-width: 576px) {
+    #modalDetalleClase .modal-btn-row {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    #modalDetalleClase .modal-btn-row .btn {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    #modalDetalleClase .btn-success {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
 /* ===== ACTIONS GROUP ===== */
 .action-btn-group {
     display: flex;

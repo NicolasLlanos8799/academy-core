@@ -113,7 +113,11 @@ function abrirModalDetalleClase(evento) {
         btnCompletada.onclick = marcarClaseComoCompletada;
     }
 
-    document.getElementById('btnEditarClase').onclick = abrirFormularioEdicionClaseProfesor;
+    document.getElementById('btnEditarClase').onclick = function () {
+        const detalleModal = bootstrap.Modal.getInstance(document.getElementById('modalDetalleClase'));
+        if (detalleModal) detalleModal.hide();
+        setTimeout(abrirFormularioEdicionClaseProfesor, 200);
+    };
     document.getElementById('btnEliminarClase').onclick = eliminarClaseProfesor;
 
     modal.show();
@@ -173,8 +177,6 @@ function abrirFormularioEdicionClaseProfesor() {
             document.getElementById("editar_email_alumno").value = clase.email;
             document.getElementById("editar_telefono_alumno").value = clase.telefono;
             document.getElementById("editar_observaciones").value = clase.observaciones || '';
-
-            bootstrap.Modal.getInstance(document.getElementById("modalDetalleClase")).hide();
 
             const modal = new bootstrap.Modal(document.getElementById('modalEditarClase'));
             modal.show();
