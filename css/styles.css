@@ -791,31 +791,16 @@ body {
     font-weight: 500;
 }
 
-@media (max-width: 576px) {
-    #btnClaseCompletada .completed-text::before {
-        content: "Completed";
-    }
+#btnClaseCompletada {
+    white-space: nowrap;
+}
 
-    #btnClaseCompletada.completado .completed-text::before {
-        content: "✅ Completed";
-    }
-
-    #btnClaseCompletada .completed-text {
-        display: inline-block;
-        width: 100%;
-        text-align: center;
+@media (max-width: 575.98px) {
+    #btnClaseCompletada {
+        flex: 1 1 100%;
     }
 }
 
-@media (min-width: 577px) {
-    #btnClaseCompletada .completed-text::before {
-        content: "Mark as Completed";
-    }
-
-    #btnClaseCompletada.completado .completed-text::before {
-        content: "✅ Completed";
-    }
-}
 
 #modalDetalleClase .btn-success {
     background-color: #10B981;

@@ -1,19 +1,17 @@
 // profesor_clases.js
 
 function actualizarBotonCompletado(clase) {
-    const boton = document.getElementById('btnClaseCompletada');
-    const texto = boton ? boton.querySelector('.completed-text') : null;
-    if (!boton || !texto) return;
+    const boton = document.getElementById("btnClaseCompletada");
+    if (!boton) return;
 
-    if (clase.estado === 'completada') {
-        boton.classList.add('completado');
+    if (clase.estado === "completada") {
         boton.disabled = true;
+        boton.textContent = "✅ Completed";
     } else {
-        boton.classList.remove('completado');
         boton.disabled = false;
+        boton.textContent = "Mark as Completed";
     }
 }
-
 document.addEventListener("DOMContentLoaded", function () {
     mostrarSeccion('clases');
 

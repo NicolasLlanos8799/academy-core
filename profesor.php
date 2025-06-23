@@ -95,9 +95,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
                             <p><strong>Observations:</strong> <span id="detalleObservaciones"></span></p>
                         </div>
                         <div class="d-flex mt-4 modal-btn-row px-3 pb-3">
-                            <button id="btnClaseCompletada" class="btn btn-success flex-fill me-1">
-                                <span class="completed-text">Mark as Completed</span>
-                            </button>
+                            <button id="btnClaseCompletada" class="btn btn-success flex-fill me-1">Mark as Completed</button>
                             <button id="btnEditarClase" class="btn btn-warning flex-fill me-1">Edit</button>
                             <button id="btnEliminarClase" class="btn btn-danger flex-fill me-1">Delete</button>
                             <button type="button" class="btn btn-secondary flex-fill"
