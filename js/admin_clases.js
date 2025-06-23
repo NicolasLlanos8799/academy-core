@@ -419,22 +419,23 @@ function inicializarCalendario() {
             document.getElementById('detalleHorario').textContent = `${horaInicio} - ${horaFin}`;
 
             const btnCompletada = document.getElementById('btnClaseCompletada');
+            const isMobile = window.matchMedia('(max-width: 576px)').matches;
 
             if (evento.extendedProps.estado === 'completada') {
                 btnCompletada.classList.add("opacity-50");
                 btnCompletada.disabled = true;
-                btnCompletada.textContent = "✅ Class completed";
+                btnCompletada.textContent = isMobile ? "Completed" : "✅ Class completed";
             } else {
                 btnCompletada.disabled = false;
-                btnCompletada.textContent = "Mark as Completed";
+                btnCompletada.textContent = isMobile ? "Completed" : "Mark as Completed";
                 btnCompletada.setAttribute("data-id", evento.id);
                 btnCompletada.classList.remove("opacity-50");
             }
 
             document.getElementById('btnEditarClase').onclick = function () {
-                abrirFormularioEdicion(evento.id);
                 const modal = bootstrap.Modal.getInstance(document.getElementById('modalDetalleClase'));
                 if (modal) modal.hide();
+                setTimeout(() => abrirFormularioEdicion(evento.id), 200);
             };
 
             document.getElementById('btnEliminarClase').onclick = function () {

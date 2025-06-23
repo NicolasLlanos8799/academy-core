@@ -98,22 +98,27 @@ function abrirModalDetalleClase(evento) {
     document.getElementById('modalDetalleClase').dataset.idClase = evento.id;
 
     const btnCompletada = document.getElementById('btnClaseCompletada');
+    const isMobile = window.matchMedia('(max-width: 576px)').matches;
 
     // Visual state of the button depending on class status
     if (datos.estado === 'completada') {
         btnCompletada.classList.remove("btn-success");
         btnCompletada.classList.add("btn-success", "opacity-50");
         btnCompletada.disabled = true;
-        btnCompletada.textContent = "✅ Class completed";
+        btnCompletada.textContent = isMobile ? "Completed" : "✅ Class completed";
     } else {
         btnCompletada.disabled = false;
-        btnCompletada.textContent = "Mark as Completed";
+        btnCompletada.textContent = isMobile ? "Completed" : "Mark as Completed";
         btnCompletada.classList.remove("btn-secondary", "opacity-50");
         btnCompletada.classList.add("btn-success");
         btnCompletada.onclick = marcarClaseComoCompletada;
     }
 
-    document.getElementById('btnEditarClase').onclick = abrirFormularioEdicionClaseProfesor;
+    document.getElementById('btnEditarClase').onclick = function () {
+        const detalleModal = bootstrap.Modal.getInstance(document.getElementById('modalDetalleClase'));
+        if (detalleModal) detalleModal.hide();
+        setTimeout(abrirFormularioEdicionClaseProfesor, 200);
+    };
     document.getElementById('btnEliminarClase').onclick = eliminarClaseProfesor;
 
     modal.show();
@@ -173,8 +178,6 @@ function abrirFormularioEdicionClaseProfesor() {
             document.getElementById("editar_email_alumno").value = clase.email;
             document.getElementById("editar_telefono_alumno").value = clase.telefono;
             document.getElementById("editar_observaciones").value = clase.observaciones || '';
-
-            bootstrap.Modal.getInstance(document.getElementById("modalDetalleClase")).hide();
 
             const modal = new bootstrap.Modal(document.getElementById('modalEditarClase'));
             modal.show();
