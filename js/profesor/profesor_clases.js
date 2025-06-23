@@ -5,8 +5,9 @@ function actualizarBotonCompletado(clase) {
     if (!boton) return;
 
     const isMobile = window.innerWidth < 576;
+    const completada = clase?.completada ?? (clase?.estado === "completada");
 
-    if (clase.estado === "completada") {
+    if (completada) {
         boton.disabled = true;
         boton.textContent = "✅ Completed";
     } else {
@@ -112,7 +113,7 @@ function abrirModalDetalleClase(evento) {
     document.getElementById('modalDetalleClase').dataset.idClase = evento.id;
 
     const btnCompletada = document.getElementById('btnMarcarCompletada');
-    actualizarBotonCompletado(datos);
+    actualizarBotonCompletado({ completada: datos.estado === 'completada' });
     if (datos.estado !== 'completada') {
         btnCompletada.onclick = marcarClaseComoCompletada;
     } else {
@@ -150,7 +151,7 @@ function marcarClaseComoCompletada() {
         btn.innerHTML = originalText;
 
         if (data.success) {
-            actualizarBotonCompletado({ estado: 'completada' });
+            actualizarBotonCompletado({ completada: true });
 
             bootstrap.Modal.getInstance(document.getElementById("modalDetalleClase")).hide();
             if (calendarInstancia?.refetchEvents) calendarInstancia.refetchEvents();

@@ -6,8 +6,9 @@ function actualizarBotonCompletado(clase) {
     if (!boton) return;
 
     const isMobile = window.innerWidth < 576;
+    const completada = clase?.completada ?? (clase?.estado === "completada");
 
-    if (clase.estado === "completada") {
+    if (completada) {
         boton.disabled = true;
         boton.textContent = "✅ Completed";
     } else {
@@ -434,7 +435,7 @@ function inicializarCalendario() {
             document.getElementById('detalleHorario').textContent = `${horaInicio} - ${horaFin}`;
 
             const btnCompletada = document.getElementById('btnMarcarCompletada');
-            actualizarBotonCompletado(evento.extendedProps);
+            actualizarBotonCompletado({ completada: evento.extendedProps.estado === 'completada' });
             if (evento.extendedProps.estado !== 'completada') {
                 btnCompletada.setAttribute('data-id', evento.id);
             }
@@ -565,7 +566,7 @@ document.getElementById("btnMarcarCompletada").addEventListener("click", functio
                 const modalInstance = bootstrap.Modal.getInstance(document.getElementById("modalDetalleClase"));
                 if (modalInstance) modalInstance.hide();
 
-                actualizarBotonCompletado({ estado: 'completada' });
+                actualizarBotonCompletado({ completada: true });
 
                 cargarClases();
                 if (calendarInstancia?.refetchEvents) calendarInstancia.refetchEvents();

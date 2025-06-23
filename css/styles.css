@@ -782,13 +782,14 @@ body {
 }
 
 #btnMarcarCompletada:disabled {
-    background-color: #b6e7c3;
+    background-color: #b5e7b3;
     color: #265f3a;
     cursor: default;
     opacity: 1;
     border: none;
     box-shadow: none;
     font-weight: 500;
+    pointer-events: none;
 }
 
 #btnMarcarCompletada {
@@ -797,7 +798,6 @@ body {
 
 @media (max-width: 575.98px) {
     #btnMarcarCompletada {
-        flex: 1 1 100%;
         font-size: 0.9rem;
     }
 }
