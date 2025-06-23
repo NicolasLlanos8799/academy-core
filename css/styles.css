@@ -781,26 +781,34 @@ body {
     border: none;
 }
 
-/* Base style for the Complete button */
-#btnClaseCompletada {
-    border-radius: 0.75rem;
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
+/* Completed button styling */
+.btn-completed {
+    background-color: #22c55e;
+    color: white;
+    border: none;
     transition: all 0.2s ease-in-out;
-    white-space: nowrap;
-    text-align: center;
 }
 
-/* Disabled visual state */
-#btnClaseCompletada:disabled {
-    background-color: #E5E7EB;  /* gris claro */
-    color: #374151;             /* gris oscuro */
-    cursor: default;
-    opacity: 1;
-    border: none;
-    box-shadow: none;
-    font-weight: 500;
+.btn-completed:hover:not(:disabled) {
+    background-color: #16a34a;
+}
+
+.btn-completed:disabled {
+    background-color: #b6e7c3;
+    color: #265f3a;
+    cursor: not-allowed;
+    font-weight: 600;
+}
+
+@media (max-width: 575.98px) {
+    #btnClaseCompletada:not(:disabled) {
+        font-size: 0.85rem;
+        padding-inline: 10px;
+    }
+
+    #btnClaseCompletada[data-completed="true"] {
+        font-size: 0.85rem;
+    }
 }
 
 #modalDetalleClase .btn-success {
@@ -849,12 +857,6 @@ body {
     #modalDetalleClase .modal-btn-row .btn {
         flex: 1 1 calc(50% - 0.5rem);
         text-align: center;
-    }
-
-    #btnClaseCompletada {
-        font-size: 0.9rem;
-        padding: 0.45rem 0.8rem;
-        flex: 1 1 100%;
     }
 }
 

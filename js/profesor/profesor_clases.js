@@ -101,12 +101,16 @@ function abrirModalDetalleClase(evento) {
 
     if (datos.estado === 'completada') {
         btnCompletada.disabled = true;
-        btnCompletada.textContent = "✅ Completed";
-        btnCompletada.classList.add("opacity-50");
+        btnCompletada.classList.add('btn-completed');
+        btnCompletada.setAttribute('data-completed', 'true');
+        btnCompletada.textContent = 'Completed';
     } else {
         btnCompletada.disabled = false;
-        btnCompletada.textContent = "Mark as Completed";
-        btnCompletada.classList.remove("opacity-50");
+        btnCompletada.classList.add('btn-completed');
+        btnCompletada.setAttribute('data-completed', 'false');
+
+        const isMobile = window.innerWidth < 576;
+        btnCompletada.textContent = isMobile ? 'Completed' : 'Mark as Completed';
         btnCompletada.onclick = marcarClaseComoCompletada;
     }
 
@@ -144,8 +148,9 @@ function marcarClaseComoCompletada() {
             const btnCompletada = document.getElementById('btnClaseCompletada');
             if (btnCompletada) {
                 btnCompletada.disabled = true;
-                btnCompletada.textContent = "✅ Completed";
-                btnCompletada.classList.add("opacity-50");
+                btnCompletada.classList.add('btn-completed');
+                btnCompletada.setAttribute('data-completed', 'true');
+                btnCompletada.textContent = 'Completed';
             }
 
             bootstrap.Modal.getInstance(document.getElementById("modalDetalleClase")).hide();

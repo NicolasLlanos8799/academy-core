@@ -422,13 +422,17 @@ function inicializarCalendario() {
 
             if (evento.extendedProps.estado === 'completada') {
                 btnCompletada.disabled = true;
-                btnCompletada.textContent = "✅ Completed";
-                btnCompletada.classList.add("opacity-50");
+                btnCompletada.classList.add('btn-completed');
+                btnCompletada.setAttribute('data-completed', 'true');
+                btnCompletada.textContent = 'Completed';
             } else {
                 btnCompletada.disabled = false;
-                btnCompletada.textContent = "Mark as Completed";
-                btnCompletada.classList.remove("opacity-50");
-                btnCompletada.setAttribute("data-id", evento.id);
+                btnCompletada.classList.add('btn-completed');
+                btnCompletada.setAttribute('data-completed', 'false');
+
+                const isMobile = window.innerWidth < 576;
+                btnCompletada.textContent = isMobile ? 'Completed' : 'Mark as Completed';
+                btnCompletada.setAttribute('data-id', evento.id);
             }
 
             document.getElementById('btnEditarClase').onclick = function () {
@@ -560,8 +564,9 @@ document.getElementById("btnClaseCompletada").addEventListener("click", function
                 const btnCompletada = document.getElementById('btnClaseCompletada');
                 if (btnCompletada) {
                     btnCompletada.disabled = true;
-                    btnCompletada.textContent = "✅ Completed";
-                    btnCompletada.classList.add("opacity-50");
+                    btnCompletada.classList.add('btn-completed');
+                    btnCompletada.setAttribute('data-completed', 'true');
+                    btnCompletada.textContent = 'Completed';
                 }
 
                 cargarClases();
