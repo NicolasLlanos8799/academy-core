@@ -1,6 +1,20 @@
 // admin_clases.js
 // Funciones para la gestión de clases en el panel admin
 
+function actualizarBotonClaseCompletada(estadoCompletado) {
+    const btn = document.getElementById('btnClaseCompletada');
+    if (!btn) return;
+    if (estadoCompletado) {
+        btn.innerHTML = '<span class="me-1">✔️</span> <span class="completed-text">Completed</span>';
+        btn.disabled = true;
+        btn.classList.add('btn-success');
+    } else {
+        btn.innerHTML = 'Mark as Completed';
+        btn.disabled = false;
+        btn.classList.add('btn-success');
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     cargarClases()
     mostrarSeccion('clases');
@@ -419,19 +433,8 @@ function inicializarCalendario() {
             document.getElementById('detalleHorario').textContent = `${horaInicio} - ${horaFin}`;
 
             const btnCompletada = document.getElementById('btnClaseCompletada');
-
-            if (evento.extendedProps.estado === 'completada') {
-                btnCompletada.disabled = true;
-                btnCompletada.classList.add('btn-completed');
-                btnCompletada.setAttribute('data-completed', 'true');
-                btnCompletada.textContent = 'Completed';
-            } else {
-                btnCompletada.disabled = false;
-                btnCompletada.classList.add('btn-completed');
-                btnCompletada.setAttribute('data-completed', 'false');
-
-                const isMobile = window.innerWidth < 576;
-                btnCompletada.textContent = isMobile ? 'Completed' : 'Mark as Completed';
+            actualizarBotonClaseCompletada(evento.extendedProps.estado === 'completada');
+            if (evento.extendedProps.estado !== 'completada') {
                 btnCompletada.setAttribute('data-id', evento.id);
             }
 
@@ -561,13 +564,7 @@ document.getElementById("btnClaseCompletada").addEventListener("click", function
                 const modalInstance = bootstrap.Modal.getInstance(document.getElementById("modalDetalleClase"));
                 if (modalInstance) modalInstance.hide();
 
-                const btnCompletada = document.getElementById('btnClaseCompletada');
-                if (btnCompletada) {
-                    btnCompletada.disabled = true;
-                    btnCompletada.classList.add('btn-completed');
-                    btnCompletada.setAttribute('data-completed', 'true');
-                    btnCompletada.textContent = 'Completed';
-                }
+                actualizarBotonClaseCompletada(true);
 
                 cargarClases();
                 if (calendarInstancia?.refetchEvents) calendarInstancia.refetchEvents();

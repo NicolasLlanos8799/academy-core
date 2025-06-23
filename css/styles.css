@@ -781,33 +781,9 @@ body {
     border: none;
 }
 
-/* Completed button styling */
-.btn-completed {
-    background-color: #22c55e;
-    color: white;
-    border: none;
-    transition: all 0.2s ease-in-out;
-}
-
-.btn-completed:hover:not(:disabled) {
-    background-color: #16a34a;
-}
-
-.btn-completed:disabled {
-    background-color: #b6e7c3;
-    color: #265f3a;
-    cursor: not-allowed;
-    font-weight: 600;
-}
-
-@media (max-width: 575.98px) {
-    #btnClaseCompletada:not(:disabled) {
-        font-size: 0.85rem;
-        padding-inline: 10px;
-    }
-
-    #btnClaseCompletada[data-completed="true"] {
-        font-size: 0.85rem;
+@media (max-width: 576px) {
+    #btnClaseCompletada .completed-text {
+        display: none;
     }
 }
 
