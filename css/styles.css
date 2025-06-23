@@ -6,6 +6,43 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ====================================================
+   MODAL BUTTON GROUP
+==================================================== */
+.botonera-modal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.botonera-modal .btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.botonera-modal .btn:focus {
+    outline: 2px solid #0002;
+    outline-offset: 2px;
+}
+
+.botonera-modal .btn:hover {
+    filter: brightness(1.1);
+}
+
+/* Estilo especial para botón deshabilitado */
+.botonera-modal .btn:disabled {
+    background-color: #a1e5b0 !important;
+    color: #fff;
+    cursor: default;
+    opacity: 1;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;

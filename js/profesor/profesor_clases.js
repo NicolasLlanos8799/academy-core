@@ -77,7 +77,7 @@ function abrirModalDetalleClase(evento) {
     const modal = new bootstrap.Modal(document.getElementById('modalDetalleClase'));
     document.getElementById('modalDetalleClase').dataset.idClase = evento.id;
 
-    const btnCompletada = document.getElementById('btnClaseCompletada');
+    const btnCompletada = document.getElementById('btnMarcarCompletada');
 
     // Visual state of the button depending on class status
     if (datos.estado === 'completada') {
@@ -93,14 +93,14 @@ function abrirModalDetalleClase(evento) {
         btnCompletada.onclick = marcarClaseComoCompletada;
     }
 
-    document.getElementById('btnEditarClase').onclick = abrirFormularioEdicionClaseProfesor;
-    document.getElementById('btnEliminarClase').onclick = eliminarClaseProfesor;
+    document.getElementById('btnEditar').onclick = abrirFormularioEdicionClaseProfesor;
+    document.getElementById('btnEliminar').onclick = eliminarClaseProfesor;
 
     modal.show();
 }
 
 function marcarClaseComoCompletada() {
-    const btn = document.getElementById("btnClaseCompletada");
+    const btn = document.getElementById("btnMarcarCompletada");
     const claseId = document.getElementById('modalDetalleClase').dataset.idClase;
 
     if (!claseId) return mostrarToast("Class not identified", "danger");
@@ -211,7 +211,7 @@ function guardarEdicionClaseProfesor() {
 
 function eliminarClaseProfesor() {
     const claseId = document.getElementById('modalDetalleClase').dataset.idClase;
-    const btn = document.getElementById("btnEliminarClase");
+    const btn = document.getElementById("btnEliminar");
 
     if (!confirm("Delete this class?")) return;
 

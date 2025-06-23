@@ -418,7 +418,7 @@ function inicializarCalendario() {
             document.getElementById('detalleFecha').textContent = fecha;
             document.getElementById('detalleHorario').textContent = `${horaInicio} - ${horaFin}`;
 
-            const btnCompletada = document.getElementById('btnClaseCompletada');
+            const btnCompletada = document.getElementById('btnMarcarCompletada');
 
             if (evento.extendedProps.estado === 'completada') {
                 btnCompletada.classList.add("opacity-50");
@@ -431,13 +431,13 @@ function inicializarCalendario() {
                 btnCompletada.classList.remove("opacity-50");
             }
 
-            document.getElementById('btnEditarClase').onclick = function () {
+            document.getElementById('btnEditar').onclick = function () {
                 abrirFormularioEdicion(evento.id);
                 const modal = bootstrap.Modal.getInstance(document.getElementById('modalDetalleClase'));
                 if (modal) modal.hide();
             };
 
-            document.getElementById('btnEliminarClase').onclick = function () {
+            document.getElementById('btnEliminar').onclick = function () {
                 const btn = this;
                 const originalText = btn.innerHTML;
             
@@ -515,7 +515,7 @@ function abrirFormularioEdicion(id) {
 }
 
 // ✅ Mark class as completed
-document.getElementById("btnClaseCompletada").addEventListener("click", function () {
+document.getElementById("btnMarcarCompletada").addEventListener("click", function () {
     const claseId = this.getAttribute("data-id");
 
     if (!claseId) {
