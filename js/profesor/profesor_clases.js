@@ -1,15 +1,17 @@
 // profesor_clases.js
 
 function actualizarBotonCompletado(clase) {
-    const boton = document.getElementById("btnClaseCompletada");
+    const boton = document.getElementById("btnMarcarCompletada");
     if (!boton) return;
+
+    const isMobile = window.innerWidth < 576;
 
     if (clase.estado === "completada") {
         boton.disabled = true;
         boton.textContent = "✅ Completed";
     } else {
         boton.disabled = false;
-        boton.textContent = "Mark as Completed";
+        boton.textContent = isMobile ? "Completed" : "Mark as Completed";
     }
 }
 document.addEventListener("DOMContentLoaded", function () {
@@ -109,7 +111,7 @@ function abrirModalDetalleClase(evento) {
     const modal = new bootstrap.Modal(document.getElementById('modalDetalleClase'));
     document.getElementById('modalDetalleClase').dataset.idClase = evento.id;
 
-    const btnCompletada = document.getElementById('btnClaseCompletada');
+    const btnCompletada = document.getElementById('btnMarcarCompletada');
     actualizarBotonCompletado(datos);
     if (datos.estado !== 'completada') {
         btnCompletada.onclick = marcarClaseComoCompletada;
@@ -128,7 +130,7 @@ function abrirModalDetalleClase(evento) {
 }
 
 function marcarClaseComoCompletada() {
-    const btn = document.getElementById("btnClaseCompletada");
+    const btn = document.getElementById("btnMarcarCompletada");
     const claseId = document.getElementById('modalDetalleClase').dataset.idClase;
 
     if (!claseId) return mostrarToast("Class not identified", "danger");

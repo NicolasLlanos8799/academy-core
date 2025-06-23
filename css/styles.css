@@ -781,9 +781,9 @@ body {
     border: none;
 }
 
-#btnClaseCompletada:disabled {
-    background-color: #E5E7EB;
-    color: #374151;
+#btnMarcarCompletada:disabled {
+    background-color: #b6e7c3;
+    color: #265f3a;
     cursor: default;
     opacity: 1;
     border: none;
@@ -791,13 +791,14 @@ body {
     font-weight: 500;
 }
 
-#btnClaseCompletada {
+#btnMarcarCompletada {
     white-space: nowrap;
 }
 
 @media (max-width: 575.98px) {
-    #btnClaseCompletada {
+    #btnMarcarCompletada {
         flex: 1 1 100%;
+        font-size: 0.9rem;
     }
 }
 

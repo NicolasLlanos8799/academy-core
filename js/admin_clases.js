@@ -2,15 +2,17 @@
 // Funciones para la gestión de clases en el panel admin
 
 function actualizarBotonCompletado(clase) {
-    const boton = document.getElementById("btnClaseCompletada");
+    const boton = document.getElementById("btnMarcarCompletada");
     if (!boton) return;
+
+    const isMobile = window.innerWidth < 576;
 
     if (clase.estado === "completada") {
         boton.disabled = true;
         boton.textContent = "✅ Completed";
     } else {
         boton.disabled = false;
-        boton.textContent = "Mark as Completed";
+        boton.textContent = isMobile ? "Completed" : "Mark as Completed";
     }
 }
 
@@ -431,7 +433,7 @@ function inicializarCalendario() {
             document.getElementById('detalleFecha').textContent = fecha;
             document.getElementById('detalleHorario').textContent = `${horaInicio} - ${horaFin}`;
 
-            const btnCompletada = document.getElementById('btnClaseCompletada');
+            const btnCompletada = document.getElementById('btnMarcarCompletada');
             actualizarBotonCompletado(evento.extendedProps);
             if (evento.extendedProps.estado !== 'completada') {
                 btnCompletada.setAttribute('data-id', evento.id);
@@ -544,7 +546,7 @@ function abrirFormularioEdicion(id) {
 }
 
 // ✅ Mark class as completed
-document.getElementById("btnClaseCompletada").addEventListener("click", function () {
+document.getElementById("btnMarcarCompletada").addEventListener("click", function () {
     const claseId = this.getAttribute("data-id");
 
     if (!claseId) {
