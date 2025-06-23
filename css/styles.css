@@ -781,9 +781,39 @@ body {
     border: none;
 }
 
+#btnClaseCompletada:disabled {
+    background-color: #E5E7EB;
+    color: #374151;
+    cursor: default;
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+    font-weight: 500;
+}
+
 @media (max-width: 576px) {
+    #btnClaseCompletada .completed-text::before {
+        content: "Completed";
+    }
+
+    #btnClaseCompletada.completado .completed-text::before {
+        content: "✅ Completed";
+    }
+
     #btnClaseCompletada .completed-text {
-        display: none;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 577px) {
+    #btnClaseCompletada .completed-text::before {
+        content: "Mark as Completed";
+    }
+
+    #btnClaseCompletada.completado .completed-text::before {
+        content: "✅ Completed";
     }
 }
 
