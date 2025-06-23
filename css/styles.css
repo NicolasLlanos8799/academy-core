@@ -781,6 +781,25 @@ body {
     border: none;
 }
 
+/* Base style for the Complete button */
+#btnClaseCompletada {
+    border-radius: 0.75rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Disabled visual state */
+#btnClaseCompletada:disabled {
+    background-color: #D1D5DB;
+    color: #6B7280;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
 #modalDetalleClase .btn-success {
     background-color: #10B981;
     color: white;
@@ -829,13 +848,10 @@ body {
         text-align: center;
     }
 
-    #btnClaseCompletada::before {
-        content: "";
-    }
-
     #btnClaseCompletada {
         font-size: 0.9rem;
-        padding: 0.5rem;
+        padding: 0.45rem 0.8rem;
+        flex: 1 1 100%;
     }
 }
 

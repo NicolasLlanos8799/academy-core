@@ -419,17 +419,16 @@ function inicializarCalendario() {
             document.getElementById('detalleHorario').textContent = `${horaInicio} - ${horaFin}`;
 
             const btnCompletada = document.getElementById('btnClaseCompletada');
-            const isMobile = window.matchMedia('(max-width: 576px)').matches;
 
             if (evento.extendedProps.estado === 'completada') {
-                btnCompletada.classList.add("opacity-50");
                 btnCompletada.disabled = true;
-                btnCompletada.textContent = isMobile ? "Completed" : "✅ Class completed";
+                btnCompletada.textContent = "✅ Completed";
+                btnCompletada.classList.add("opacity-50");
             } else {
                 btnCompletada.disabled = false;
-                btnCompletada.textContent = isMobile ? "Completed" : "Mark as Completed";
-                btnCompletada.setAttribute("data-id", evento.id);
+                btnCompletada.textContent = "Mark as Completed";
                 btnCompletada.classList.remove("opacity-50");
+                btnCompletada.setAttribute("data-id", evento.id);
             }
 
             document.getElementById('btnEditarClase').onclick = function () {
@@ -557,6 +556,13 @@ document.getElementById("btnClaseCompletada").addEventListener("click", function
             if (data.success) {
                 const modalInstance = bootstrap.Modal.getInstance(document.getElementById("modalDetalleClase"));
                 if (modalInstance) modalInstance.hide();
+
+                const btnCompletada = document.getElementById('btnClaseCompletada');
+                if (btnCompletada) {
+                    btnCompletada.disabled = true;
+                    btnCompletada.textContent = "✅ Completed";
+                    btnCompletada.classList.add("opacity-50");
+                }
 
                 cargarClases();
                 if (calendarInstancia?.refetchEvents) calendarInstancia.refetchEvents();

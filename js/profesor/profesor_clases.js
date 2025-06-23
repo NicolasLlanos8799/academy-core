@@ -98,19 +98,15 @@ function abrirModalDetalleClase(evento) {
     document.getElementById('modalDetalleClase').dataset.idClase = evento.id;
 
     const btnCompletada = document.getElementById('btnClaseCompletada');
-    const isMobile = window.matchMedia('(max-width: 576px)').matches;
 
-    // Visual state of the button depending on class status
     if (datos.estado === 'completada') {
-        btnCompletada.classList.remove("btn-success");
-        btnCompletada.classList.add("btn-success", "opacity-50");
         btnCompletada.disabled = true;
-        btnCompletada.textContent = isMobile ? "Completed" : "✅ Class completed";
+        btnCompletada.textContent = "✅ Completed";
+        btnCompletada.classList.add("opacity-50");
     } else {
         btnCompletada.disabled = false;
-        btnCompletada.textContent = isMobile ? "Completed" : "Mark as Completed";
-        btnCompletada.classList.remove("btn-secondary", "opacity-50");
-        btnCompletada.classList.add("btn-success");
+        btnCompletada.textContent = "Mark as Completed";
+        btnCompletada.classList.remove("opacity-50");
         btnCompletada.onclick = marcarClaseComoCompletada;
     }
 
@@ -145,6 +141,13 @@ function marcarClaseComoCompletada() {
         btn.innerHTML = originalText;
 
         if (data.success) {
+            const btnCompletada = document.getElementById('btnClaseCompletada');
+            if (btnCompletada) {
+                btnCompletada.disabled = true;
+                btnCompletada.textContent = "✅ Completed";
+                btnCompletada.classList.add("opacity-50");
+            }
+
             bootstrap.Modal.getInstance(document.getElementById("modalDetalleClase")).hide();
             if (calendarInstancia?.refetchEvents) calendarInstancia.refetchEvents();
             if (typeof cargarPagosProfesor === "function") cargarPagosProfesor();
