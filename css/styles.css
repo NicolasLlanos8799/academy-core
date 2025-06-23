@@ -794,10 +794,13 @@ body {
 
 /* Disabled visual state */
 #btnClaseCompletada:disabled {
-    background-color: #D1D5DB;
-    color: #6B7280;
-    cursor: not-allowed;
+    background-color: #E5E7EB;  /* gris claro */
+    color: #374151;             /* gris oscuro */
+    cursor: default;
     opacity: 1;
+    border: none;
+    box-shadow: none;
+    font-weight: 500;
 }
 
 #modalDetalleClase .btn-success {
