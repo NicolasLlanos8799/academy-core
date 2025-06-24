@@ -150,6 +150,7 @@ form button {
     padding: 8px 12px;
     font-size: 14px;
     border-radius: 5px;
+    min-width: 140px;
 }
 .btn-warning {
     background-color: #ffcc00;
