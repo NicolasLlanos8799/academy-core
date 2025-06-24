@@ -235,17 +235,17 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             </div>
 
             <!-- Action Buttons -->
-            <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
-                <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1">
-                    <i class="bi bi-check-circle"></i> Mark as Completed
+            <div class="d-flex justify-content-center flex-nowrap gap-2 mt-4">
+                <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 px-3 py-2">
+                    <i class="bi bi-check-circle"></i> Completed
                 </button>
-                <button id="btnEditarClase" class="btn btn-warning text-white d-flex align-items-center gap-1">
+                <button id="btnEditarClase" class="btn btn-warning text-white d-flex align-items-center gap-1 px-3 py-2">
                     <i class="bi bi-pencil-square"></i> Edit
                 </button>
-                <button id="btnEliminarClase" class="btn btn-danger d-flex align-items-center gap-1">
+                <button id="btnEliminarClase" class="btn btn-danger d-flex align-items-center gap-1 px-3 py-2">
                     <i class="bi bi-trash3-fill"></i> Delete
                 </button>
-                <button type="button" class="btn btn-secondary d-flex align-items-center gap-1" data-bs-dismiss="modal">
+                <button type="button" class="btn btn-secondary d-flex align-items-center gap-1 px-3 py-2" data-bs-dismiss="modal">
                     <i class="bi bi-x-circle"></i> Close
                 </button>
             </div>

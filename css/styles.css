@@ -1055,3 +1055,11 @@ body {
   border-bottom: none;
 }
 
+/* Prevent modal action buttons from wrapping */
+.modal-content .btn {
+  white-space: nowrap;
+  flex-shrink: 1;
+  font-weight: 500;
+  border-radius: 0.75rem;
+}
+
