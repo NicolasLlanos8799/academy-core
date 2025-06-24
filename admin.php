@@ -38,6 +38,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
 
     <!-- Include Bootstrap to enhance appearance and functionality -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -184,31 +185,72 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'admin') {
             <div class="modal fade" id="modalDetalleClase" data-id-clase="" tabindex="-1"
                 aria-labelledby="modalDetalleClaseLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content bg-white text-dark">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalDetalleClaseLabel">Class Details</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
+                    <div class="modal-content p-4">
+                        <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
+                            <i class="bi bi-info-circle-fill text-primary"></i> Class Details
+                        </h4>
+
+                        <!-- Participant & Instructor -->
+                        <div class="section mb-3">
+                            <p><strong><i class="bi bi-person-fill me-1"></i>Participant:</strong> <span id="detalleAlumno"></span></p>
+                            <p><strong><i class="bi bi-person-badge-fill me-1"></i>Instructor:</strong> <span id="detalleProfesor"></span></p>
                         </div>
-                        <div class="modal-body">
-                            <p><strong>Participant:</strong> <span id="detalleAlumno"></span></p>
-                            <p><strong>Instructor:</strong> <span id="detalleProfesor"></span></p>
-                            <p><strong>Date:</strong> <span id="detalleFecha"></span></p>
-                            <p><strong>Time:</strong> <span id="detalleHorario"></span></p>
-                            <p><strong>Email:</strong> <span id="detalleEmail"></span></p>
-                            <p><strong>Phone:</strong> <span id="detalleTelefono"></span></p>
-                            <p><strong>Cash Payment (€):</strong> <span id="detallePagoEfectivo">—</span></p>
-                            <p><strong>Card Payment (€):</strong> <span id="detallePagoTarjeta">—</span></p>
-                            <p><strong>Total Amount (€):</strong> <span id="detalleImportePagado">—</span></p>
-                            <p><strong>Instructor Hourly Rate (€):</strong> <span id="detalleTarifaHora">—</span></p>
-                            <p><strong>Observations:</strong> <span id="detalleObservaciones"></span></p>
+
+                        <!-- Date & Time -->
+                        <div class="section mb-3">
+                            <p><strong><i class="bi bi-calendar-event me-1"></i>Date:</strong> <span id="detalleFecha"></span></p>
+                            <p><strong><i class="bi bi-clock-fill me-1"></i>Time:</strong> <span id="detalleHorario"></span></p>
                         </div>
-                        <div class="d-flex mt-4 modal-btn-row px-3 pb-3">
-                            <button id="btnClaseCompletada" class="btn btn-success flex-fill me-1">Mark as
-                                Completed</button>
-                            <button id="btnEditarClase" class="btn btn-warning flex-fill me-1">Edit</button>
-                            <button id="btnEliminarClase" class="btn btn-danger flex-fill me-1">Delete</button>
-                            <button type="button" class="btn btn-secondary flex-fill">Close</button>
+
+                        <!-- Contact Info -->
+                        <div class="section mb-3">
+                            <p><strong><i class="bi bi-envelope-fill me-1"></i>Email:</strong> <span id="detalleEmail"></span></p>
+                            <p><strong><i class="bi bi-telephone-fill me-1"></i>Phone:</strong> <span id="detalleTelefono"></span></p>
+                        </div>
+
+                        <!-- Payments -->
+                        <div class="section mb-3">
+                            <p>
+                                <strong><i class="bi bi-cash-coin me-1"></i>Cash Payment (€):</strong>
+                                <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
+                            </p>
+                            <p>
+                                <strong><i class="bi bi-credit-card-2-front-fill me-1"></i>Card Payment (€):</strong>
+                                <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
+                            </p>
+                            <p>
+                                <strong><i class="bi bi-receipt-cutoff me-1"></i>Total Amount (€):</strong>
+                                <span id="detalleImportePagado" class="fw-bold">—</span>
+                            </p>
+                        </div>
+
+                        <!-- Instructor rate -->
+                        <div class="section mb-3">
+                            <p>
+                                <strong><i class="bi bi-currency-euro me-1"></i>Instructor Hourly Rate (€):</strong>
+                                <span id="detalleTarifaHora">—</span>
+                            </p>
+                        </div>
+
+                        <!-- Observations -->
+                        <div class="section mb-4">
+                            <p><strong><i class="bi bi-chat-left-text me-1"></i>Observations:</strong> <span id="detalleObservaciones"></span></p>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex flex-wrap gap-2 justify-content-end">
+                            <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1">
+                                <i class="bi bi-check-circle"></i> Class Completed
+                            </button>
+                            <button id="btnEditarClase" class="btn btn-warning text-white d-flex align-items-center gap-1">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </button>
+                            <button id="btnEliminarClase" class="btn btn-danger d-flex align-items-center gap-1">
+                                <i class="bi bi-trash3-fill"></i> Delete
+                            </button>
+                            <button type="button" class="btn btn-secondary d-flex align-items-center gap-1" data-bs-dismiss="modal">
+                                <i class="bi bi-x-circle"></i> Close
+                            </button>
                         </div>
                     </div>
                 </div>
