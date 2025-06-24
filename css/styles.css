@@ -1045,3 +1045,12 @@ body {
     text-align: center;
   }
 }
+
+.section {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.75rem;
+}
+.section:last-of-type {
+  border-bottom: none;
+}
+
