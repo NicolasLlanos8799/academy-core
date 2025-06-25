@@ -1058,8 +1058,16 @@ body {
 /* Prevent modal action buttons from wrapping */
 .modal-content .btn {
   white-space: nowrap;
+  overflow-wrap: break-word;
   flex-shrink: 1;
   font-weight: 500;
   border-radius: 0.75rem;
+  min-width: 100px;
+}
+
+#modalDetalleClase .modal-dialog {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
 }
 
