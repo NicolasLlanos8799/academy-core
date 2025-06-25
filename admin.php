@@ -237,7 +237,9 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             <!-- Action Buttons -->
             <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
               <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 px-3 py-2">
-                <i class="bi bi-check-circle"></i> Mark as Completed
+                <i class="bi bi-check-circle"></i>
+                <span class="d-none d-sm-inline">Mark as Completed</span>
+                <span class="d-inline d-sm-none">Completed</span>
               </button>
               <button id="btnEditarClase" class="btn btn-warning text-white d-flex align-items-center gap-1 px-3 py-2">
                 <i class="bi bi-pencil-square"></i> Edit
