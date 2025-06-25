@@ -1060,7 +1060,7 @@ body {
   white-space: nowrap;
   font-weight: 500;
   border-radius: 0.75rem;
-  min-width: auto;
+  text-align: center;
 }
 
 #modalDetalleClase .modal-dialog {
