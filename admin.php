@@ -235,20 +235,26 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             </div>
 
             <!-- Action Buttons -->
-            <div class="d-flex justify-content-between flex-nowrap gap-2 overflow-x-auto mt-4">
-              <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 flex-grow-1 px-3 py-2">
+            <div class="d-flex justify-content-between flex-nowrap gap-2 mt-4 w-100">
+              <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-2 py-2 flex-fill">
                 <i class="bi bi-check-circle"></i>
                 <span class="d-none d-sm-inline">Mark as Completed</span>
-                <span class="d-inline d-sm-none">Completed</span>
+                <span class="d-inline d-sm-none">✓</span>
               </button>
-              <button id="btnEditarClase" class="btn btn-warning text-white d-flex align-items-center gap-1 flex-grow-1 px-3 py-2">
-                <i class="bi bi-pencil-square"></i> Edit
+              <button id="btnEditarClase" class="btn btn-warning text-white d-flex align-items-center gap-1 justify-content-center px-2 py-2 flex-fill">
+                <i class="bi bi-pencil-square"></i>
+                <span class="d-none d-sm-inline">Edit</span>
+                <span class="d-inline d-sm-none">✏️</span>
               </button>
-              <button id="btnEliminarClase" class="btn btn-danger d-flex align-items-center gap-1 flex-grow-1 px-3 py-2">
-                <i class="bi bi-trash3-fill"></i> Delete
+              <button id="btnEliminarClase" class="btn btn-danger d-flex align-items-center gap-1 justify-content-center px-2 py-2 flex-fill">
+                <i class="bi bi-trash3-fill"></i>
+                <span class="d-none d-sm-inline">Delete</span>
+                <span class="d-inline d-sm-none">🗑</span>
               </button>
-              <button type="button" class="btn btn-secondary d-flex align-items-center gap-1 flex-grow-1 px-3 py-2" data-bs-dismiss="modal">
-                <i class="bi bi-x-circle"></i> Close
+              <button type="button" class="btn btn-secondary d-flex align-items-center gap-1 justify-content-center px-2 py-2 flex-fill" data-bs-dismiss="modal">
+                <i class="bi bi-x-circle"></i>
+                <span class="d-none d-sm-inline">Close</span>
+                <span class="d-inline d-sm-none">✖</span>
               </button>
             </div>
         </div>

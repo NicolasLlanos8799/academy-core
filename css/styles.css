@@ -1055,12 +1055,13 @@ body {
   border-bottom: none;
 }
 
-/* Prevent modal action buttons from wrapping */
-.modal-content .btn {
+/* Modal Detail buttons style */
+#modalDetalleClase .btn {
   white-space: nowrap;
   font-weight: 500;
   border-radius: 0.75rem;
-  text-align: center;
+  font-size: 0.9rem;
+  min-width: 0;
 }
 
 #modalDetalleClase .modal-dialog {
