@@ -255,19 +255,19 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
                         <!-- Action Buttons -->
                         <div class="modal-acciones">
-                            <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-3 py-2">
+                            <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-3 py-2" title="Mark as Completed">
                                 <i class="bi bi-check2-circle"></i>
                                 <span class="d-none d-sm-inline">Mark as Completed</span>
                             </button>
-                            <button id="btnEditarClase" class="btn btn-warning text-white">
+                            <button id="btnEditarClase" class="btn btn-warning text-white" title="Edit Class">
                                 <i class="bi bi-pencil-square"></i>
                                 <span class="texto-responsive">Edit</span>
                             </button>
-                            <button id="btnEliminarClase" class="btn btn-danger">
+                            <button id="btnEliminarClase" class="btn btn-danger" title="Delete Class">
                                 <i class="bi bi-trash3-fill"></i>
                                 <span class="texto-responsive">Delete</span>
                             </button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Close">
                                 <i class="bi bi-x-circle"></i>
                                 <span class="texto-responsive">Close</span>
                             </button>

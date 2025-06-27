@@ -103,12 +103,14 @@ function abrirModalDetalleClase(evento) {
     if (datos.estado === 'completada') {
         btnCompletada.classList.add('disabled');
         btnCompletada.disabled = true;
+        btnCompletada.title = 'Completed';
         btnCompletada.innerHTML = `
             <i class="bi bi-check-circle-fill"></i>
             <span class="d-none d-sm-inline">Completed</span>`;
     } else {
         btnCompletada.disabled = false;
         btnCompletada.classList.remove('disabled');
+        btnCompletada.title = 'Mark as Completed';
         btnCompletada.innerHTML = `
             <i class="bi bi-check2-circle"></i>
             <span class="d-none d-sm-inline">Mark as Completed</span>`;
