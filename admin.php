@@ -191,9 +191,9 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             <!-- Class Detail Modal -->
             <div class="modal fade" id="modalDetalleClase" data-id-clase="" tabindex="-1"
                 aria-labelledby="modalDetalleClaseLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
                     <!-- Modal Content -->
-                    <div class="modal-content p-4">
+                    <div class="modal-content p-3">
                         <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
                             <i class="bi bi-info-circle-fill text-primary"></i> Class Details
                         </h4>
