@@ -98,19 +98,23 @@ function abrirModalDetalleClase(evento) {
     document.getElementById('modalDetalleClase').dataset.idClase = evento.id;
 
     const btnCompletada = document.getElementById('btnClaseCompletada');
-    const isMobile = window.matchMedia('(max-width: 576px)').matches;
 
     // Visual state of the button depending on class status
     if (datos.estado === 'completada') {
-        btnCompletada.classList.remove("btn-success");
-        btnCompletada.classList.add("btn-success", "opacity-50");
+        btnCompletada.classList.add('disabled');
         btnCompletada.disabled = true;
-        btnCompletada.textContent = isMobile ? "Completed" : "✅ Class completed";
+        btnCompletada.title = 'Completed';
+        btnCompletada.innerHTML = `
+            <i class="bi bi-check-circle-fill"></i>
+            <span class="d-none d-sm-inline">Completed</span>`;
     } else {
         btnCompletada.disabled = false;
-        btnCompletada.textContent = isMobile ? "Completed" : "Mark as Completed";
-        btnCompletada.classList.remove("btn-secondary", "opacity-50");
-        btnCompletada.classList.add("btn-success");
+        btnCompletada.classList.remove('disabled');
+        btnCompletada.title = 'Mark as Completed';
+        btnCompletada.innerHTML = `
+            <i class="bi bi-check2-circle"></i>
+            <span class="d-none d-sm-inline">Mark as Completed</span>`;
+        btnCompletada.classList.add('btn-success');
         btnCompletada.onclick = marcarClaseComoCompletada;
     }
 
