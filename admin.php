@@ -200,56 +200,56 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                         </h4>
 
                         <!-- Participant & Instructor -->
-                        <div class="section mb-3">
-                            <p><strong><i class="bi bi-person-fill me-1"></i>Participant:</strong> <span
+                        <div class="section">
+                            <p><strong><i class="bi bi-person-fill"></i>Participant:</strong> <span
                                     id="detalleAlumno"></span></p>
-                            <p><strong><i class="bi bi-person-badge-fill me-1"></i>Instructor:</strong> <span
+                            <p><strong><i class="bi bi-person-badge-fill"></i>Instructor:</strong> <span
                                     id="detalleProfesor"></span></p>
                         </div>
 
                         <!-- Date & Time -->
-                        <div class="section mb-3">
-                            <p><strong><i class="bi bi-calendar-event me-1"></i>Date:</strong> <span
+                        <div class="section">
+                            <p><strong><i class="bi bi-calendar-event"></i>Date:</strong> <span
                                     id="detalleFecha"></span></p>
-                            <p><strong><i class="bi bi-clock-fill me-1"></i>Time:</strong> <span
+                            <p><strong><i class="bi bi-clock-fill"></i>Time:</strong> <span
                                     id="detalleHorario"></span></p>
                         </div>
 
                         <!-- Contact Info -->
-                        <div class="section mb-3">
-                            <p><strong><i class="bi bi-envelope-fill me-1"></i>Email:</strong> <span
+                        <div class="section">
+                            <p><strong><i class="bi bi-envelope-fill"></i>Email:</strong> <span
                                     id="detalleEmail"></span></p>
-                            <p><strong><i class="bi bi-telephone-fill me-1"></i>Phone:</strong> <span
+                            <p><strong><i class="bi bi-telephone-fill"></i>Phone:</strong> <span
                                     id="detalleTelefono"></span></p>
                         </div>
 
                         <!-- Payments -->
-                        <div class="section mb-3">
+                        <div class="section">
                             <p>
-                                <strong><i class="bi bi-cash-coin me-1"></i>Cash Payment (€):</strong>
+                                <strong><i class="bi bi-cash-coin"></i>Cash Payment (€):</strong>
                                 <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
                             </p>
                             <p>
-                                <strong><i class="bi bi-credit-card-2-front-fill me-1"></i>Card Payment (€):</strong>
+                                <strong><i class="bi bi-credit-card-2-front-fill"></i>Card Payment (€):</strong>
                                 <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
                             </p>
                             <p>
-                                <strong><i class="bi bi-receipt-cutoff me-1"></i>Total Amount (€):</strong>
+                                <strong><i class="bi bi-receipt-cutoff"></i>Total Amount (€):</strong>
                                 <span id="detalleImportePagado" class="fw-bold">—</span>
                             </p>
                         </div>
 
                         <!-- Instructor rate -->
-                        <div class="section mb-3">
+                        <div class="section">
                             <p>
-                                <strong><i class="bi bi-currency-euro me-1"></i>Instructor Hourly Rate (€):</strong>
+                                <strong><i class="bi bi-currency-euro"></i>Instructor Hourly Rate (€):</strong>
                                 <span id="detalleTarifaHora">—</span>
                             </p>
                         </div>
 
                         <!-- Observations -->
-                        <div class="section mb-4">
-                            <p><strong><i class="bi bi-chat-left-text me-1"></i>Observations:</strong> <span
+                        <div class="section">
+                            <p><strong><i class="bi bi-chat-left-text"></i>Observations:</strong> <span
                                     id="detalleObservaciones"></span></p>
                         </div>
 
