@@ -12,6 +12,7 @@
   line-height: 1.4;
   border-radius: 0.6rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  position: relative; /* allows close button positioning */
 }
 
 /* Menor espacio vertical entre secciones */
@@ -73,4 +74,15 @@
   .btn span.d-sm-inline {
     display: none !important;
   }
+}
+
+/* Close button styling */
+.modal .btn-close {
+  z-index: 10;
+  font-size: 1.2rem;
+}
+
+/* Extra space below actions */
+.modal-footer {
+  padding-bottom: 1.5rem;
 }

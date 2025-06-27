@@ -24,6 +24,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pDQNmV8X60lNPp1XWmzh7aX6ixkmKuuNHYsYAGP82LPgAvFp8Z64Kbjsggq09NdXBJtu7wa9u0J7lzPJQ0C2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- TU CSS PERSONALIZADO SIEMPRE ÚLTIMO -->
     <link rel="stylesheet" href="css/styles.css?v=2.0">
@@ -195,9 +196,12 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                 <div class="modal-dialog modal-dialog-centered modal-detalle-clase">
                     <!-- Modal Content -->
                     <div class="modal-content compacto">
-                        <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
-                            <i class="bi bi-info-circle-fill text-primary"></i> Class Details
-                        </h4>
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-header border-0 pt-4 pb-2">
+                            <h5 class="modal-title fw-bold text-primary" id="modalDetalleClaseLabel">
+                                <i class="fas fa-info-circle me-2"></i>Class Details
+                            </h5>
+                        </div>
 
                         <!-- Participant & Instructor -->
                         <div class="section">
@@ -254,22 +258,15 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                         </div>
 
                         <!-- Action Buttons -->
-                        <div class="modal-acciones">
-                            <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-3 py-2" title="Mark as Completed">
-                                <i class="bi bi-check2-circle"></i>
-                                <span class="d-none d-sm-inline">Mark as Completed</span>
+                        <div class="modal-footer justify-content-between border-0 pt-0">
+                            <button id="btnClaseCompletada" class="btn btn-success">
+                                <i class="fas fa-check-circle me-1"></i>Completed
                             </button>
-                            <button id="btnEditarClase" class="btn btn-warning text-white" title="Edit Class">
-                                <i class="bi bi-pencil-square"></i>
-                                <span class="texto-responsive">Edit</span>
+                            <button id="btnEditarClase" class="btn btn-warning text-white">
+                                <i class="fas fa-edit me-1"></i>Edit
                             </button>
-                            <button id="btnEliminarClase" class="btn btn-danger" title="Delete Class">
-                                <i class="bi bi-trash3-fill"></i>
-                                <span class="texto-responsive">Delete</span>
-                            </button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Close">
-                                <i class="bi bi-x-circle"></i>
-                                <span class="texto-responsive">Close</span>
+                            <button id="btnEliminarClase" class="btn btn-danger">
+                                <i class="fas fa-trash-alt me-1"></i>Delete
                             </button>
                         </div>
 
