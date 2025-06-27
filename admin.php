@@ -255,9 +255,10 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
                         <!-- Action Buttons -->
                         <div class="modal-acciones">
-                            <button id="btnClaseCompletada" class="btn btn-success">
-                                <i class="bi bi-check-circle"></i>
-                                <span class="texto-responsive">Mark as Completed</span>
+                            <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-3 py-2">
+                                <i class="bi bi-check2-circle"></i>
+                                <span class="d-none d-sm-inline">Mark as Completed</span>
+                                <span class="d-inline d-sm-none">✓</span>
                             </button>
                             <button id="btnEditarClase" class="btn btn-warning text-white">
                                 <i class="bi bi-pencil-square"></i>
