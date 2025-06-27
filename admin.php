@@ -10,7 +10,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    
+
     <!-- Preconexión para Google Fonts e iconos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,14 +29,19 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <link rel="stylesheet" href="css/styles.css?v=2.0">
 
     <!-- FOUC Fix -->
-    <style>body { display: none; }</style>
+    <style>
+    body {
+        display: none;
+    }
+    </style>
 </head>
 
 
 <body>
-  <div id="loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;display:flex;align-items:center;justify-content:center;background:#f7f8fa;">
-    <span class="material-icons" style="font-size:2.2rem; color:#2563EB;">hourglass_top</span>
-  </div>
+    <div id="loader"
+        style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;display:flex;align-items:center;justify-content:center;background:#f7f8fa;">
+        <span class="material-icons" style="font-size:2.2rem; color:#2563EB;">hourglass_top</span>
+    </div>
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -104,8 +109,10 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <input type="text" id="telefono" class="form-control">
                                 </div>
                                 <div class="modal-footer d-flex gap-2">
-                                    <button type="button" class="btn btn-secondary flex-fill" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary flex-fill" onclick="agregarProfesor()">Save Instructor</button>
+                                    <button type="button" class="btn btn-secondary flex-fill"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary flex-fill"
+                                        onclick="agregarProfesor()">Save Instructor</button>
                                 </div>
                             </form>
                         </div>
@@ -138,8 +145,10 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <input type="text" id="editar_telefono" class="form-control">
                                 </div>
                                 <div class="modal-footer d-flex gap-2">
-                                    <button type="button" class="btn btn-success flex-fill" onclick="guardarEdicionProfesor()">Save Changes</button>
-                                    <button type="button" class="btn btn-secondary flex-fill" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-success flex-fill"
+                                        onclick="guardarEdicionProfesor()">Save Changes</button>
+                                    <button type="button" class="btn btn-secondary flex-fill"
+                                        data-bs-dismiss="modal">Cancel</button>
                                 </div>
                             </form>
                         </div>
@@ -180,86 +189,97 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             <div id="leyendaProfesores" class="d-flex flex-wrap gap-2 mb-4"></div>
 
             <!-- Class Detail Modal -->
-<div class="modal fade" id="modalDetalleClase" data-id-clase="" tabindex="-1" aria-labelledby="modalDetalleClaseLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <!-- Modal Content -->
-        <div class="modal-content p-4">
-            <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
-                <i class="bi bi-info-circle-fill text-primary"></i> Class Details
-            </h4>
+            <div class="modal fade" id="modalDetalleClase" data-id-clase="" tabindex="-1"
+                aria-labelledby="modalDetalleClaseLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <!-- Modal Content -->
+                    <div class="modal-content p-4">
+                        <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
+                            <i class="bi bi-info-circle-fill text-primary"></i> Class Details
+                        </h4>
 
-            <!-- Participant & Instructor -->
-            <div class="section mb-3">
-                <p><strong><i class="bi bi-person-fill me-1"></i>Participant:</strong> <span id="detalleAlumno"></span></p>
-                <p><strong><i class="bi bi-person-badge-fill me-1"></i>Instructor:</strong> <span id="detalleProfesor"></span></p>
-            </div>
+                        <!-- Participant & Instructor -->
+                        <div class="section mb-3">
+                            <p><strong><i class="bi bi-person-fill me-1"></i>Participant:</strong> <span
+                                    id="detalleAlumno"></span></p>
+                            <p><strong><i class="bi bi-person-badge-fill me-1"></i>Instructor:</strong> <span
+                                    id="detalleProfesor"></span></p>
+                        </div>
 
-            <!-- Date & Time -->
-            <div class="section mb-3">
-                <p><strong><i class="bi bi-calendar-event me-1"></i>Date:</strong> <span id="detalleFecha"></span></p>
-                <p><strong><i class="bi bi-clock-fill me-1"></i>Time:</strong> <span id="detalleHorario"></span></p>
-            </div>
+                        <!-- Date & Time -->
+                        <div class="section mb-3">
+                            <p><strong><i class="bi bi-calendar-event me-1"></i>Date:</strong> <span
+                                    id="detalleFecha"></span></p>
+                            <p><strong><i class="bi bi-clock-fill me-1"></i>Time:</strong> <span
+                                    id="detalleHorario"></span></p>
+                        </div>
 
-            <!-- Contact Info -->
-            <div class="section mb-3">
-                <p><strong><i class="bi bi-envelope-fill me-1"></i>Email:</strong> <span id="detalleEmail"></span></p>
-                <p><strong><i class="bi bi-telephone-fill me-1"></i>Phone:</strong> <span id="detalleTelefono"></span></p>
-            </div>
+                        <!-- Contact Info -->
+                        <div class="section mb-3">
+                            <p><strong><i class="bi bi-envelope-fill me-1"></i>Email:</strong> <span
+                                    id="detalleEmail"></span></p>
+                            <p><strong><i class="bi bi-telephone-fill me-1"></i>Phone:</strong> <span
+                                    id="detalleTelefono"></span></p>
+                        </div>
 
-            <!-- Payments -->
-            <div class="section mb-3">
-                <p>
-                    <strong><i class="bi bi-cash-coin me-1"></i>Cash Payment (€):</strong>
-                    <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
-                </p>
-                <p>
-                    <strong><i class="bi bi-credit-card-2-front-fill me-1"></i>Card Payment (€):</strong>
-                    <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
-                </p>
-                <p>
-                    <strong><i class="bi bi-receipt-cutoff me-1"></i>Total Amount (€):</strong>
-                    <span id="detalleImportePagado" class="fw-bold">—</span>
-                </p>
-            </div>
+                        <!-- Payments -->
+                        <div class="section mb-3">
+                            <p>
+                                <strong><i class="bi bi-cash-coin me-1"></i>Cash Payment (€):</strong>
+                                <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
+                            </p>
+                            <p>
+                                <strong><i class="bi bi-credit-card-2-front-fill me-1"></i>Card Payment (€):</strong>
+                                <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
+                            </p>
+                            <p>
+                                <strong><i class="bi bi-receipt-cutoff me-1"></i>Total Amount (€):</strong>
+                                <span id="detalleImportePagado" class="fw-bold">—</span>
+                            </p>
+                        </div>
 
-            <!-- Instructor rate -->
-            <div class="section mb-3">
-                <p>
-                    <strong><i class="bi bi-currency-euro me-1"></i>Instructor Hourly Rate (€):</strong> <span id="detalleTarifaHora">—</span>
-                </p>
-            </div>
+                        <!-- Instructor rate -->
+                        <div class="section mb-3">
+                            <p>
+                                <strong><i class="bi bi-currency-euro me-1"></i>Instructor Hourly Rate (€):</strong>
+                                <span id="detalleTarifaHora">—</span>
+                            </p>
+                        </div>
 
-            <!-- Observations -->
-            <div class="section mb-4">
-                <p><strong><i class="bi bi-chat-left-text me-1"></i>Observations:</strong> <span id="detalleObservaciones"></span></p>
-            </div>
+                        <!-- Observations -->
+                        <div class="section mb-4">
+                            <p><strong><i class="bi bi-chat-left-text me-1"></i>Observations:</strong> <span
+                                    id="detalleObservaciones"></span></p>
+                        </div>
 
-            <!-- Action Buttons -->
-            <div class="d-flex justify-content-between flex-nowrap gap-2 mt-4 w-100">
-              <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-2 py-2 flex-fill">
-                <i class="bi bi-check-circle"></i>
-                <span class="d-none d-sm-inline">Mark as Completed</span>
-                <span class="d-inline d-sm-none">✓</span>
-              </button>
-              <button id="btnEditarClase" class="btn btn-warning text-white d-flex align-items-center gap-1 justify-content-center px-2 py-2 flex-fill">
-                <i class="bi bi-pencil-square"></i>
-                <span class="d-none d-sm-inline">Edit</span>
-                <span class="d-inline d-sm-none">✏️</span>
-              </button>
-              <button id="btnEliminarClase" class="btn btn-danger d-flex align-items-center gap-1 justify-content-center px-2 py-2 flex-fill">
-                <i class="bi bi-trash3-fill"></i>
-                <span class="d-none d-sm-inline">Delete</span>
-                <span class="d-inline d-sm-none">🗑</span>
-              </button>
-              <button type="button" class="btn btn-secondary d-flex align-items-center gap-1 justify-content-center px-2 py-2 flex-fill" data-bs-dismiss="modal">
-                <i class="bi bi-x-circle"></i>
-                <span class="d-none d-sm-inline">Close</span>
-                <span class="d-inline d-sm-none">✖</span>
-              </button>
+                        <!-- Action Buttons -->
+                        <div class="d-flex justify-content-between flex-nowrap gap-2 mt-4 w-100">
+                            <button id="btnClaseCompletada"
+                                class="btn btn-success d-flex align-items-center justify-content-center gap-1 px-2 py-2 flex-fill">
+                                <i class="bi bi-check-circle"></i>
+                                <span class="d-none d-sm-inline">Mark as Completed</span>
+                            </button>
+                            <button id="btnEditarClase"
+                                class="btn btn-warning text-white d-flex align-items-center justify-content-center gap-1 px-2 py-2 flex-fill">
+                                <i class="bi bi-pencil-square"></i>
+                                <span class="d-none d-sm-inline">Edit</span>
+                            </button>
+                            <button id="btnEliminarClase"
+                                class="btn btn-danger d-flex align-items-center justify-content-center gap-1 px-2 py-2 flex-fill">
+                                <i class="bi bi-trash3-fill"></i>
+                                <span class="d-none d-sm-inline">Delete</span>
+                            </button>
+                            <button type="button"
+                                class="btn btn-secondary d-flex align-items-center justify-content-center gap-1 px-2 py-2 flex-fill"
+                                data-bs-dismiss="modal">
+                                <i class="bi bi-x-circle"></i>
+                                <span class="d-none d-sm-inline">Close</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
         </div>
 
 
@@ -678,47 +698,44 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     let calendarInstancia = null;
 
     function mostrarSeccion(seccion) {
-    // Oculta todas las secciones
-    document.querySelectorAll('.seccion').forEach(div => div.style.display = 'none');
+        // Oculta todas las secciones
+        document.querySelectorAll('.seccion').forEach(div => div.style.display = 'none');
 
-    // Muestra el loader local
-    var loader = document.getElementById('loader');
-    if (loader) loader.style.display = 'flex';
+        // Muestra el loader local
+        var loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'flex';
 
-    // Referencia al target
-    const target = document.getElementById(seccion);
+        // Referencia al target
+        const target = document.getElementById(seccion);
 
-    if (seccion === 'clases') {
-        // Espera a que FullCalendar esté listo antes de mostrar la sección
-        setTimeout(() => {
-            if (!calendarInstancia) {
-                calendarInstancia = inicializarCalendario();
-            } else {
+        if (seccion === 'clases') {
+            // Espera a que FullCalendar esté listo antes de mostrar la sección
+            setTimeout(() => {
+                if (!calendarInstancia) {
+                    calendarInstancia = inicializarCalendario();
+                } else {
+                    calendarInstancia.updateSize();
+                }
+                if (target) target.style.display = 'block';
                 calendarInstancia.updateSize();
-            }
-            if (target) target.style.display = 'block';
-            calendarInstancia.updateSize();
 
-            if (loader) loader.style.display = 'none';
-        }, 120); // Ajustá este valor según la velocidad real de tu inicialización
+                if (loader) loader.style.display = 'none';
+            }, 120); // Ajustá este valor según la velocidad real de tu inicialización
+        } else if (seccion === 'pagos') {
+            // Carga pagos y espera un toque antes de mostrar
+            cargarPagos();
+            setTimeout(() => {
+                if (target) target.style.display = 'block';
+                if (loader) loader.style.display = 'none';
+            }, 180); // Ajustá este valor si es necesario
+        } else {
+            // Para las demás secciones, cambio inmediato (con loader un toque)
+            setTimeout(() => {
+                if (target) target.style.display = 'block';
+                if (loader) loader.style.display = 'none';
+            }, 100);
+        }
     }
-    else if (seccion === 'pagos') {
-        // Carga pagos y espera un toque antes de mostrar
-        cargarPagos();
-        setTimeout(() => {
-            if (target) target.style.display = 'block';
-            if (loader) loader.style.display = 'none';
-        }, 180); // Ajustá este valor si es necesario
-    }
-    else {
-        // Para las demás secciones, cambio inmediato (con loader un toque)
-        setTimeout(() => {
-            if (target) target.style.display = 'block';
-            if (loader) loader.style.display = 'none';
-        }, 100);
-    }
-}
-
     </script>
 
 
@@ -819,10 +836,10 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     </script>
 
     <script>
-      window.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('DOMContentLoaded', function() {
         document.getElementById('loader').style.display = 'none';
         document.body.style.display = 'block';
-      });
+    });
     </script>
 
 
