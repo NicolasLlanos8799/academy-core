@@ -757,6 +757,7 @@ body {
     border-radius: 1rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
 }
 
 #modalDetalleClase .modal-header {
@@ -1065,7 +1066,7 @@ body {
 }
 
 #modalDetalleClase .modal-dialog {
-  max-width: 500px;
+  max-width: 480px;
   width: 100%;
   margin: auto;
 }

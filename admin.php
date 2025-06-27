@@ -27,6 +27,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
     <!-- TU CSS PERSONALIZADO SIEMPRE ÚLTIMO -->
     <link rel="stylesheet" href="css/styles.css?v=2.0">
+    <link rel="stylesheet" href="css/modal-detalle.css">
 
     <!-- FOUC Fix -->
     <style>
@@ -191,89 +192,84 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             <!-- Class Detail Modal -->
             <div class="modal fade" id="modalDetalleClase" data-id-clase="" tabindex="-1"
                 aria-labelledby="modalDetalleClaseLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered modal-detalle-clase">
                     <!-- Modal Content -->
-                    <div class="modal-content p-4">
+                    <div class="modal-content compacto">
                         <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
                             <i class="bi bi-info-circle-fill text-primary"></i> Class Details
                         </h4>
 
                         <!-- Participant & Instructor -->
-                        <div class="section mb-3">
-                            <p><strong><i class="bi bi-person-fill me-1"></i>Participant:</strong> <span
+                        <div class="section">
+                            <p><strong><i class="bi bi-person-fill"></i>Participant:</strong> <span
                                     id="detalleAlumno"></span></p>
-                            <p><strong><i class="bi bi-person-badge-fill me-1"></i>Instructor:</strong> <span
+                            <p><strong><i class="bi bi-person-badge-fill"></i>Instructor:</strong> <span
                                     id="detalleProfesor"></span></p>
                         </div>
 
                         <!-- Date & Time -->
-                        <div class="section mb-3">
-                            <p><strong><i class="bi bi-calendar-event me-1"></i>Date:</strong> <span
+                        <div class="section">
+                            <p><strong><i class="bi bi-calendar-event"></i>Date:</strong> <span
                                     id="detalleFecha"></span></p>
-                            <p><strong><i class="bi bi-clock-fill me-1"></i>Time:</strong> <span
+                            <p><strong><i class="bi bi-clock-fill"></i>Time:</strong> <span
                                     id="detalleHorario"></span></p>
                         </div>
 
                         <!-- Contact Info -->
-                        <div class="section mb-3">
-                            <p><strong><i class="bi bi-envelope-fill me-1"></i>Email:</strong> <span
+                        <div class="section">
+                            <p><strong><i class="bi bi-envelope-fill"></i>Email:</strong> <span
                                     id="detalleEmail"></span></p>
-                            <p><strong><i class="bi bi-telephone-fill me-1"></i>Phone:</strong> <span
+                            <p><strong><i class="bi bi-telephone-fill"></i>Phone:</strong> <span
                                     id="detalleTelefono"></span></p>
                         </div>
 
                         <!-- Payments -->
-                        <div class="section mb-3">
+                        <div class="section">
                             <p>
-                                <strong><i class="bi bi-cash-coin me-1"></i>Cash Payment (€):</strong>
+                                <strong><i class="bi bi-cash-coin"></i>Cash Payment (€):</strong>
                                 <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
                             </p>
                             <p>
-                                <strong><i class="bi bi-credit-card-2-front-fill me-1"></i>Card Payment (€):</strong>
+                                <strong><i class="bi bi-credit-card-2-front-fill"></i>Card Payment (€):</strong>
                                 <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
                             </p>
                             <p>
-                                <strong><i class="bi bi-receipt-cutoff me-1"></i>Total Amount (€):</strong>
+                                <strong><i class="bi bi-receipt-cutoff"></i>Total Amount (€):</strong>
                                 <span id="detalleImportePagado" class="fw-bold">—</span>
                             </p>
                         </div>
 
                         <!-- Instructor rate -->
-                        <div class="section mb-3">
+                        <div class="section">
                             <p>
-                                <strong><i class="bi bi-currency-euro me-1"></i>Instructor Hourly Rate (€):</strong>
+                                <strong><i class="bi bi-currency-euro"></i>Instructor Hourly Rate (€):</strong>
                                 <span id="detalleTarifaHora">—</span>
                             </p>
                         </div>
 
                         <!-- Observations -->
-                        <div class="section mb-4">
-                            <p><strong><i class="bi bi-chat-left-text me-1"></i>Observations:</strong> <span
+                        <div class="section">
+                            <p><strong><i class="bi bi-chat-left-text"></i>Observations:</strong> <span
                                     id="detalleObservaciones"></span></p>
                         </div>
 
                         <!-- Action Buttons -->
-                        <div class="d-flex justify-content-between flex-nowrap gap-2 mt-4 w-100">
-                            <button id="btnClaseCompletada"
-                                class="btn btn-success d-flex align-items-center justify-content-center gap-1 px-2 py-2 flex-fill">
+                        <div class="modal-acciones">
+                            <button id="btnClaseCompletada" class="btn btn-success">
                                 <i class="bi bi-check-circle"></i>
-                                <span class="d-none d-sm-inline">Mark as Completed</span>
+                                <span class="texto-responsive">Mark as Completed</span>
                             </button>
-                            <button id="btnEditarClase"
-                                class="btn btn-warning text-white d-flex align-items-center justify-content-center gap-1 px-2 py-2 flex-fill">
+                            <button id="btnEditarClase" class="btn btn-warning text-white">
                                 <i class="bi bi-pencil-square"></i>
-                                <span class="d-none d-sm-inline">Edit</span>
+                                <span class="texto-responsive">Edit</span>
                             </button>
-                            <button id="btnEliminarClase"
-                                class="btn btn-danger d-flex align-items-center justify-content-center gap-1 px-2 py-2 flex-fill">
+                            <button id="btnEliminarClase" class="btn btn-danger">
                                 <i class="bi bi-trash3-fill"></i>
-                                <span class="d-none d-sm-inline">Delete</span>
+                                <span class="texto-responsive">Delete</span>
                             </button>
-                            <button type="button"
-                                class="btn btn-secondary d-flex align-items-center justify-content-center gap-1 px-2 py-2 flex-fill"
-                                data-bs-dismiss="modal">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                 <i class="bi bi-x-circle"></i>
-                                <span class="d-none d-sm-inline">Close</span>
+                                <span class="texto-responsive">Close</span>
                             </button>
                         </div>
 
