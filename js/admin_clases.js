@@ -424,7 +424,7 @@ function inicializarCalendario() {
                 btnCompletada.classList.add('disabled');
                 btnCompletada.disabled = true;
                 btnCompletada.innerHTML = `
-                    <i class="bi bi-check-circle-fill text-white"></i>
+                    <i class="bi bi-check-circle-fill"></i>
                     <span class="d-none d-sm-inline">Completed</span>
                     <span class="d-inline d-sm-none">✔</span>`;
             } else {
