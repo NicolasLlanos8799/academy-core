@@ -150,6 +150,7 @@ form button {
     padding: 8px 12px;
     font-size: 14px;
     border-radius: 5px;
+    min-width: 140px;
 }
 .btn-warning {
     background-color: #ffcc00;
@@ -1045,3 +1046,27 @@ body {
     text-align: center;
   }
 }
+
+.section {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.75rem;
+}
+.section:last-of-type {
+  border-bottom: none;
+}
+
+/* Modal Detail buttons style */
+#modalDetalleClase .btn {
+  white-space: nowrap;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  min-width: 0;
+}
+
+#modalDetalleClase .modal-dialog {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
