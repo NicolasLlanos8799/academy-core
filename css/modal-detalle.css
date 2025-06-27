@@ -1,0 +1,44 @@
+/* Limita el ancho del modal */
+.modal-dialog.modal-detalle-clase {
+  max-width: 480px;
+  width: 100%;
+  margin: auto;
+}
+
+/* Compacta el contenido del modal */
+.modal-content.compacto {
+  font-size: 0.92rem;
+  padding: 1rem; /* equivalente a Bootstrap p-3 */
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenedor de los botones en una sola fila */
+.modal-acciones {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Estilo uniforme de botones */
+.modal-acciones .btn {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 0.65rem;
+}
+
+/* Texto adaptable dentro de botones */
+.modal-acciones .btn .texto-responsive {
+  display: none;
+}
+@media (min-width: 576px) {
+  .modal-acciones .btn .texto-responsive {
+    display: inline;
+  }
+}
