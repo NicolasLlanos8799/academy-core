@@ -83,6 +83,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
     <div class="modal-dialog modal-dialog-centered modal-detalle-clase">
         <!-- Modal Content -->
         <div class="modal-content compacto">
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
             <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
                 <i class="bi bi-info-circle-fill text-primary"></i> Class Details
             </h4>
@@ -146,10 +147,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
               <button id="btnEliminarClase" class="btn btn-danger" title="Delete Class">
                 <i class="bi bi-trash3-fill"></i>
                 <span class="texto-responsive">Delete</span>
-              </button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Close">
-                <i class="bi bi-x-circle"></i>
-                <span class="texto-responsive">Close</span>
               </button>
             </div>
         </div>
