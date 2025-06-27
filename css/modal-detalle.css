@@ -1,22 +1,22 @@
 /* Limita el ancho del modal */
 .modal-dialog.modal-detalle-clase {
-  max-width: 420px;
+  max-width: 460px;
   width: 100%;
   margin: auto;
 }
 
 /* Compacta el contenido del modal */
 .modal-content.compacto {
-  font-size: 0.85rem;
-  padding: 0.65rem;
-  line-height: 1.25;
+  font-size: 0.87rem;
+  padding: 0.85rem;
+  line-height: 1.4;
   border-radius: 0.6rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Menor espacio vertical entre secciones */
 .modal-content.compacto .section {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.6rem;
 }
 
 /* Íconos más pequeños y alineados */
@@ -28,7 +28,7 @@
 
 /* Remove extra space between paragraphs */
 .modal-content.compacto p {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Contenedor de los botones en una sola fila */
@@ -45,10 +45,10 @@
   flex: 1 1 auto;
   white-space: nowrap;
   font-weight: 500;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.5rem;
   text-align: center;
-  font-size: 0.9rem;
-  border-radius: 0.65rem;
+  font-size: 0.8rem;
+  border-radius: 0.55rem;
 }
 
 /* Texto adaptable dentro de botones */
