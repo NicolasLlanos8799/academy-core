@@ -61,19 +61,16 @@
   }
 }
 
-/* Mejora visual de botones deshabilitados */
+/* Botón deshabilitado: visualmente claro */
 .btn[disabled],
 .btn.disabled {
   opacity: 0.6;
   pointer-events: none;
 }
 
-/* En pantallas pequeñas, ocultar el texto largo y mostrar solo el ícono */
+/* En pantallas pequeñas, ocultar el texto y dejar solo el ícono */
 @media (max-width: 576px) {
   .btn span.d-sm-inline {
     display: none !important;
-  }
-  .btn span.d-sm-none {
-    display: inline !important;
   }
 }
