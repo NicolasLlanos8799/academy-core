@@ -279,8 +279,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
         <!-- Modal to Assign Class -->
         <div class="modal fade" id="modalAsignarClase" tabindex="-1" aria-labelledby="modalAsignarClaseLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content compacto shadow-lg">
+            <div class="modal-dialog modal-dialog-centered modal-detalle-clase">
+                <div class="modal-content compacto">
                     <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
                     <h4 class="modal-title mb-1 d-flex align-items-center gap-2" id="modalAsignarClaseLabel">
                         <i class="bi bi-calendar-plus text-primary"></i> <strong>Assign New Class</strong>
@@ -289,92 +289,92 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                     <hr class="mb-3">
                     <div class="modal-body p-0">
                         <form id="formAsignarClase">
-                            <h6 class="text-muted mb-2 d-flex align-items-center gap-1"><i class="bi bi-calendar-event"></i> Instructor &amp; Schedule</h6>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <label for="profesor" class="form-label">Instructor<span class="text-danger">*</span></label>
-                                    <select id="profesor" class="form-select" required>
-                                        <option value="">Select an instructor</option>
-                                    </select>
+                            <p class="text-muted d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-calendar-event text-primary"></i><strong>Instructor &amp; Schedule</strong>
+                            </p>
+                            <div class="mb-3">
+                                <label for="profesor" class="form-label">Instructor<span class="text-danger">*</span></label>
+                                <select id="profesor" class="form-select" required>
+                                    <option value="">Select an instructor</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label">Date<span class="text-danger">*</span></label>
+                                <input type="date" id="fecha" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="hora_inicio" class="form-label">Start Time<span class="text-danger">*</span></label>
+                                <input type="time" id="hora_inicio" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="hora_fin" class="form-label">End Time<span class="text-danger">*</span></label>
+                                <input type="time" id="hora_fin" class="form-control" required>
+                            </div>
+
+                            <hr class="mb-3">
+                            <p class="text-muted d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-people text-primary"></i><strong>Participant Info</strong>
+                            </p>
+                            <div class="mb-3">
+                                <label for="alumno" class="form-label">Participant Name<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-person-fill text-primary"></i></span>
+                                    <input type="text" id="alumno" class="form-control" required>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="fecha" class="form-label">Date<span class="text-danger">*</span></label>
-                                    <input type="date" id="fecha" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono_alumno" class="form-label">Participant Phone</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-telephone-fill text-success"></i></span>
+                                    <input type="text" id="telefono_alumno" class="form-control">
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="hora_inicio" class="form-label">Start Time<span class="text-danger">*</span></label>
-                                    <input type="time" id="hora_inicio" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="hora_fin" class="form-label">End Time<span class="text-danger">*</span></label>
-                                    <input type="time" id="hora_fin" class="form-control" required>
-                                </div>
-                            <hr class="my-3">
-                            <h6 class="text-muted mb-2 d-flex align-items-center gap-1"><i class="bi bi-people"></i> Participant Info</h6>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-4">
-                                    <label for="alumno" class="form-label">Participant Name<span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                                        <input type="text" id="alumno" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="telefono_alumno" class="form-label">Participant Phone</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                                        <input type="text" id="telefono_alumno" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="email_alumno" class="form-label">Participant Email</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
-                                        <input type="email" id="email_alumno" class="form-control">
-                                    </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email_alumno" class="form-label">Participant Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope-fill text-danger"></i></span>
+                                    <input type="email" id="email_alumno" class="form-control">
                                 </div>
                             </div>
 
-                            <hr class="my-3">
-                            <h6 class="text-muted mb-2 d-flex align-items-center gap-1"><i class="bi bi-wallet2"></i> Payment Info</h6>
-                            <div class="row g-2 mb-3">
-                                <div class="col-md-3">
-                                    <label for="pago_efectivo" class="form-label">Cash (€)</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-cash"></i></span>
-                                        <input type="number" class="form-control" id="pago_efectivo" name="pago_efectivo"
-                                            min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="pago_tarjeta" class="form-label">Card (€)</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
-                                        <input type="number" class="form-control" id="pago_tarjeta" name="pago_tarjeta"
-                                            min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="tarifa_hora" class="form-label">Hourly Rate (€)</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-currency-euro"></i></span>
-                                        <input type="number" class="form-control" id="tarifa_hora" name="tarifa_hora"
-                                            step="0.01" min="0" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="importePagado" class="form-label">Total Paid (€)</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-receipt"></i></span>
-                                        <input type="number" class="form-control" id="importePagado" name="importePagado"
-                                            readonly>
-                                    </div>
-                                    <small class="text-muted">Calculated automatically</small>
+                            <hr class="mb-3">
+                            <p class="text-muted d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-wallet2 text-success"></i><strong>Payment Info</strong>
+                            </p>
+                            <div class="mb-3">
+                                <label for="pago_efectivo" class="form-label">Cash (€)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-cash text-success"></i></span>
+                                    <input type="number" class="form-control" id="pago_efectivo" name="pago_efectivo" min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
                                 </div>
                             </div>
+                            <div class="mb-3">
+                                <label for="pago_tarjeta" class="form-label">Card (€)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-credit-card text-primary"></i></span>
+                                    <input type="number" class="form-control" id="pago_tarjeta" name="pago_tarjeta" min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tarifa_hora" class="form-label">Hourly Rate (€)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-currency-euro text-secondary"></i></span>
+                                    <input type="number" class="form-control" id="tarifa_hora" name="tarifa_hora" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <label for="importePagado" class="form-label">Total Paid (€)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-receipt text-dark"></i></span>
+                                    <input type="number" class="form-control" id="importePagado" name="importePagado" readonly>
+                                </div>
+                                <small class="text-muted">Calculated automatically</small>
+                            </div>
 
-                            <hr class="my-3">
-                            <h6 class="text-muted mb-2 d-flex align-items-center gap-1"><i class="bi bi-chat-left-text"></i> Observations</h6>
+                            <hr class="mb-3">
+                            <p class="text-muted d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-chat-left-text text-warning"></i><strong>Observations</strong>
+                            </p>
                             <textarea id="observaciones" class="form-control rounded" rows="3"></textarea>
                         </form>
                     </div>
