@@ -279,16 +279,18 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
         <!-- Modal to Assign Class -->
         <div class="modal fade" id="modalAsignarClase" tabindex="-1" aria-labelledby="modalAsignarClaseLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content bg-light">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalAsignarClaseLabel">Assign New Class</h5>
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content bg-light shadow-lg rounded-4">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold text-primary" id="modalAsignarClaseLabel">📘 Assign New Class</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body px-4 pt-0 pb-3">
                         <form id="formAsignarClase">
+
+                            <!-- Class Information -->
+                            <h6 class="text-muted mb-2 mt-2">Class Information</h6>
                             <div class="row g-3">
-                                <!-- Row 1: Instructor and Date -->
                                 <div class="col-md-6">
                                     <label for="profesor" class="form-label">Instructor</label>
                                     <select id="profesor" class="form-select" required>
@@ -299,8 +301,6 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <label for="fecha" class="form-label">Date</label>
                                     <input type="date" id="fecha" class="form-control" required>
                                 </div>
-
-                                <!-- Row 2: Start and End Time -->
                                 <div class="col-md-6">
                                     <label for="hora_inicio" class="form-label">Start Time</label>
                                     <input type="time" id="hora_inicio" class="form-control" required>
@@ -309,55 +309,54 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <label for="hora_fin" class="form-label">End Time</label>
                                     <input type="time" id="hora_fin" class="form-control" required>
                                 </div>
+                            </div>
 
-                                <!-- Row 3: Student, Phone, Email -->
+                            <!-- Participant Information -->
+                            <h6 class="text-muted mb-2 mt-4">Participant Information</h6>
+                            <div class="row g-3">
                                 <div class="col-md-4">
-                                    <label for="alumno" class="form-label">Participant Name</label>
+                                    <label for="alumno" class="form-label">Name</label>
                                     <input type="text" id="alumno" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="telefono_alumno" class="form-label">Participant Phone</label>
+                                    <label for="telefono_alumno" class="form-label">Phone</label>
                                     <input type="text" id="telefono_alumno" class="form-control">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="email_alumno" class="form-label">Participant Email</label>
+                                    <label for="email_alumno" class="form-label">Email</label>
                                     <input type="email" id="email_alumno" class="form-control">
                                 </div>
+                            </div>
 
-                                <!-- Row 4: Payments and Hourly Rate -->
-                                <div class="col-md-3">
+                            <!-- Payment Information -->
+                            <h6 class="text-muted mb-2 mt-4">Payment Information</h6>
+                            <div class="row g-3">
+                                <div class="col-md-4">
                                     <label for="pago_efectivo" class="form-label">Cash Payment (€)</label>
-                                    <input type="number" class="form-control" id="pago_efectivo" name="pago_efectivo"
-                                        min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                    <input type="number" class="form-control" id="pago_efectivo" name="pago_efectivo" min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <label for="pago_tarjeta" class="form-label">Card Payment (€)</label>
-                                    <input type="number" class="form-control" id="pago_tarjeta" name="pago_tarjeta"
-                                        min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                    <input type="number" class="form-control" id="pago_tarjeta" name="pago_tarjeta" min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
+                                    <label for="tarifa_hora" class="form-label">Hourly Rate (€)</label>
+                                    <input type="number" class="form-control" id="tarifa_hora" name="tarifa_hora" step="0.01" min="0" required>
+                                </div>
+                                <div class="col-md-12">
                                     <label for="importePagado" class="form-label">Total Paid (€)</label>
-                                    <input type="number" class="form-control" id="importePagado" name="importePagado"
-                                        readonly>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="tarifa_hora" class="form-label">Instr. Hourly Rate (€)</label>
-                                    <input type="number" class="form-control" id="tarifa_hora" name="tarifa_hora"
-                                        step="0.01" min="0" required>
-                                </div>
-
-                                <!-- Row 5: Observations -->
-                                <div class="col-12">
-                                    <label for="observaciones" class="form-label">Observations</label>
-                                    <textarea id="observaciones" class="form-control" rows="2"></textarea>
+                                    <input type="number" class="form-control" id="importePagado" name="importePagado" readonly>
                                 </div>
                             </div>
+
+                            <!-- Observations -->
+                            <h6 class="text-muted mb-2 mt-4">Observations</h6>
+                            <textarea id="observaciones" class="form-control" rows="3" style="resize: none;"></textarea>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button id="btnGuardarClase" class="btn btn-primary" onclick="asignarClase()">Save
-                            Class</button>
+                    <div class="modal-footer border-0 px-4 pb-4">
+                        <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                        <button id="btnGuardarClase" class="btn btn-primary px-4" onclick="asignarClase()">Save Class</button>
                     </div>
                 </div>
             </div>

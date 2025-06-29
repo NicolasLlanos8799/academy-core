@@ -157,14 +157,17 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
             <!-- Modal to Assign Class -->
             <div class="modal fade" id="modalAsignarClase" tabindex="-1" aria-labelledby="modalAsignarClaseLabel"
                 aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content bg-light">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalAsignarClaseLabel">Assign New Class</h5>
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content bg-light shadow-lg rounded-4">
+                        <div class="modal-header border-0">
+                            <h5 class="modal-title fw-bold text-primary" id="modalAsignarClaseLabel">📘 Assign New Class</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body px-4 pt-0 pb-3">
                             <form id="formAsignarClase">
+
+                                <!-- Class Information -->
+                                <h6 class="text-muted mb-2 mt-2">Class Information</h6>
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="fecha" class="form-label">Date</label>
@@ -178,29 +181,33 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
                                         <label for="hora_fin" class="form-label">End Time</label>
                                         <input type="time" id="hora_fin" class="form-control" required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="alumno" class="form-label">Participant Name</label>
+                                </div>
+
+                                <!-- Participant Information -->
+                                <h6 class="text-muted mb-2 mt-4">Participant Information</h6>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label for="alumno" class="form-label">Name</label>
                                         <input type="text" id="alumno" class="form-control" required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="email_alumno" class="form-label">Participant Email</label>
+                                    <div class="col-md-4">
+                                        <label for="email_alumno" class="form-label">Email</label>
                                         <input type="email" id="email_alumno" class="form-control">
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="telefono_alumno" class="form-label">Participant Phone</label>
+                                    <div class="col-md-4">
+                                        <label for="telefono_alumno" class="form-label">Phone</label>
                                         <input type="text" id="telefono_alumno" class="form-control">
                                     </div>
-                                    <div class="col-12">
-                                        <label for="observaciones" class="form-label">Observations</label>
-                                        <textarea id="observaciones" class="form-control" rows="2"></textarea>
-                                    </div>
                                 </div>
+
+                                <!-- Observations -->
+                                <h6 class="text-muted mb-2 mt-4">Observations</h6>
+                                <textarea id="observaciones" class="form-control" rows="3" style="resize: none;"></textarea>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button id="btnGuardarClase" class="btn btn-primary" onclick="asignarClase()">Save
-                                Class</button>
+                        <div class="modal-footer border-0 px-4 pb-4">
+                            <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                            <button id="btnGuardarClase" class="btn btn-primary px-4" onclick="asignarClase()">Save Class</button>
                         </div>
                     </div>
                 </div>

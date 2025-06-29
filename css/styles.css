@@ -1071,3 +1071,13 @@ body {
   margin: auto;
 }
 
+/* ===== Additional Modal Enhancements ===== */
+input[readonly] {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
