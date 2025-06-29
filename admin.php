@@ -280,84 +280,107 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
         <div class="modal fade" id="modalAsignarClase" tabindex="-1" aria-labelledby="modalAsignarClaseLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-content bg-light">
+                <div class="modal-content bg-light shadow-lg rounded">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalAsignarClaseLabel">Assign New Class</h5>
+                        <div>
+                            <h5 class="modal-title mb-0" id="modalAsignarClaseLabel">Assign New Class</h5>
+                            <p class="text-muted mb-0 small">Assign a class to an instructor and participant</p>
+                        </div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="formAsignarClase">
+                            <h6 class="text-muted mb-2">🧍 Instructor + Date + Start/End Time</h6>
                             <div class="row g-3">
-                                <!-- Row 1: Instructor and Date -->
                                 <div class="col-md-6">
-                                    <label for="profesor" class="form-label">Instructor</label>
+                                    <label for="profesor" class="form-label">Instructor<span class="text-danger">*</span></label>
                                     <select id="profesor" class="form-select" required>
                                         <option value="">Select an instructor</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="fecha" class="form-label">Date</label>
+                                    <label for="fecha" class="form-label">Date<span class="text-danger">*</span></label>
                                     <input type="date" id="fecha" class="form-control" required>
                                 </div>
-
-                                <!-- Row 2: Start and End Time -->
                                 <div class="col-md-6">
-                                    <label for="hora_inicio" class="form-label">Start Time</label>
+                                    <label for="hora_inicio" class="form-label">Start Time<span class="text-danger">*</span></label>
                                     <input type="time" id="hora_inicio" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="hora_fin" class="form-label">End Time</label>
+                                    <label for="hora_fin" class="form-label">End Time<span class="text-danger">*</span></label>
                                     <input type="time" id="hora_fin" class="form-control" required>
                                 </div>
+                            </div>
 
-                                <!-- Row 3: Student, Phone, Email -->
+                            <h6 class="text-muted mt-4 mb-2">👤 Participant Details (Name, Phone, Email)</h6>
+                            <div class="row g-3">
                                 <div class="col-md-4">
-                                    <label for="alumno" class="form-label">Participant Name</label>
-                                    <input type="text" id="alumno" class="form-control" required>
+                                    <label for="alumno" class="form-label">Participant Name<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                                        <input type="text" id="alumno" class="form-control" required>
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="telefono_alumno" class="form-label">Participant Phone</label>
-                                    <input type="text" id="telefono_alumno" class="form-control">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                                        <input type="text" id="telefono_alumno" class="form-control">
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="email_alumno" class="form-label">Participant Email</label>
-                                    <input type="email" id="email_alumno" class="form-control">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                                        <input type="email" id="email_alumno" class="form-control">
+                                    </div>
                                 </div>
+                            </div>
 
-                                <!-- Row 4: Payments and Hourly Rate -->
+                            <h6 class="text-muted mt-4 mb-2">💳 Payment Info (Cash, Card, Hourly Rate, Total Paid)</h6>
+                            <div class="row g-3">
                                 <div class="col-md-3">
-                                    <label for="pago_efectivo" class="form-label">Cash Payment (€)</label>
-                                    <input type="number" class="form-control" id="pago_efectivo" name="pago_efectivo"
-                                        min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                    <label for="pago_efectivo" class="form-label">Cash (€)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-cash"></i></span>
+                                        <input type="number" class="form-control" id="pago_efectivo" name="pago_efectivo"
+                                            min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="pago_tarjeta" class="form-label">Card Payment (€)</label>
-                                    <input type="number" class="form-control" id="pago_tarjeta" name="pago_tarjeta"
-                                        min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                    <label for="pago_tarjeta" class="form-label">Card (€)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
+                                        <input type="number" class="form-control" id="pago_tarjeta" name="pago_tarjeta"
+                                            min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="tarifa_hora" class="form-label">Hourly Rate (€)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-currency-euro"></i></span>
+                                        <input type="number" class="form-control" id="tarifa_hora" name="tarifa_hora"
+                                            step="0.01" min="0" required>
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="importePagado" class="form-label">Total Paid (€)</label>
-                                    <input type="number" class="form-control" id="importePagado" name="importePagado"
-                                        readonly>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="tarifa_hora" class="form-label">Instr. Hourly Rate (€)</label>
-                                    <input type="number" class="form-control" id="tarifa_hora" name="tarifa_hora"
-                                        step="0.01" min="0" required>
-                                </div>
-
-                                <!-- Row 5: Observations -->
-                                <div class="col-12">
-                                    <label for="observaciones" class="form-label">Observations</label>
-                                    <textarea id="observaciones" class="form-control" rows="2"></textarea>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-receipt"></i></span>
+                                        <input type="number" class="form-control" id="importePagado" name="importePagado"
+                                            readonly>
+                                    </div>
+                                    <small class="text-muted">Calculated automatically</small>
                                 </div>
                             </div>
+
+                            <h6 class="text-muted mt-4 mb-2">📝 Observations</h6>
+                            <textarea id="observaciones" class="form-control rounded" rows="3"></textarea>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button id="btnGuardarClase" class="btn btn-primary" onclick="asignarClase()">Save
-                            Class</button>
+                        <button id="btnGuardarClase" class="btn btn-primary" onclick="asignarClase()">Save Class</button>
                     </div>
                 </div>
             </div>

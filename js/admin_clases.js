@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!hFin.value) hFin.value = "06:00";
         });
     }
+
+    const camposConflicto = ['profesor', 'fecha', 'hora_inicio', 'hora_fin'];
+    camposConflicto.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', verificarConflicto);
+    });
 });
 
 
@@ -290,6 +296,30 @@ function actualizarTotalPagado() {
     const cash = parseFloat(document.getElementById('pago_efectivo').value) || 0;
     const card = parseFloat(document.getElementById('pago_tarjeta').value) || 0;
     document.getElementById('importePagado').value = (cash + card).toFixed(2);
+}
+
+function verificarConflicto() {
+    const profesorId = document.getElementById('profesor').value;
+    const fecha = document.getElementById('fecha').value;
+    const horaInicio = document.getElementById('hora_inicio').value;
+    const horaFin = document.getElementById('hora_fin').value;
+
+    if (!profesorId || !fecha || !horaInicio || !horaFin) return;
+
+    fetch('php/listar_clases.php')
+        .then(res => res.json())
+        .then(clases => {
+            const conflicto = clases.some(c =>
+                c.profesor_id == profesorId &&
+                c.fecha === fecha &&
+                horaInicio < c.hora_fin &&
+                horaFin > c.hora_inicio
+            );
+            if (conflicto) {
+                mostrarToast('Warning: selected instructor already has a class at this time', 'warning');
+            }
+        })
+        .catch(err => console.error('Error checking conflicts', err));
 }
 
 function mostrarLeyendaProfesores(profesores) {
