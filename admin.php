@@ -279,19 +279,18 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
         <!-- Modal to Assign Class -->
         <div class="modal fade" id="modalAsignarClase" tabindex="-1" aria-labelledby="modalAsignarClaseLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content bg-light shadow-lg rounded">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="modal-title mb-0" id="modalAsignarClaseLabel">Assign New Class</h5>
-                            <p class="text-muted mb-0 small">Assign a class to an instructor and participant</p>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content compacto shadow-lg">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h4 class="modal-title mb-1 d-flex align-items-center gap-2" id="modalAsignarClaseLabel">
+                        <i class="bi bi-calendar-plus text-primary"></i> <strong>Assign New Class</strong>
+                    </h4>
+                    <p class="text-muted mb-3">Assign a class to an instructor and participant</p>
+                    <hr class="mb-3">
+                    <div class="modal-body p-0">
                         <form id="formAsignarClase">
-                            <h6 class="text-muted mb-2">🧍 Instructor + Date + Start/End Time</h6>
-                            <div class="row g-3">
+                            <h6 class="text-muted mb-2 d-flex align-items-center gap-1"><i class="bi bi-calendar-event"></i> Instructor &amp; Schedule</h6>
+                            <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="profesor" class="form-label">Instructor<span class="text-danger">*</span></label>
                                     <select id="profesor" class="form-select" required>
@@ -310,10 +309,9 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <label for="hora_fin" class="form-label">End Time<span class="text-danger">*</span></label>
                                     <input type="time" id="hora_fin" class="form-control" required>
                                 </div>
-                            </div>
-
-                            <h6 class="text-muted mt-4 mb-2">👤 Participant Details (Name, Phone, Email)</h6>
-                            <div class="row g-3">
+                            <hr class="my-3">
+                            <h6 class="text-muted mb-2 d-flex align-items-center gap-1"><i class="bi bi-people"></i> Participant Info</h6>
+                            <div class="row g-3 mb-3">
                                 <div class="col-md-4">
                                     <label for="alumno" class="form-label">Participant Name<span class="text-danger">*</span></label>
                                     <div class="input-group">
@@ -337,8 +335,9 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                 </div>
                             </div>
 
-                            <h6 class="text-muted mt-4 mb-2">💳 Payment Info (Cash, Card, Hourly Rate, Total Paid)</h6>
-                            <div class="row g-3">
+                            <hr class="my-3">
+                            <h6 class="text-muted mb-2 d-flex align-items-center gap-1"><i class="bi bi-wallet2"></i> Payment Info</h6>
+                            <div class="row g-2 mb-3">
                                 <div class="col-md-3">
                                     <label for="pago_efectivo" class="form-label">Cash (€)</label>
                                     <div class="input-group">
@@ -374,11 +373,12 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                 </div>
                             </div>
 
-                            <h6 class="text-muted mt-4 mb-2">📝 Observations</h6>
+                            <hr class="my-3">
+                            <h6 class="text-muted mb-2 d-flex align-items-center gap-1"><i class="bi bi-chat-left-text"></i> Observations</h6>
                             <textarea id="observaciones" class="form-control rounded" rows="3"></textarea>
                         </form>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer mt-3">
                         <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         <button id="btnGuardarClase" class="btn btn-primary" onclick="asignarClase()">Save Class</button>
                     </div>
