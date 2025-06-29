@@ -1081,3 +1081,21 @@ textarea.form-control {
   resize: none;
 }
 
+.modal-content {
+  border-radius: 1rem;
+  border: none;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+}
+
+.input-group-text {
+  background-color: #e9ecef;
+  border-right: 0;
+}
+
+.input-group .form-control {
+  border-left: 0;
+}
+
