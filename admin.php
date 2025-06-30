@@ -293,11 +293,18 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                 <i class="bi bi-journal-plus text-primary"></i>Instructor &amp; Schedule
                             </p>
                             <div class="row g-3 mb-2">
-                                <div class="col-md-6">
-                                    <label for="profesor" class="form-label">Instructor<span class="text-danger">*</span></label>
-                                    <select id="profesor" class="form-select" required>
-                                        <option value="">Select an instructor</option>
-                                    </select>
+                                <div class="col-md-6 mb-3">
+                                    <label for="instructorSelect" class="form-label fw-semibold">Instructor<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text text-primary">
+                                            <i class="bi bi-person-badge"></i>
+                                        </span>
+                                        <select class="form-select custom-select-focus" id="instructorSelect" required>
+                                            <option value="" disabled selected hidden>Select an instructor</option>
+                                            <option value="1">Oscar</option>
+                                            <option value="2">Lucho</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="fecha" class="form-label">Date<span class="text-danger">*</span></label>

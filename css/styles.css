@@ -1071,3 +1071,19 @@ body {
   margin: auto;
 }
 
+/* Enhanced form select appearance */
+select.form-select {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-radius: 0.5rem;
+}
+
+.custom-select-focus:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+select.form-select:invalid {
+  border-left: 3px solid #dc3545;
+}
+

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const camposConflicto = ['profesor', 'fecha', 'hora_inicio', 'hora_fin'];
+    const camposConflicto = ['instructorSelect', 'fecha', 'hora_inicio', 'hora_fin'];
     camposConflicto.forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('change', verificarConflicto);
@@ -55,7 +55,7 @@ function asignarClase() {
     const originalText = btn.innerHTML;
     btn.innerHTML = `<span class="spinner-border spinner-sm" role="status" aria-hidden="true"></span> Saving...`;
 
-    const profesorId = document.getElementById("profesor").value;
+    const profesorId = document.getElementById("instructorSelect").value;
     const tarifaHora = document.getElementById("tarifa_hora").value.trim();
     const fecha = document.getElementById("fecha").value;
     const horaInicio = document.getElementById("hora_inicio").value;
@@ -247,7 +247,7 @@ function cargarListaProfesores() {
     fetch("php/listar_profesores.php")
         .then(response => response.json())
         .then(data => {
-            const selectProfesores = document.getElementById("profesor");
+            const selectProfesores = document.getElementById("instructorSelect");
             if (!selectProfesores) {
                 console.error("Error: Instructor select element not found in the DOM.");
                 return;
@@ -299,7 +299,7 @@ function actualizarTotalPagado() {
 }
 
 function verificarConflicto() {
-    const profesorId = document.getElementById('profesor').value;
+    const profesorId = document.getElementById('instructorSelect').value;
     const fecha = document.getElementById('fecha').value;
     const horaInicio = document.getElementById('hora_inicio').value;
     const horaFin = document.getElementById('hora_fin').value;
