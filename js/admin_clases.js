@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (modalEditarClase) {
         modalEditarClase.addEventListener('show.bs.modal', function () {
             // Solo establecer si está vacío, para no sobreescribir valores reales
-            const hInicio = document.getElementById('editar_hora_inicio');
-            const hFin = document.getElementById('editar_hora_fin');
+            const hInicio = document.getElementById('edit_hora_inicio');
+            const hFin = document.getElementById('edit_hora_fin');
             if (!hInicio.value) hInicio.value = "06:00";
             if (!hFin.value) hFin.value = "06:00";
         });
@@ -49,14 +49,14 @@ function asignarClase() {
     const originalText = btn.innerHTML;
     btn.innerHTML = `<span class="spinner-border spinner-sm" role="status" aria-hidden="true"></span> Saving...`;
 
-    const profesorId = document.getElementById("profesor").value;
-    const tarifaHora = document.getElementById("tarifa_hora").value.trim();
+    const profesorId = document.getElementById("instructor").value;
+    const tarifaHora = document.getElementById("tarifa_profesor").value.trim();
     const fecha = document.getElementById("fecha").value;
     const horaInicio = document.getElementById("hora_inicio").value;
     const horaFin = document.getElementById("hora_fin").value;
-    const alumno = document.getElementById("alumno").value.trim();
-    const email = document.getElementById("email_alumno").value.trim();
-    const telefono = document.getElementById("telefono_alumno").value.trim();
+    const alumno = document.getElementById("alumno_nombre").value.trim();
+    const email = document.getElementById("alumno_email").value.trim();
+    const telefono = document.getElementById("alumno_telefono").value.trim();
     const observaciones = document.getElementById("observaciones").value.trim();
     const pagoEfectivo = document.getElementById("pago_efectivo").value.trim();
     const pagoTarjeta = document.getElementById("pago_tarjeta").value.trim();
@@ -150,17 +150,17 @@ function guardarEdicionClase() {
     btn.innerHTML = `<span class="spinner-border spinner-sm" role="status" aria-hidden="true"></span> Saving...`;
 
     const id = document.getElementById("clase_id").value;
-    const profesorId = document.getElementById("editar_profesor").value;
-    const tarifaHora = document.getElementById("editar_tarifa_hora").value.trim();
-    const fecha = document.getElementById("editar_fecha").value;
-    const horaInicio = document.getElementById("editar_hora_inicio").value;
-    const horaFin = document.getElementById("editar_hora_fin").value;
-    const alumno = document.getElementById("editar_alumno").value.trim();
-    const email = document.getElementById("editar_email_alumno").value.trim();
-    const telefono = document.getElementById("editar_telefono_alumno").value.trim();
-    const observaciones = document.getElementById("editar_observaciones").value.trim();
-    const pagoEfectivo = document.getElementById("editar_pago_efectivo").value.trim();
-    const pagoTarjeta = document.getElementById("editar_pago_tarjeta").value.trim();
+    const profesorId = document.getElementById("edit_profesor").value;
+    const tarifaHora = document.getElementById("edit_tarifa_profesor").value.trim();
+    const fecha = document.getElementById("edit_fecha").value;
+    const horaInicio = document.getElementById("edit_hora_inicio").value;
+    const horaFin = document.getElementById("edit_hora_fin").value;
+    const alumno = document.getElementById("edit_alumno_nombre").value.trim();
+    const email = document.getElementById("edit_alumno_email").value.trim();
+    const telefono = document.getElementById("edit_alumno_telefono").value.trim();
+    const observaciones = document.getElementById("edit_observaciones").value.trim();
+    const pagoEfectivo = document.getElementById("edit_pago_efectivo").value.trim();
+    const pagoTarjeta = document.getElementById("edit_pago_tarjeta").value.trim();
 
     if (!id || !profesorId || !fecha || !horaInicio || !horaFin || !alumno) {
         mostrarToast("All required fields must be completed", "warning");
@@ -241,7 +241,7 @@ function cargarListaProfesores() {
     fetch("php/listar_profesores.php")
         .then(response => response.json())
         .then(data => {
-            const selectProfesores = document.getElementById("profesor");
+            const selectProfesores = document.getElementById("instructor");
             if (!selectProfesores) {
                 console.error("Error: Instructor select element not found in the DOM.");
                 return;
@@ -264,7 +264,7 @@ function cargarListaProfesoresEdicion(profesorSeleccionado) {
     fetch("php/listar_profesores.php")
         .then(response => response.json())
         .then(data => {
-            const selectProfesores = document.getElementById("editar_profesor");
+            const selectProfesores = document.getElementById("edit_profesor");
             selectProfesores.innerHTML = '<option value="">Select an instructor</option>';
 
             data.forEach(profesor => {
@@ -281,15 +281,15 @@ function cargarListaProfesoresEdicion(profesorSeleccionado) {
 }
 
 function actualizarTotalEditado() {
-    const cash = parseFloat(document.getElementById('editar_pago_efectivo').value) || 0;
-    const card = parseFloat(document.getElementById('editar_pago_tarjeta').value) || 0;
-    document.getElementById('editar_importe_pagado').value = (cash + card).toFixed(2);
+    const cash = parseFloat(document.getElementById('edit_pago_efectivo').value) || 0;
+    const card = parseFloat(document.getElementById('edit_pago_tarjeta').value) || 0;
+    document.getElementById('edit_total_pagado').value = (cash + card).toFixed(2);
 }
 
 function actualizarTotalPagado() {
     const cash = parseFloat(document.getElementById('pago_efectivo').value) || 0;
     const card = parseFloat(document.getElementById('pago_tarjeta').value) || 0;
-    document.getElementById('importePagado').value = (cash + card).toFixed(2);
+    document.getElementById('total_pagado').value = (cash + card).toFixed(2);
 }
 
 function mostrarLeyendaProfesores(profesores) {
@@ -384,11 +384,11 @@ function inicializarCalendario() {
             document.getElementById("fecha").value = info.dateStr;
             document.getElementById("hora_inicio").value = '';
             document.getElementById("hora_fin").value = '';
-            document.getElementById("alumno").value = '';
-            document.getElementById("email_alumno").value = '';
-            document.getElementById("telefono_alumno").value = '';
-            document.getElementById("importePagado").value = '';
-            document.getElementById("tarifa_hora").value = '';
+            document.getElementById("alumno_nombre").value = '';
+            document.getElementById("alumno_email").value = '';
+            document.getElementById("alumno_telefono").value = '';
+            document.getElementById("total_pagado").value = '';
+            document.getElementById("tarifa_profesor").value = '';
             document.getElementById("pago_efectivo").value = 0;
             document.getElementById("pago_tarjeta").value = 0;
             document.getElementById("observaciones").value = '';
@@ -513,23 +513,23 @@ function abrirFormularioEdicion(id) {
 
             // Fill in the form
             document.getElementById("clase_id").value = clase.id;
-            document.getElementById("editar_fecha").value = clase.fecha;
-            document.getElementById("editar_hora_inicio").value = clase.hora_inicio;
-            document.getElementById("editar_hora_fin").value = clase.hora_fin;
-            document.getElementById("editar_alumno").value = clase.alumno_nombre;
-            document.getElementById("editar_email_alumno").value = clase.email;
-            document.getElementById("editar_telefono_alumno").value = clase.telefono;
-            document.getElementById("editar_observaciones").value = clase.observaciones || '';
+            document.getElementById("edit_fecha").value = clase.fecha;
+            document.getElementById("edit_hora_inicio").value = clase.hora_inicio;
+            document.getElementById("edit_hora_fin").value = clase.hora_fin;
+            document.getElementById("edit_alumno_nombre").value = clase.alumno_nombre;
+            document.getElementById("edit_alumno_email").value = clase.email;
+            document.getElementById("edit_alumno_telefono").value = clase.telefono;
+            document.getElementById("edit_observaciones").value = clase.observaciones || '';
 
             const efectivo = parseFloat((clase.pago_efectivo || '0').toString().replace(',', '.'));
             const tarjeta = parseFloat((clase.pago_tarjeta || '0').toString().replace(',', '.'));
             const tarifa = parseFloat((clase.tarifa_hora || '0').toString().replace(',', '.'));
 
-            document.getElementById("editar_pago_efectivo").value = isNaN(efectivo) ? '' : efectivo.toFixed(2);
-            document.getElementById("editar_pago_tarjeta").value = isNaN(tarjeta) ? '' : tarjeta.toFixed(2);
+            document.getElementById("edit_pago_efectivo").value = isNaN(efectivo) ? '' : efectivo.toFixed(2);
+            document.getElementById("edit_pago_tarjeta").value = isNaN(tarjeta) ? '' : tarjeta.toFixed(2);
 
-            document.getElementById("editar_importe_pagado").value = (efectivo + tarjeta).toFixed(2);
-            document.getElementById("editar_tarifa_hora").value = isNaN(tarifa) ? '' : tarifa.toFixed(2);
+            document.getElementById("edit_total_pagado").value = (efectivo + tarjeta).toFixed(2);
+            document.getElementById("edit_tarifa_profesor").value = isNaN(tarifa) ? '' : tarifa.toFixed(2);
 
             cargarListaProfesoresEdicion(clase.profesor_id);
 
