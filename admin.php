@@ -279,7 +279,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
         <!-- Modal to Assign Class -->
         <div class="modal fade" id="modalAsignarClase" tabindex="-1" aria-labelledby="modalAsignarClaseLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-detalle-clase">
+            <div class="modal-dialog modal-dialog-centered modal-detalle-clase" style="max-width: 720px;">
                 <div class="modal-content compacto">
                     <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
                     <h4 class="modal-title mb-1 d-flex align-items-center gap-2" id="modalAsignarClaseLabel">
@@ -292,7 +292,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             <p class="text-muted fw-semibold d-flex align-items-center gap-2 mb-2">
                                 <i class="bi bi-journal-plus text-primary"></i>Instructor &amp; Schedule
                             </p>
-                            <div class="row g-3 mb-3">
+                            <div class="row g-3 mb-2">
                                 <div class="col-md-6">
                                     <label for="profesor" class="form-label">Instructor<span class="text-danger">*</span></label>
                                     <select id="profesor" class="form-select" required>
@@ -303,6 +303,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <label for="fecha" class="form-label">Date<span class="text-danger">*</span></label>
                                     <input type="date" id="fecha" class="form-control" required>
                                 </div>
+                            </div>
+                            <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="hora_inicio" class="form-label">Start Time<span class="text-danger">*</span></label>
                                     <input type="time" id="hora_inicio" class="form-control" required>
@@ -345,7 +347,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             <p class="text-muted fw-semibold d-flex align-items-center gap-2 mb-2">
                                 <i class="bi bi-credit-card-2-front-fill text-success"></i>Payment Info
                             </p>
-                            <div class="row g-3 mb-3">
+                            <div class="row g-3 mb-2">
                                 <div class="col-md-6">
                                     <label for="pago_efectivo" class="form-label">Cash Payment (€)</label>
                                     <div class="input-group">
@@ -360,6 +362,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                         <input type="number" class="form-control" id="pago_tarjeta" name="pago_tarjeta" min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="tarifa_hora" class="form-label">Hourly Rate (€)</label>
                                     <div class="input-group">
