@@ -319,7 +319,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <input type="time" id="hora_fin" class="form-control" required>
                                 </div>
                             </div>
-                            <hr class="border-separator">
+                            <hr class="section-divider">
+                            <h6 class="text-muted fw-semibold mb-3">Participant Information</h6>
 
                             <div class="row g-3 mb-3">
                                 <div class="col-md-4">
@@ -340,8 +341,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     </label>
                                     <input type="email" id="alumno_email" class="form-control" name="email_alumno">
                                 </div>
-                            </div>
-                            <hr class="border-separator">
+                            <hr class="section-divider">
+                            <h6 class="text-muted fw-semibold mb-3">Payment Details</h6>
                             <div class="row g-3 mb-3">
                                 <div class="col-md-3">
                                     <label for="pago_efectivo" class="form-label">
@@ -368,8 +369,9 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <input type="number" id="tarifa_profesor" class="form-control" name="tarifa_hora" step="0.01" min="0" required>
                                 </div>
                             </div>
-                            <hr class="border-separator">
-                            <div class="mb-3">
+                              <hr class="section-divider">
+                              <h6 class="text-muted fw-semibold mb-3">Additional Notes</h6>
+                              <div class="mb-3">
                                 <label for="observaciones" class="form-label">
                                     <i class="fas fa-sticky-note text-muted me-2"></i>Notes
                                 </label>
