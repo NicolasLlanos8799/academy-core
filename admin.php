@@ -291,17 +291,16 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
                     <div class="modal-body">
                         <form id="formAsignarClase">
-                            <h6 class="text-muted mb-2">Schedule</h6>
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="instructor" class="form-label">
-                                        <i class="fas fa-user-tie me-2"></i>Instructor <span class="text-danger">*</span>
+                                        <i class="fas fa-chalkboard-teacher text-primary me-2"></i>Instructor <span class="text-danger">*</span>
                                     </label>
                                     <select id="instructor" class="form-select" required name="profesor"></select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="fecha" class="form-label">
-                                        <i class="fas fa-calendar-alt me-2"></i>Date <span class="text-danger">*</span>
+                                        <i class="fas fa-calendar-alt text-primary me-2"></i>Date <span class="text-danger">*</span>
                                     </label>
                                     <input type="date" id="fecha" class="form-control" required>
                                 </div>
@@ -309,41 +308,40 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="hora_inicio" class="form-label">
-                                        <i class="fas fa-clock me-2"></i>Start Time <span class="text-danger">*</span>
+                                        <i class="fas fa-clock text-secondary me-2"></i>Start Time <span class="text-danger">*</span>
                                     </label>
                                     <input type="time" id="hora_inicio" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="hora_fin" class="form-label">
-                                        <i class="fas fa-clock me-2"></i>End Time <span class="text-danger">*</span>
+                                        <i class="fas fa-clock text-secondary me-2"></i>End Time <span class="text-danger">*</span>
                                     </label>
                                     <input type="time" id="hora_fin" class="form-control" required>
                                 </div>
                             </div>
+                            <hr class="border-separator">
 
-                            <h6 class="text-muted mb-2">Participant Information</h6>
                             <div class="row g-3 mb-3">
                                 <div class="col-md-4">
                                     <label for="alumno_nombre" class="form-label">
-                                        <i class="fas fa-user me-2"></i>Name <span class="text-danger">*</span>
+                                        <i class="fas fa-user text-muted me-2"></i>Name <span class="text-danger">*</span>
                                     </label>
                                     <input type="text" id="alumno_nombre" class="form-control" required name="alumno">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="alumno_telefono" class="form-label">
-                                        <i class="fas fa-phone me-2"></i>Phone
+                                        <i class="fas fa-phone text-success me-2"></i>Phone
                                     </label>
                                     <input type="tel" id="alumno_telefono" class="form-control" name="telefono_alumno">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="alumno_email" class="form-label">
-                                        <i class="fas fa-envelope me-2"></i>Email
+                                        <i class="fas fa-envelope text-primary me-2"></i>Email
                                     </label>
                                     <input type="email" id="alumno_email" class="form-control" name="email_alumno">
                                 </div>
                             </div>
-
-                            <h6 class="text-muted mb-2">Payment Details</h6>
+                            <hr class="border-separator">
                             <div class="row g-3 mb-3">
                                 <div class="col-md-3">
                                     <label for="pago_efectivo" class="form-label">
@@ -359,22 +357,21 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                 </div>
                                 <div class="col-md-3">
                                     <label for="total_pagado" class="form-label">
-                                        <i class="fas fa-dollar-sign me-2"></i>Total Paid
+                                        <i class="fas fa-dollar-sign text-info me-2"></i>Total Paid
                                     </label>
                                     <input type="number" id="total_pagado" class="form-control" name="importePagado" readonly>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="tarifa_profesor" class="form-label">
-                                        <i class="fas fa-user-tie text-secondary me-2"></i>Instructor Fee <span class="text-danger">*</span>
+                                        <i class="fas fa-receipt text-secondary me-2"></i>Instructor Fee <span class="text-danger">*</span>
                                     </label>
                                     <input type="number" id="tarifa_profesor" class="form-control" name="tarifa_hora" step="0.01" min="0" required>
                                 </div>
                             </div>
-
-                            <h6 class="text-muted mb-2">Additional Notes</h6>
+                            <hr class="border-separator">
                             <div class="mb-3">
                                 <label for="observaciones" class="form-label">
-                                    <i class="fas fa-sticky-note me-2"></i>Notes
+                                    <i class="fas fa-sticky-note text-muted me-2"></i>Notes
                                 </label>
                                 <textarea id="observaciones" class="form-control" rows="3" name="observaciones"></textarea>
                             </div>
