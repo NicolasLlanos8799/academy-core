@@ -741,9 +741,10 @@ body {
 
 /* ===== MODALES ===== */
 .modal-content {
-    border-radius: 20px;
+    background: #f9fafb;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
     box-shadow: 0 2px 16px rgba(37,99,235,0.08);
-    border: 1px solid #E5E7EB;
 }
 .modal-header {
     border-bottom: none;
@@ -751,6 +752,19 @@ body {
 .modal-title {
     font-weight: 700;
     color: #2563EB;
+}
+
+.section-divider {
+    border-top: 1px solid #d1d5db;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
 }
 
 #modalDetalleClase .modal-content {
