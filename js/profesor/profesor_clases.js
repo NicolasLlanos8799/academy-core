@@ -92,7 +92,7 @@ function abrirModalDetalleClase(evento) {
     document.getElementById('detalleEmail').innerText = datos.email || '-';
     document.getElementById('detalleTelefono').innerText = datos.telefono || '-';
     document.getElementById('detalleTarifaHora').innerText = datos.tarifa_hora ? `${datos.tarifa_hora} ` : 'Not available';
-    document.getElementById('detalleObservaciones').innerText = datos.observaciones || 'No observations';
+    document.getElementById('detalleObservaciones').innerText = datos.observaciones || 'No additional info.';
 
     const modal = new bootstrap.Modal(document.getElementById('modalDetalleClase'));
     document.getElementById('modalDetalleClase').dataset.idClase = evento.id;

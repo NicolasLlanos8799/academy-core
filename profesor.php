@@ -129,9 +129,9 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
                 </p>
             </div>
 
-            <!-- Observations -->
+            <!-- Additional Info -->
             <div class="section">
-                <p><strong><i class="bi bi-chat-left-text"></i>Observations:</strong> <span id="detalleObservaciones"></span></p>
+                <p><strong><i class="bi bi-chat-left-text"></i>Additional Info:</strong> <span id="detalleObservaciones"></span></p>
             </div>
 
             <!-- Action Buttons -->
@@ -191,7 +191,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
                                         <input type="text" id="telefono_alumno" class="form-control">
                                     </div>
                                     <div class="col-12">
-                                        <label for="observaciones" class="form-label">Observations</label>
+                                        <label for="observaciones" class="form-label">Additional Info</label>
                                         <textarea id="observaciones" class="form-control" rows="2"></textarea>
                                     </div>
                                 </div>
@@ -244,7 +244,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
                                         <input type="text" id="editar_telefono_alumno" class="form-control">
                                     </div>
                                     <div class="col-12">
-                                        <label for="editar_observaciones" class="form-label">Observations</label>
+                                        <label for="editar_observaciones" class="form-label">Additional Info</label>
                                         <textarea id="editar_observaciones" class="form-control" rows="2"></textarea>
                                     </div>
                                 </div>

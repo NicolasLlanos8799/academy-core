@@ -249,9 +249,9 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             </p>
                         </div>
 
-                        <!-- Observations -->
+                        <!-- Additional Info -->
                         <div class="section">
-                            <p><strong><i class="bi bi-chat-left-text"></i>Observations:</strong> <span
+                            <p><strong><i class="bi bi-chat-left-text"></i>Additional Info:</strong> <span
                                     id="detalleObservaciones"></span></p>
                         </div>
 
@@ -371,11 +371,9 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                 </div>
                             </div>
                               <hr class="section-divider">
-                              <h6 class="section-title">Additional Notes</h6>
+                              <h6 class="section-title">Additional Info</h6>
                               <div class="mb-3">
-                                <label for="observaciones" class="form-label d-flex align-items-center gap-1">
-                                    <i class="fas fa-sticky-note text-muted"></i>Notes
-                                </label>
+                                
                                 <textarea id="observaciones" class="form-control" rows="3" name="observaciones"></textarea>
                             </div>
                         </form>
@@ -486,11 +484,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             </div>
 
                             <hr class="section-divider">
-<h6 class="section-title">Additional Notes</h6>
+<h6 class="section-title">Additional Info</h6>
                             <div class="mb-3">
-                                <label for="edit_observaciones" class="form-label d-flex align-items-center gap-1">
-                                    <i class="fas fa-sticky-note text-muted"></i>Notes
-                                </label>
                                 <textarea id="edit_observaciones" class="form-control" rows="3" name="editar_observaciones"></textarea>
                             </div>
                         </form>

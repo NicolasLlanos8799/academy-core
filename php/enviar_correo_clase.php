@@ -164,7 +164,7 @@ foreach ($destinatarios as [$email, $nombre]) {
                 $mensajeHTML .= "<p style='color:#000;'><strong>Instructor Hourly Rate (€):</strong> €" . number_format($tarifa_hora, 2) . "</p>";
             }
             if (!empty($observaciones)) {
-                $mensajeHTML .= "<p style='color:#000;'><strong>Observations:</strong> $observaciones</p>";
+                $mensajeHTML .= "<p style='color:#000;'><strong>Additional Info:</strong> $observaciones</p>";
             }
         } else {
             if ($importe_pagado > 0) {

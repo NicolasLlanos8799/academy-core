@@ -402,7 +402,7 @@ function inicializarCalendario() {
 
             document.getElementById('detalleAlumno').textContent = evento.title;
             document.getElementById('detalleProfesor').textContent = evento.extendedProps.profesor;
-            document.getElementById('detalleObservaciones').textContent = evento.extendedProps.observaciones?.trim() || 'No observations';
+            document.getElementById('detalleObservaciones').textContent = evento.extendedProps.observaciones?.trim() || 'No additional info.';
             document.getElementById('detalleEmail').textContent = evento.extendedProps.email || '—';
             document.getElementById('detalleTelefono').textContent = evento.extendedProps.telefono || '—';
             document.getElementById('detalleImportePagado').textContent = evento.extendedProps.importe_pagado || '—';
