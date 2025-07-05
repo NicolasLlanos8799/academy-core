@@ -22,6 +22,22 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!hFin.value) hFin.value = "06:00";
         });
     }
+    const horaInicioPicker = flatpickr("#hora_inicio", {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      time_24hr: true,
+      onChange: function(selectedDates, dateStr, instance) {
+        horaFinPicker.set("minTime", dateStr);
+      }
+    });
+
+    const horaFinPicker = flatpickr("#hora_fin", {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      time_24hr: true
+    });
 });
 
 function inicializarCalendario() {

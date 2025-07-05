@@ -29,6 +29,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <!-- TU CSS PERSONALIZADO SIEMPRE ÚLTIMO -->
     <link rel="stylesheet" href="css/styles.css?v=2.0">
     <link rel="stylesheet" href="css/modal-detalle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <!-- FOUC Fix -->
     <style>
@@ -310,13 +312,13 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <label for="hora_inicio" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-clock text-secondary"></i>Start Time 
                                     </label>
-                                    <input type="time" id="hora_inicio" class="form-control" required>
+                                    <input type="text" id="hora_inicio" class="form-control" required placeholder="Start Time">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="hora_fin" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-clock text-secondary"></i>End Time 
                                     </label>
-                                    <input type="time" id="hora_fin" class="form-control" required>
+                                    <input type="text" id="hora_fin" class="form-control" required placeholder="End Time">
                                 </div>
                             </div>
                             <hr class="section-divider">

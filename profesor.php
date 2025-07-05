@@ -42,6 +42,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/modal-detalle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
@@ -172,11 +174,11 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
                                     </div>
                                     <div class="col-md-6">
                                         <label for="hora_inicio" class="form-label">Start Time</label>
-                                        <input type="time" id="hora_inicio" class="form-control" required>
+                                        <input type="text" id="hora_inicio" class="form-control" required placeholder="Start Time">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="hora_fin" class="form-label">End Time</label>
-                                        <input type="time" id="hora_fin" class="form-control" required>
+                                        <input type="text" id="hora_fin" class="form-control" required placeholder="End Time">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="alumno" class="form-label">Participant Name</label>
