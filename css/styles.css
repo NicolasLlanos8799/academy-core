@@ -748,10 +748,13 @@ label.form-label.d-flex {
 
 /* Uniformidad en íconos dentro de los labels */
 label.form-label.d-flex i {
-    font-size: 1rem;
-    line-height: 1.2;
-    display: inline-block;
+  font-size: 1rem;
+  line-height: 1.2;
+  width: 1.2rem;        /* Establece ancho fijo uniforme */
+  text-align: center;   /* Centra el ícono dentro del ancho */
+  margin-left: 0.1rem;  /* Opcional: para alinear con el texto */
 }
+
 
 /* Ajustes de padding en los inputs, selects y textareas */
 input.form-control,
