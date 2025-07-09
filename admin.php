@@ -1,6 +1,7 @@
 <?php
 $config = include __DIR__ . '/php/school_config.php';
 require_once __DIR__ . '/php/validar_sesion_admin.php';
+require_once __DIR__ . '/helpers.php';
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +74,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <div class="container mt-4">
         <!-- Instructor Management Section -->
         <div id="profesores" class="seccion">
-            <h3 class="mb-2 text-center text-md-start">Instructor Management</h3>
+            <h3 class="mb-2 text-center text-md-start">Instructor Management <?php echo render_icon('instructor', 'Instructor'); ?></h3>
             <div class="d-flex justify-content-md-end justify-content-center mb-3">
                 <button class="btn btn-primary d-flex align-items-center gap-2 boton-add-instructor"
                     data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
