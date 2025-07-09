@@ -196,33 +196,28 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                 <div class="modal-dialog modal-dialog-centered modal-detalle-clase">
                     <!-- Modal Content -->
                     <div class="modal-content compacto">
-                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                         <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
                             <span>ℹ️</span> Class Details
                         </h4>
 
                         <!-- Participant & Instructor -->
                         <div class="section">
-                            <p><strong><span>👤</span> Participant:</strong> <span
-                                    id="detalleAlumno"></span></p>
-                            <p><strong><span>🧑‍🏫</span> Instructor:</strong> <span
-                                    id="detalleProfesor"></span></p>
+                            <p><strong><span>👤</span> Participant:</strong> <span id="detalleAlumno"></span></p>
+                            <p><strong><span>🧑‍🏫</span> Instructor:</strong> <span id="detalleProfesor"></span></p>
                         </div>
 
                         <!-- Date & Time -->
                         <div class="section">
-                            <p><strong><span>📅</span> Date:</strong> <span
-                                    id="detalleFecha"></span></p>
-                            <p><strong><span>⏰</span> Time:</strong> <span
-                                    id="detalleHorario"></span></p>
+                            <p><strong><span>📅</span> Date:</strong> <span id="detalleFecha"></span></p>
+                            <p><strong><span>⏰</span> Time:</strong> <span id="detalleHorario"></span></p>
                         </div>
 
                         <!-- Contact Info -->
                         <div class="section">
-                            <p><strong><span>✉️</span> Email:</strong> <span
-                                    id="detalleEmail"></span></p>
-                            <p><strong><span>📞</span> Phone:</strong> <span
-                                    id="detalleTelefono"></span></p>
+                            <p><strong><span>✉️</span> Email:</strong> <span id="detalleEmail"></span></p>
+                            <p><strong><span>📞</span> Phone:</strong> <span id="detalleTelefono"></span></p>
                         </div>
 
                         <!-- Payments -->
@@ -237,27 +232,31 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             </p>
                             <p>
                                 <strong><span>💰</span> Total Amount (€):</strong>
-                                <span id="detalleImportePagado" class="fw-bold">—</span>
+                                <span id="detalleImportePagado" class="badge bg-warning-subtle text-warning">—</span>
                             </p>
+
                         </div>
 
                         <!-- Instructor rate -->
                         <div class="section">
                             <p>
-                                <strong><span>💸</span> Instructor Hourly Rate (€):</strong>
-                                <span id="detalleTarifaHora">—</span>
+                                <strong><span>💸</span> Instructor €/hr:</strong>
+                                <span id="detalleTarifaHora" class="badge bg-secondary-subtle text-dark">—</span>
                             </p>
                         </div>
 
+
                         <!-- Additional Info -->
                         <div class="section">
-                            <p><strong><span>📝</span> Additional Info:</strong> <span
-                                    id="detalleObservaciones"></span></p>
+                            <p><strong><span>📝</span> Additional Info:</strong> <span id="detalleObservaciones"></span>
+                            </p>
                         </div>
 
                         <!-- Action Buttons -->
                         <div class="modal-acciones">
-                            <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-3 py-2" title="Mark as Completed">
+                            <button id="btnClaseCompletada"
+                                class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-3 py-2"
+                                title="Mark as Completed">
                                 <i class="bi bi-check2-circle"></i>
                                 <span class="d-none d-sm-inline">Mark as Completed</span>
                             </button>
@@ -294,13 +293,13 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="instructor" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-chalkboard-teacher text-primary"></i>Instructor 
+                                        <i class="fas fa-chalkboard-teacher text-primary"></i>Instructor
                                     </label>
                                     <select id="instructor" class="form-select" required name="profesor"></select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="fecha" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-calendar-alt text-primary"></i>Date 
+                                        <i class="fas fa-calendar-alt text-primary"></i>Date
                                     </label>
                                     <input type="date" id="fecha" class="form-control" required>
                                 </div>
@@ -308,13 +307,13 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="hora_inicio" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-clock text-secondary"></i>Start Time 
+                                        <i class="fas fa-clock text-secondary"></i>Start Time
                                     </label>
                                     <input type="time" id="hora_inicio" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="hora_fin" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-clock text-secondary"></i>End Time 
+                                        <i class="fas fa-clock text-secondary"></i>End Time
                                     </label>
                                     <input type="time" id="hora_fin" class="form-control" required>
                                 </div>
@@ -325,7 +324,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             <div class="row g-3 mb-3">
                                 <div class="col-md-4">
                                     <label for="alumno_nombre" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-user text-muted"></i>Name 
+                                        <i class="fas fa-user text-muted"></i>Name
                                     </label>
                                     <input type="text" id="alumno_nombre" class="form-control" required name="alumno">
                                 </div>
@@ -340,8 +339,8 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                         <i class="fas fa-envelope text-primary"></i>Email
                                     </label>
                                     <input type="email" id="alumno_email" class="form-control" name="email_alumno">
-                            </div>
                                 </div>
+                            </div>
                             <hr class="section-divider">
                             <h6 class="section-title">Payment Details</h6>
                             <div class="row g-3 mb-3">
@@ -349,39 +348,45 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     <label for="pago_efectivo" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-money-bill-wave text-success"></i>Cash
                                     </label>
-                                    <input type="number" id="pago_efectivo" class="form-control" name="pago_efectivo" min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                    <input type="number" id="pago_efectivo" class="form-control" name="pago_efectivo"
+                                        min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="pago_tarjeta" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-credit-card text-danger"></i>Card
                                     </label>
-                                    <input type="number" id="pago_tarjeta" class="form-control" name="pago_tarjeta" min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
+                                    <input type="number" id="pago_tarjeta" class="form-control" name="pago_tarjeta"
+                                        min="0" step="0.01" value="0" oninput="actualizarTotalPagado()">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="total_pagado" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-dollar-sign text-info"></i>Total Paid
                                     </label>
-                                    <input type="number" id="total_pagado" class="form-control" name="importePagado" readonly>
+                                    <input type="number" id="total_pagado" class="form-control" name="importePagado"
+                                        readonly>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="tarifa_profesor" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-receipt text-secondary"></i>Instructor Fee 
+                                        <i class="fas fa-receipt text-secondary"></i>Instructor €/hr
                                     </label>
-                                    <input type="number" id="tarifa_profesor" class="form-control" name="tarifa_hora" step="0.01" min="0" required>
+                                    <input type="number" id="tarifa_profesor" class="form-control" name="tarifa_hora"
+                                        step="0.01" min="0" required>
                                 </div>
                             </div>
-                              <hr class="section-divider">
-                              <h6 class="section-title">Additional Info</h6>
-                              <div class="mb-3">
-                                
-                                <textarea id="observaciones" class="form-control" rows="3" name="observaciones"></textarea>
+                            <hr class="section-divider">
+                            <h6 class="section-title">Additional Info</h6>
+                            <div class="mb-3">
+
+                                <textarea id="observaciones" class="form-control" rows="3"
+                                    name="observaciones"></textarea>
                             </div>
                         </form>
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button id="btnGuardarClase" type="button" class="btn btn-primary" onclick="asignarClase()">Save Class</button>
+                        <button id="btnGuardarClase" type="button" class="btn btn-primary" onclick="asignarClase()">Save
+                            Class</button>
                     </div>
                 </div>
             </div>
@@ -406,94 +411,111 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="edit_profesor" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-chalkboard-teacher text-primary"></i>Instructor 
+                                        <i class="fas fa-chalkboard-teacher text-primary"></i>Instructor
                                     </label>
-                                    <select id="edit_profesor" class="form-select" required name="editar_profesor"></select>
+                                    <select id="edit_profesor" class="form-select" required
+                                        name="editar_profesor"></select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="edit_fecha" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-calendar-alt text-primary"></i>Date 
+                                        <i class="fas fa-calendar-alt text-primary"></i>Date
                                     </label>
-                                    <input type="date" id="edit_fecha" class="form-control" required name="editar_fecha">
+                                    <input type="date" id="edit_fecha" class="form-control" required
+                                        name="editar_fecha">
                                 </div>
                             </div>
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <label for="edit_hora_inicio" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-clock text-secondary"></i>Start Time 
+                                        <i class="fas fa-clock text-secondary"></i>Start Time
                                     </label>
-                                    <input type="time" id="edit_hora_inicio" class="form-control" required name="editar_hora_inicio">
+                                    <input type="time" id="edit_hora_inicio" class="form-control" required
+                                        name="editar_hora_inicio">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="edit_hora_fin" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-clock text-secondary"></i>End Time 
+                                        <i class="fas fa-clock text-secondary"></i>End Time
                                     </label>
-                                    <input type="time" id="edit_hora_fin" class="form-control" required name="editar_hora_fin">
+                                    <input type="time" id="edit_hora_fin" class="form-control" required
+                                        name="editar_hora_fin">
                                 </div>
                             </div>
                             <hr class="section-divider">
-<h6 class="section-title">Participant Information</h6>
+                            <h6 class="section-title">Participant Information</h6>
 
                             <div class="row g-3 mb-3">
                                 <div class="col-md-4">
                                     <label for="edit_alumno_nombre" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-user text-muted"></i>Name 
+                                        <i class="fas fa-user text-muted"></i>Name
                                     </label>
-                                    <input type="text" id="edit_alumno_nombre" class="form-control" required name="editar_alumno">
+                                    <input type="text" id="edit_alumno_nombre" class="form-control" required
+                                        name="editar_alumno">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="edit_alumno_telefono" class="form-label d-flex align-items-center gap-1">
+                                    <label for="edit_alumno_telefono"
+                                        class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-phone text-success"></i>Phone
                                     </label>
-                                    <input type="text" id="edit_alumno_telefono" class="form-control" name="editar_telefono_alumno">
+                                    <input type="text" id="edit_alumno_telefono" class="form-control"
+                                        name="editar_telefono_alumno">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="edit_alumno_email" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-envelope text-primary"></i>Email
                                     </label>
-                                    <input type="email" id="edit_alumno_email" class="form-control" name="editar_email_alumno">
+                                    <input type="email" id="edit_alumno_email" class="form-control"
+                                        name="editar_email_alumno">
                                 </div>
                             </div>
                             <hr class="section-divider">
-<h6 class="section-title">Payment Details</h6>
+                            <h6 class="section-title">Payment Details</h6>
                             <div class="row g-3 mb-3">
                                 <div class="col-md-3">
                                     <label for="edit_pago_efectivo" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-money-bill-wave text-success"></i>Cash
                                     </label>
-                                    <input type="number" id="edit_pago_efectivo" class="form-control" name="editar_pago_efectivo" min="0" step="0.01" value="0" oninput="actualizarTotalEditado()">
+                                    <input type="number" id="edit_pago_efectivo" class="form-control"
+                                        name="editar_pago_efectivo" min="0" step="0.01" value="0"
+                                        oninput="actualizarTotalEditado()">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="edit_pago_tarjeta" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-credit-card text-danger"></i>Card
                                     </label>
-                                    <input type="number" id="edit_pago_tarjeta" class="form-control" name="editar_pago_tarjeta" min="0" step="0.01" value="0" oninput="actualizarTotalEditado()">
+                                    <input type="number" id="edit_pago_tarjeta" class="form-control"
+                                        name="editar_pago_tarjeta" min="0" step="0.01" value="0"
+                                        oninput="actualizarTotalEditado()">
                                 </div>
                                 <div class="col-md-3">
                                     <label for="edit_total_pagado" class="form-label d-flex align-items-center gap-1">
                                         <i class="fas fa-dollar-sign text-info"></i>Total Paid
                                     </label>
-                                    <input type="number" id="edit_total_pagado" class="form-control" name="editar_importe_pagado" readonly>
+                                    <input type="number" id="edit_total_pagado" class="form-control"
+                                        name="editar_importe_pagado" readonly>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="edit_tarifa_profesor" class="form-label d-flex align-items-center gap-1">
-                                        <i class="fas fa-receipt text-secondary"></i>Instructor Fee 
+                                    <label for="edit_tarifa_profesor"
+                                        class="form-label d-flex align-items-center gap-1">
+                                        <i class="fas fa-receipt text-secondary"></i>Instructor €/hr
                                     </label>
-                                    <input type="number" id="edit_tarifa_profesor" class="form-control" name="editar_tarifa_hora" step="0.01" min="0" required>
+                                    <input type="number" id="edit_tarifa_profesor" class="form-control"
+                                        name="editar_tarifa_hora" step="0.01" min="0" required>
                                 </div>
                             </div>
 
                             <hr class="section-divider">
-<h6 class="section-title">Additional Info</h6>
+                            <h6 class="section-title">Additional Info</h6>
                             <div class="mb-3">
-                                <textarea id="edit_observaciones" class="form-control" rows="3" name="editar_observaciones"></textarea>
+                                <textarea id="edit_observaciones" class="form-control" rows="3"
+                                    name="editar_observaciones"></textarea>
                             </div>
                         </form>
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button id="btnGuardarEdicion" type="button" class="btn btn-primary" onclick="guardarEdicionClase()">Save Changes</button>
+                        <button id="btnGuardarEdicion" type="button" class="btn btn-primary"
+                            onclick="guardarEdicionClase()">Save Changes</button>
                     </div>
                 </div>
             </div>

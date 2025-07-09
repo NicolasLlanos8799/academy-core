@@ -79,79 +79,84 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
 
             <!-- Class Detail Modal -->
 
-<div class="modal fade" id="modalDetalleClase" data-id-clase="" tabindex="-1" aria-labelledby="modalDetalleClaseLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-detalle-clase">
-        <!-- Modal Content -->
-        <div class="modal-content compacto">
-            <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-            <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
-                <span>ℹ️</span> Class Details
-            </h4>
+            <div class="modal fade" id="modalDetalleClase" data-id-clase="" tabindex="-1"
+                aria-labelledby="modalDetalleClaseLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-detalle-clase">
+                    <!-- Modal Content -->
+                    <div class="modal-content compacto">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
+                            <span>ℹ️</span> Class Details
+                        </h4>
 
-            <!-- Participant & Instructor -->
-            <div class="section">
-                <p><strong><span>👤</span> Participant:</strong> <span id="detalleAlumno"></span></p>
-                <p><strong><span>🧑‍🏫</span> Instructor:</strong> <span id="detalleProfesor"></span></p>
-            </div>
+                        <!-- Participant & Instructor -->
+                        <div class="section">
+                            <p><strong><span>👤</span> Participant:</strong> <span id="detalleAlumno"></span></p>
+                            <p><strong><span>🧑‍🏫</span> Instructor:</strong> <span id="detalleProfesor"></span></p>
+                        </div>
 
-            <!-- Date & Time -->
-            <div class="section">
-                <p><strong><span>📅</span> Date:</strong> <span id="detalleFecha"></span></p>
-                <p><strong><span>⏰</span> Time:</strong> <span id="detalleHorario"></span></p>
-            </div>
+                        <!-- Date & Time -->
+                        <div class="section">
+                            <p><strong><span>📅</span> Date:</strong> <span id="detalleFecha"></span></p>
+                            <p><strong><span>⏰</span> Time:</strong> <span id="detalleHorario"></span></p>
+                        </div>
 
-            <!-- Contact Info -->
-            <div class="section">
-                <p><strong><span>✉️</span> Email:</strong> <span id="detalleEmail"></span></p>
-                <p><strong><span>📞</span> Phone:</strong> <span id="detalleTelefono"></span></p>
-            </div>
+                        <!-- Contact Info -->
+                        <div class="section">
+                            <p><strong><span>✉️</span> Email:</strong> <span id="detalleEmail"></span></p>
+                            <p><strong><span>📞</span> Phone:</strong> <span id="detalleTelefono"></span></p>
+                        </div>
 
-            <!-- Payments -->
-            <div class="section">
-                <p>
-                    <strong><span>💶</span> Cash Payment (€):</strong>
-                    <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
-                </p>
-                <p>
-                    <strong><span>💳</span> Card Payment (€):</strong>
-                    <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
-                </p>
-                <p>
-                    <strong><span>💰</span> Total Amount (€):</strong>
-                    <span id="detalleImportePagado" class="fw-bold">—</span>
-                </p>
-            </div>
+                        <!-- Payments -->
+                        <div class="section">
+                            <p>
+                                <strong><span>💶</span> Cash Payment (€):</strong>
+                                <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
+                            </p>
+                            <p>
+                                <strong><span>💳</span> Card Payment (€):</strong>
+                                <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
+                            </p>
+                            <p>
+                                <strong><span>💰</span> Total Amount (€):</strong>
+                                <span id="detalleImportePagado" class="fw-bold">—</span>
+                            </p>
+                        </div>
 
-            <!-- Instructor rate -->
-            <div class="section">
-                <p>
-                    <strong><span>💸</span> Instructor Hourly Rate (€):</strong> <span id="detalleTarifaHora">—</span>
-                </p>
-            </div>
+                        <div class="section">
+                            <p>
+                                <strong><span>💸</span> Instructor €/hr:</strong>
+                                <span id="detalleTarifaHora" class="badge bg-secondary-subtle text-dark">—</span>
+                            </p>
+                        </div>
 
-            <!-- Additional Info -->
-            <div class="section">
-                <p><strong><span>📝</span> Additional Info:</strong> <span id="detalleObservaciones"></span></p>
-            </div>
+                        <!-- Additional Info -->
+                        <div class="section">
+                            <p><strong><span>📝</span> Additional Info:</strong> <span id="detalleObservaciones"></span>
+                            </p>
+                        </div>
 
-            <!-- Action Buttons -->
-            <div class="modal-acciones">
-              <button id="btnClaseCompletada" class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-3 py-2" title="Mark as Completed">
-                <i class="bi bi-check2-circle"></i>
-                <span class="d-none d-sm-inline">Mark as Completed</span>
-              </button>
-              <button id="btnEditarClase" class="btn btn-warning text-white" title="Edit Class">
-                <i class="bi bi-pencil-square"></i>
-                <span class="texto-responsive">Edit</span>
-              </button>
-              <button id="btnEliminarClase" class="btn btn-danger" title="Delete Class">
-                <i class="bi bi-trash3-fill"></i>
-                <span class="texto-responsive">Delete</span>
-              </button>
+                        <!-- Action Buttons -->
+                        <div class="modal-acciones">
+                            <button id="btnClaseCompletada"
+                                class="btn btn-success d-flex align-items-center gap-1 justify-content-center px-3 py-2"
+                                title="Mark as Completed">
+                                <i class="bi bi-check2-circle"></i>
+                                <span class="d-none d-sm-inline">Mark as Completed</span>
+                            </button>
+                            <button id="btnEditarClase" class="btn btn-warning text-white" title="Edit Class">
+                                <i class="bi bi-pencil-square"></i>
+                                <span class="texto-responsive">Edit</span>
+                            </button>
+                            <button id="btnEliminarClase" class="btn btn-danger" title="Delete Class">
+                                <i class="bi bi-trash3-fill"></i>
+                                <span class="texto-responsive">Delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
 
             <!-- Modal to Assign Class -->
