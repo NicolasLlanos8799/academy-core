@@ -35,25 +35,30 @@ function cargarPagos() {
 
             data.completadas.forEach(pago => {
                 cuerpoTablaCompletadas.innerHTML += `
-                    <tr>
-                        <td>${pago.profesor_nombre}</td>
-                        <td>${pago.total_horas}</td>
-                        <td>€${pago.total}</td>
-                        <td><button class="btn btn-sm btn-primary" onclick="verDetalleClasesPendientes(${pago.profesor_id})"> 🔍 View Details</button></td>
+                    <tr class="border-bottom border-light">
+                        <td><i class="bi bi-person me-1"></i>${pago.profesor_nombre}</td>
+                        <td class="text-end">${pago.total_horas}</td>
+                        <td class="text-end"><i class="bi bi-cash-coin me-1"></i>€${pago.total}</td>
+                        <td class="text-center">
+                            <button class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1" onclick="verDetalleClasesPendientes(${pago.profesor_id})" title="View payment details">
+                                <i class="bi bi-eye"></i> View
+                            </button>
+                        </td>
                     </tr>
                 `;
             });
 
             data.registrados.forEach(pago => {
                 const fila = document.createElement("tr");
+                fila.className = "border-bottom border-light";
                 fila.innerHTML = `
-                     <td>${formatearFecha(pago.fecha_pago)}</td>
-                    <td>${pago.profesor_nombre}</td>
-                    <td>${pago.total_horas}</td>
-                    <td>€${pago.total}</td>
-                    <td>
-                        <button class="btn btn-sm btn-primary btn-detalle-pago" data-id="${pago.id}">
-                            🔍 View Details
+                    <td>${formatearFecha(pago.fecha_pago)}</td>
+                    <td><i class="bi bi-person me-1"></i>${pago.profesor_nombre}</td>
+                    <td class="text-end">${pago.total_horas}</td>
+                    <td class="text-end"><i class="bi bi-cash-coin me-1"></i>€${pago.total}</td>
+                    <td class="text-center">
+                        <button class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 btn-detalle-pago" data-id="${pago.id}" title="View payment details">
+                            <i class="bi bi-eye"></i> View
                         </button>
                     </td>
                 `;
