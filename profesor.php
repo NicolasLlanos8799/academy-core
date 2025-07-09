@@ -85,39 +85,39 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
         <div class="modal-content compacto">
             <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
             <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
-                <i class="bi bi-info-circle-fill text-primary"></i> Class Details
+                <span>ℹ️</span> Class Details
             </h4>
 
             <!-- Participant & Instructor -->
             <div class="section">
-                <p><strong><i class="bi bi-person-fill"></i>Participant:</strong> <span id="detalleAlumno"></span></p>
-                <p><strong><i class="bi bi-person-badge-fill"></i>Instructor:</strong> <span id="detalleProfesor"></span></p>
+                <p><strong><span>👤</span> Participant:</strong> <span id="detalleAlumno"></span></p>
+                <p><strong><span>🧑‍🏫</span> Instructor:</strong> <span id="detalleProfesor"></span></p>
             </div>
 
             <!-- Date & Time -->
             <div class="section">
-                <p><strong><i class="bi bi-calendar-event"></i>Date:</strong> <span id="detalleFecha"></span></p>
-                <p><strong><i class="bi bi-clock-fill"></i>Time:</strong> <span id="detalleHorario"></span></p>
+                <p><strong><span>📅</span> Date:</strong> <span id="detalleFecha"></span></p>
+                <p><strong><span>⏰</span> Time:</strong> <span id="detalleHorario"></span></p>
             </div>
 
             <!-- Contact Info -->
             <div class="section">
-                <p><strong><i class="bi bi-envelope-fill"></i>Email:</strong> <span id="detalleEmail"></span></p>
-                <p><strong><i class="bi bi-telephone-fill"></i>Phone:</strong> <span id="detalleTelefono"></span></p>
+                <p><strong><span>✉️</span> Email:</strong> <span id="detalleEmail"></span></p>
+                <p><strong><span>📞</span> Phone:</strong> <span id="detalleTelefono"></span></p>
             </div>
 
             <!-- Payments -->
             <div class="section">
                 <p>
-                    <strong><i class="bi bi-cash-coin"></i>Cash Payment (€):</strong>
+                    <strong><span>💶</span> Cash Payment (€):</strong>
                     <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
                 </p>
                 <p>
-                    <strong><i class="bi bi-credit-card-2-front-fill"></i>Card Payment (€):</strong>
+                    <strong><span>💳</span> Card Payment (€):</strong>
                     <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
                 </p>
                 <p>
-                    <strong><i class="bi bi-receipt-cutoff"></i>Total Amount (€):</strong>
+                    <strong><span>💰</span> Total Amount (€):</strong>
                     <span id="detalleImportePagado" class="fw-bold">—</span>
                 </p>
             </div>
@@ -125,13 +125,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
             <!-- Instructor rate -->
             <div class="section">
                 <p>
-                    <strong><i class="bi bi-currency-euro"></i>Instructor Hourly Rate (€):</strong> <span id="detalleTarifaHora">—</span>
+                    <strong><span>💸</span> Instructor Hourly Rate (€):</strong> <span id="detalleTarifaHora">—</span>
                 </p>
             </div>
 
             <!-- Additional Info -->
             <div class="section">
-                <p><strong><i class="bi bi-chat-left-text"></i>Additional Info:</strong> <span id="detalleObservaciones"></span></p>
+                <p><strong><span>📝</span> Additional Info:</strong> <span id="detalleObservaciones"></span></p>
             </div>
 
             <!-- Action Buttons -->
