@@ -1,6 +1,7 @@
 <?php
 $config = include __DIR__ . '/php/school_config.php';
 require_once __DIR__ . '/php/validar_sesion_admin.php';
+require_once __DIR__ . '/php/helpers.php';
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +78,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             <div class="d-flex justify-content-md-end justify-content-center mb-3">
                 <button class="btn btn-primary d-flex align-items-center gap-2 boton-add-instructor"
                     data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
-                    <span class="material-icons" style="font-size:18px;"></span>
+                    <?php echo render_icon('instructor'); ?>
                     Add Instructor
                 </button>
             </div>
@@ -179,7 +180,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
         <!-- Class Management Section -->
         <div id="clases" class="seccion" style="display: none;">
-            <h3>Class Management</h3>
+            <h3><?php echo render_icon('calendar', '1.5rem'); ?> Class Management</h3>
 
             <!-- Calendar -->
             <p class="text-muted small mb-2">📌 Click on a day in the calendar to schedule a new class</p>
@@ -265,7 +266,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                 <span class="texto-responsive">Edit</span>
                             </button>
                             <button id="btnEliminarClase" class="btn btn-danger" title="Delete Class">
-                                <i class="bi bi-trash3-fill"></i>
+                                <?php echo render_icon('delete'); ?>
                                 <span class="texto-responsive">Delete</span>
                             </button>
                         </div>
