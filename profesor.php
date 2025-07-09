@@ -269,28 +269,43 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
         </div>
 
         <div id="seccionPagos" class="seccion" style="display: none;">
-            <h4 class="d-flex align-items-center gap-1">
-                <i class="fas fa-list-check text-primary"></i>
-                Total to Collect for Completed Classes
-            </h4>
-            <div id="contenedorClasesCompletadas" class="mb-4"></div>
+            <div class="card shadow-sm rounded-3 border-0 p-4 mb-4">
+                <h5 class="d-flex align-items-center gap-2 text-primary mb-3">
+                    <i class="fas fa-list-check text-primary"></i>
+                    Total to Collect for Completed Classes
+                </h5>
+                <div id="contenedorClasesCompletadas" class="mb-4"></div>
+            </div>
 
-            <hr class="my-3">
-            <h4 class="d-flex align-items-center gap-1">
-                <i class="fas fa-file-invoice-dollar text-success"></i>
-                Registered Payments
-            </h4>
-            <table id="tablaPagosRegistrados" class="table table-bordered table-hover">
-                <thead class="table-white">
-                    <tr>
-                        <th>Payment Date</th>
-                        <th>Hours Worked</th>
-                        <th>Amount Received</th>
-                        <th>Actions</th> <!-- Nueva columna -->
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <div class="card shadow-sm rounded-3 border-0 p-4 mb-4">
+                <h5 class="d-flex align-items-center gap-2 text-primary mb-3">
+                    <i class="fas fa-file-invoice-dollar text-success"></i>
+                    Registered Payments
+                </h5>
+                <hr class="my-2">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text bg-light border-0">
+                        <i class="fas fa-search text-muted"></i>
+                    </span>
+                    <input type="text" id="buscadorPagosProfesor" class="form-control rounded-pill border-light shadow-sm" placeholder="Search by date or amount...">
+                </div>
+                <div class="table-responsive">
+                    <table id="tablaPagosRegistrados" class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th><i class="fas fa-calendar-alt text-primary me-1"></i> Payment Date</th>
+                                <th><i class="fas fa-clock text-primary me-1"></i> Hours Worked</th>
+                                <th><i class="fas fa-euro-sign text-primary me-1"></i> Amount Received</th>
+                                <th><i class="fas fa-cogs text-primary me-1"></i> Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-end mt-2">
+                    <small class="text-muted" id="infoPagosProfesor"></small>
+                </div>
+            </div>
 
         </div>
     </div>

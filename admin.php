@@ -534,49 +534,71 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             </h3>
             <hr class="my-3">
 
-            <!-- Table of Pending Payments -->
-            <h4 class="d-flex align-items-center gap-1">
-                <i class="fas fa-hourglass-half text-primary"></i>
-                Completed Classes (Total to Pay)
-            </h4>
-            <div class="table-responsive">
-                <table id="tablaPagosPendientes" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Instructor</th>
-                            <th>Scheduled Hours</th>
-                            <th>Estimated Amount (€)</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpoTablaPagosPendientes">
-                        <!-- Pending payments will be loaded here -->
-                    </tbody>
-                </table>
+            <!-- Pending Payments Card -->
+            <div class="card shadow-sm rounded-3 border-0 p-4 mb-4">
+                <h5 class="d-flex align-items-center gap-2 text-primary mb-3">
+                    <i class="fas fa-hourglass-half text-primary"></i>
+                    Completed Classes (Total to Pay)
+                </h5>
+                <hr class="my-2">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text bg-light border-0">
+                        <i class="fas fa-search text-muted"></i>
+                    </span>
+                    <input type="text" id="buscadorPendientes" class="form-control rounded-pill border-light shadow-sm" placeholder="Search by name or amount...">
+                </div>
+                <div class="table-responsive">
+                    <table id="tablaPagosPendientes" class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th><i class="fas fa-user text-primary me-1"></i> Instructor</th>
+                                <th><i class="fas fa-clock text-primary me-1"></i> Scheduled Hours</th>
+                                <th><i class="fas fa-euro-sign text-primary me-1"></i> Estimated Amount (€)</th>
+                                <th><i class="fas fa-cogs text-primary me-1"></i> Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTablaPagosPendientes">
+                            <!-- Pending payments will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-end mt-2">
+                    <small class="text-muted" id="infoPendientes"></small>
+                </div>
             </div>
 
-            <hr class="my-3">
-            <!-- Table of Registered Payments -->
-            <h4 class="d-flex align-items-center gap-1">
-                <i class="fas fa-file-invoice-dollar text-success"></i>
-                Registered Payments
-            </h4>
-            <div class="table-responsive">
-                <table id="tablaPagosRealizados" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Payment Date</th>
-                            <th>Instructor</th>
-                            <th>Worked Hours</th>
-                            <th>Paid Amount (€)</th>
-                            <th>Actions</th>
-
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpoTablaPagosRealizados">
-                        <!-- Registered payments will be loaded here -->
-                    </tbody>
-                </table>
+            <!-- Registered Payments Card -->
+            <div class="card shadow-sm rounded-3 border-0 p-4 mb-4">
+                <h5 class="d-flex align-items-center gap-2 text-primary mb-3">
+                    <i class="fas fa-file-invoice-dollar text-success"></i>
+                    Registered Payments
+                </h5>
+                <hr class="my-2">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text bg-light border-0">
+                        <i class="fas fa-search text-muted"></i>
+                    </span>
+                    <input type="text" id="buscadorRegistrados" class="form-control rounded-pill border-light shadow-sm" placeholder="Search by name, date or amount...">
+                </div>
+                <div class="table-responsive">
+                    <table id="tablaPagosRealizados" class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th><i class="fas fa-calendar-alt text-primary me-1"></i> Payment Date</th>
+                                <th><i class="fas fa-user text-primary me-1"></i> Instructor</th>
+                                <th><i class="fas fa-clock text-primary me-1"></i> Worked Hours</th>
+                                <th><i class="fas fa-euro-sign text-primary me-1"></i> Paid Amount (€)</th>
+                                <th><i class="fas fa-cogs text-primary me-1"></i> Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTablaPagosRealizados">
+                            <!-- Registered payments will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-end mt-2">
+                    <small class="text-muted" id="infoRegistrados"></small>
+                </div>
             </div>
 
             <!-- Payment Detail Modal -->

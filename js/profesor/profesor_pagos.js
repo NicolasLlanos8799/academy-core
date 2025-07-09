@@ -29,12 +29,13 @@ function mostrarClasesCompletadas(clases) {
 
     const clase = clases[0];
     contenedor.innerHTML = `
-        <div class="card bg-light shadow-sm">
-            <div class="card-body">
-                <p class="card-text">Total Hours: <strong>${clase.total_horas}</strong></p>
-                <p class="card-text">Total to Collect: <strong>€${clase.total}</strong></p>
-                <span class="badge bg-warning text-dark">Pending Payment</span>
+        <div class="card shadow-sm rounded-3 border-0 p-3">
+            <div class="d-flex align-items-center gap-2 text-primary mb-2">
+                <i class="fas fa-hourglass-half"></i>
+                <span>Pending Payment</span>
             </div>
+            <p class="mb-1">Total Hours: <strong>${clase.total_horas}</strong></p>
+            <p class="mb-0">Total to Collect: <strong>€${clase.total}</strong></p>
         </div>
     `;
 }
@@ -78,17 +79,27 @@ function mostrarPagosRegistrados(pagos) {
         $('#tablaPagosRegistrados').DataTable().destroy();
     }
 
-    $('#tablaPagosRegistrados').DataTable({
+    const tablaPagosProfesor = $('#tablaPagosRegistrados').DataTable({
+        dom: 'rtp',
         pageLength: 10,
         lengthChange: false,
         order: [[0, 'desc']], // Order by date column (index 0)
         columnDefs: [
             { type: 'fecha-euro', targets: 0 }
         ],
+        searching: false,
+        info: false,
         language: {
-            search: "Search by date or amount:",
             url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/en-GB.json"
         }
+    });
+    $('#buscadorPagosProfesor').on('keyup', function () {
+        tablaPagosProfesor.search(this.value).draw();
+    });
+    tablaPagosProfesor.on('draw', function () {
+        const info = tablaPagosProfesor.page.info();
+        document.getElementById('infoPagosProfesor').textContent =
+            `Showing ${info.end} payments of ${info.recordsTotal} recorded`;
     });
 }
 

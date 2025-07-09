@@ -73,44 +73,56 @@ function cargarPagos() {
                 });
             });
 
-            $('#tablaPagosPendientes').DataTable({
+            const tablaPendientes = $('#tablaPagosPendientes').DataTable({
+                dom: 'rtp',
                 pageLength: 10,
                 lengthChange: false,
                 ordering: true,
-                searching: true,
+                searching: false,
+                info: false,
                 language: {
-                    search: "Search by name or amount:",
                     emptyTable: "No completed classes yet",
                     paginate: {
                         previous: "Previous",
                         next: "Next"
                     }
-                },
-                infoCallback: function (settings, start, end, max, total, pre) {
-                    return `Showing ${end} classes of ${total} registered`;
                 }
             });
+            $('#buscadorPendientes').on('keyup', function () {
+                tablaPendientes.search(this.value).draw();
+            });
+            tablaPendientes.on('draw', function () {
+                const info = tablaPendientes.page.info();
+                document.getElementById('infoPendientes').textContent =
+                    `Showing ${info.end} classes of ${info.recordsTotal} registered`;
+            });
 
-            $('#tablaPagosRealizados').DataTable({
+            const tablaRegistrados = $('#tablaPagosRealizados').DataTable({
+                dom: 'rtp',
                 pageLength: 10,
                 lengthChange: false,
                 order: [[3, 'desc']],
                 columnDefs: [
                     { type: 'fecha-guion', targets: 3 }
                 ],
-                searching: true,
+                searching: false,
                 ordering: true,
+                info: false,
                 language: {
-                    search: "Search by name, date or amount:",
                     emptyTable: "No payments recorded yet",
                     paginate: {
                         previous: "Previous",
                         next: "Next"
                     }
-                },
-                infoCallback: function (settings, start, end, max, total, pre) {
-                    return `Showing ${end} payments of ${total} recorded`;
                 }
+            });
+            $('#buscadorRegistrados').on('keyup', function () {
+                tablaRegistrados.search(this.value).draw();
+            });
+            tablaRegistrados.on('draw', function () {
+                const info = tablaRegistrados.page.info();
+                document.getElementById('infoRegistrados').textContent =
+                    `Showing ${info.end} payments of ${info.recordsTotal} recorded`;
             });
 
         })
