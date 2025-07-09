@@ -528,10 +528,17 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
         <!-- Payments Management Section -->
         <div id="pagos" class="seccion" style="display: none;">
-            <h3>Payments Management</h3>
+            <h3 class="d-flex align-items-center gap-1">
+                <i class="fas fa-money-check-dollar text-primary"></i>
+                Payments Management
+            </h3>
+            <hr class="my-3">
 
             <!-- Table of Pending Payments -->
-            <h4 class="mt-4">Completed Classes (Total to Pay)</h4>
+            <h4 class="d-flex align-items-center gap-1">
+                <i class="fas fa-hourglass-half text-primary"></i>
+                Completed Classes (Total to Pay)
+            </h4>
             <div class="table-responsive">
                 <table id="tablaPagosPendientes" class="table table-striped">
                     <thead>
@@ -548,8 +555,12 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                 </table>
             </div>
 
+            <hr class="my-3">
             <!-- Table of Registered Payments -->
-            <h4 class="mt-4">Registered Payments</h4>
+            <h4 class="d-flex align-items-center gap-1">
+                <i class="fas fa-file-invoice-dollar text-success"></i>
+                Registered Payments
+            </h4>
             <div class="table-responsive">
                 <table id="tablaPagosRealizados" class="table table-striped">
                     <thead>
@@ -574,7 +585,10 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content bg-white text-dark">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modalDetallePagoLabel">Payment Detail</h5>
+                            <h5 class="modal-title d-flex align-items-center gap-1" id="modalDetallePagoLabel">
+                                <i class="fas fa-info-circle text-primary"></i>
+                                Payment Detail
+                            </h5>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
@@ -602,10 +616,13 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                                     </tbody>
                                 </table>
                             </div>
-                            <button id="btnDescargarPDF" class="btn btn-primary mt-3">Download Receipt</button>
+                            <button id="btnDescargarPDF" class="btn btn-primary btn-sm rounded-pill d-flex align-items-center gap-1 mt-3">
+                                <i class="fas fa-download"></i>
+                                <span>Download Receipt</span>
+                            </button>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button class="btn btn-secondary btn-sm rounded-pill" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -619,7 +636,10 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             <div class="modal-dialog modal-lg">
                 <div class="modal-content bg-white text-dark">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalDetalleClasesPendientesLabel">Payment Preview</h5>
+                        <h5 class="modal-title d-flex align-items-center gap-1" id="modalDetalleClasesPendientesLabel">
+                            <i class="fas fa-eye text-primary"></i>
+                            Payment Preview
+                        </h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -647,10 +667,11 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button id="btnRegisterPayment" class="btn btn-success">
-                            Register Payment
+                        <button id="btnRegisterPayment" class="btn btn-success btn-sm rounded-pill d-flex align-items-center gap-1">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Register Payment</span>
                         </button>
-                        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-secondary btn-sm rounded-pill" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

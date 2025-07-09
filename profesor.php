@@ -40,6 +40,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/modal-detalle.css">
 </head>
@@ -268,10 +269,17 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
         </div>
 
         <div id="seccionPagos" class="seccion" style="display: none;">
-            <h4>Total to Collect for Completed Classes</h4>
+            <h4 class="d-flex align-items-center gap-1">
+                <i class="fas fa-list-check text-primary"></i>
+                Total to Collect for Completed Classes
+            </h4>
             <div id="contenedorClasesCompletadas" class="mb-4"></div>
 
-            <h4>Registered Payments</h4>
+            <hr class="my-3">
+            <h4 class="d-flex align-items-center gap-1">
+                <i class="fas fa-file-invoice-dollar text-success"></i>
+                Registered Payments
+            </h4>
             <table id="tablaPagosRegistrados" class="table table-bordered table-hover">
                 <thead class="table-white">
                     <tr>
@@ -292,7 +300,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
         <div class="modal-dialog modal-lg">
             <div class="modal-content bg-light">
                 <div class="modal-header">
-                    <h5 class="modal-title">Pending Completed Classes</h5>
+                    <h5 class="modal-title d-flex align-items-center gap-1">
+                        <i class="fas fa-clock text-primary"></i>
+                        Pending Completed Classes
+                    </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -319,7 +330,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content bg-white text-dark border-0">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title" id="detallePagoLabel">Payment Details</h5>
+                    <h5 class="modal-title d-flex align-items-center gap-1" id="detallePagoLabel">
+                        <i class="fas fa-info-circle text-primary"></i>
+                        Payment Details
+                    </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
@@ -342,10 +356,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol'] !== 'profesor') {
                         </table>
                     </div>
 
-                    <button id="btnDescargarComprobanteProfesor" class="btn btn-primary mt-3">Download Receipt</button>
+                    <button id="btnDescargarComprobanteProfesor" class="btn btn-primary btn-sm rounded-pill d-flex align-items-center gap-1 mt-3">
+                        <i class="fas fa-download"></i>
+                        <span>Download Receipt</span>
+                    </button>
                 </div>
                 <div class="modal-footer border-0">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-secondary btn-sm rounded-pill" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
