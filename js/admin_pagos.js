@@ -40,7 +40,7 @@ function cargarPagos() {
                         <td class="text-end">${pago.total_horas}</td>
                         <td class="text-end"><i class="bi bi-cash-coin me-1"></i>€${pago.total}</td>
                         <td class="text-center">
-                            <button class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1" onclick="verDetalleClasesPendientes(${pago.profesor_id})" title="View payment details">
+                            <button class="btn btn-sm btn-primary d-flex align-items-center gap-1 px-3 py-1" onclick="verDetalleClasesPendientes(${pago.profesor_id})" title="View details">
                                 <i class="bi bi-eye"></i> View
                             </button>
                         </td>
@@ -57,7 +57,7 @@ function cargarPagos() {
                     <td class="text-end">${pago.total_horas}</td>
                     <td class="text-end"><i class="bi bi-cash-coin me-1"></i>€${pago.total}</td>
                     <td class="text-center">
-                        <button class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 btn-detalle-pago" data-id="${pago.id}" title="View payment details">
+                        <button class="btn btn-sm btn-primary d-flex align-items-center gap-1 px-3 py-1 btn-detalle-pago" data-id="${pago.id}" title="View details">
                             <i class="bi bi-eye"></i> View
                         </button>
                     </td>

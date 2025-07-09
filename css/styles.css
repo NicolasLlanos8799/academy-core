@@ -1110,3 +1110,10 @@ body {
   margin: auto;
 }
 
+/* Hover style for modern tables */
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+  color: #111;
+  cursor: pointer;
+}
+

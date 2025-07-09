@@ -528,21 +528,21 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 
         <!-- Payments Management Section -->
         <div id="pagos" class="seccion" style="display: none;">
-            <div class="card shadow-sm rounded-3 p-4 border-light">
-                <h4 class="mb-3 fw-semibold">Payments Management</h4>
+            <div class="card shadow p-4 rounded-3 border-0 bg-white">
+                <h4 class="fw-bold text-primary mb-4">Payments Management</h4>
 
                 <!-- Table of Pending Payments -->
-                <div class="border-bottom border-light mb-4 pb-3">
-                    <h6 class="h6 text-muted fw-semibold mb-3">Completed Classes (Total to Pay)</h6>
+                <div class="mb-3">
+                    <h6 class="fw-semibold text-secondary mb-3 border-bottom pb-2">Completed Classes (Total to Pay)</h6>
                     <div class="d-flex justify-content-end mb-2">
-                        <div class="input-group input-group-sm w-auto">
-                            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
-                            <input type="text" id="searchPagosPendientes" class="form-control form-control-sm rounded-pill border-start-0" placeholder="Search">
+                        <div class="input-group input-group-sm rounded-pill border w-auto">
+                            <span class="input-group-text bg-white border-0"><i class="bi bi-search text-secondary"></i></span>
+                            <input type="text" id="searchPagosPendientes" class="form-control border-0" placeholder="Search">
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table id="tablaPagosPendientes" class="table table-sm table-hover align-middle">
-                            <thead class="table-light">
+                        <table id="tablaPagosPendientes" class="table table-hover table-sm align-middle text-center">
+                            <thead class="bg-primary text-white">
                                 <tr>
                                     <th>Instructor</th>
                                     <th class="text-end">Scheduled Hours</th>
@@ -557,34 +557,35 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
                     </div>
                 </div>
 
-            <!-- Table of Registered Payments -->
-            <h6 class="h6 text-muted fw-semibold mb-3">Registered Payments</h6>
-            <div class="d-flex justify-content-end mb-2">
-                <div class="input-group input-group-sm w-auto">
-                    <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
-                    <input type="text" id="searchPagosRealizados" class="form-control form-control-sm rounded-pill border-start-0" placeholder="Search">
+                <!-- Table of Registered Payments -->
+                <div class="border-top pt-4 mt-4">
+                    <h6 class="fw-semibold text-secondary mb-3 border-bottom pb-2">Registered Payments</h6>
+                    <div class="d-flex justify-content-end mb-2">
+                        <div class="input-group input-group-sm rounded-pill border w-auto">
+                            <span class="input-group-text bg-white border-0"><i class="bi bi-search text-secondary"></i></span>
+                            <input type="text" id="searchPagosRealizados" class="form-control border-0" placeholder="Search">
+                        </div>
+                    </div>
+                    <div class="table-responsive mb-3">
+                        <table id="tablaPagosRealizados" class="table table-hover table-sm align-middle text-center">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th>Payment Date</th>
+                                    <th>Instructor</th>
+                                    <th class="text-end">Worked Hours</th>
+                                    <th class="text-end">Paid Amount (€)</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cuerpoTablaPagosRealizados">
+                                <!-- Registered payments will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav>
+                        <ul class="pagination pagination-sm justify-content-end text-muted" id="paginacionPagos"></ul>
+                    </nav>
                 </div>
-            </div>
-            <div class="table-responsive">
-                <table id="tablaPagosRealizados" class="table table-sm table-hover align-middle">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Payment Date</th>
-                            <th>Instructor</th>
-                            <th class="text-end">Worked Hours</th>
-                            <th class="text-end">Paid Amount (€)</th>
-                            <th class="text-center">Actions</th>
-
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpoTablaPagosRealizados">
-                        <!-- Registered payments will be loaded here -->
-                    </tbody>
-                </table>
-            </div>
-            <nav>
-                <ul class="pagination pagination-sm justify-content-center mt-3" id="paginacionPagos"></ul>
-            </nav>
             </div>
 
             <!-- Payment Detail Modal -->
