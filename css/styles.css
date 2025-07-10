@@ -7,9 +7,9 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: var(--font-main);
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
 
 /* ====================================================
@@ -153,17 +153,17 @@ form button {
     min-width: 140px;
 }
 .btn-warning {
-    background-color: #ffcc00;
+    background-color: var(--color-warning);
     border: none;
     color: black;
 }
 .btn-danger {
-    background-color: #dc3545;
+    background-color: var(--color-danger);
     border: none;
     color: white;
 }
 .btn-success {
-    background-color: #28a745;
+    background-color: var(--color-success);
     border: none;
     color: white;
 }
@@ -550,9 +550,9 @@ form button {
 }
 /* ===== GENERAL ===== */
 body {
-    font-family: 'Inter', 'Roboto', Arial, sans-serif;
-    background-color: #F7F8FA;
-    color: #111827;
+    font-family: var(--font-main);
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
 * {
     margin: 0;
@@ -608,7 +608,7 @@ body {
 
 .btn-primary,
 .boton-add-instructor {
-    background: #2563EB !important;
+    background: var(--color-primary) !important;
     border: none !important;
     color: #FFF !important;
     padding: 0.7em 2em;
@@ -625,13 +625,13 @@ body {
     background: #1E40AF !important;
 }
 .boton-add-instructor:focus {
-    background: #2563EB !important; /* el mismo color normal */
+    background: var(--color-primary) !important; /* el mismo color normal */
     outline: 2px solid #1E40AF; /* opcional: outline visible para accesibilidad */
     outline-offset: 2px;
 }
 
 .btn-success {
-    background: #22C55E !important;
+    background: var(--color-success) !important;
     border: none !important;
     color: #FFF !important;
 }

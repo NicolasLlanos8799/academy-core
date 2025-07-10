@@ -24,6 +24,7 @@ if (isset($_GET['expirada'])) {
 
     <title>Login - <?php echo $config['nombre_escuela']; ?> </title>
 
+    <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 

@@ -1,6 +1,7 @@
 <?php
 $config = include __DIR__ . '/php/school_config.php';
 require_once __DIR__ . '/php/validar_sesion_admin.php';
+require_once __DIR__ . '/php/helpers.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +28,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- TU CSS PERSONALIZADO SIEMPRE ÚLTIMO -->
+    <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/styles.css?v=2.0">
     <link rel="stylesheet" href="css/modal-detalle.css">
 
@@ -42,7 +44,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
 <body>
     <div id="loader"
         style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;display:flex;align-items:center;justify-content:center;background:#f7f8fa;">
-        <span class="material-icons" style="font-size:2.2rem; color:#2563EB;">hourglass_top</span>
+        <?php echo render_icon('alarm', '2.2rem'); ?>
     </div>
 
     <!-- Navigation bar -->
@@ -77,7 +79,7 @@ require_once __DIR__ . '/php/validar_sesion_admin.php';
             <div class="d-flex justify-content-md-end justify-content-center mb-3">
                 <button class="btn btn-primary d-flex align-items-center gap-2 boton-add-instructor"
                     data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
-                    <span class="material-icons" style="font-size:18px;"></span>
+                    <?php echo render_icon('instructor'); ?>
                     Add Instructor
                 </button>
             </div>
