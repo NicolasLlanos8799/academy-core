@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // ✅ Enviar email al profesor notificando el pago
-    $mensajeHTML = "<div style='color: #000; font-family: var(--font-main);'>";
+    $mensajeHTML = "<div style='color: #000; font-family: Arial, sans-serif;'>";
     $mensajeHTML .= "<h3 style='color: #000;'>Payment Registered</h3>";
     $mensajeHTML .= "<p style='margin-top:20px; color:#000;'>Hi <strong>{$profesor_nombre}</strong>,</p>";
     $mensajeHTML .= "<p style='color:#000;'>We have registered a payment to your name on <strong>" . date('d/m/Y') . "</strong> for a total amount of <strong>€{$total}</strong>, corresponding to your completed classes.</p>";
