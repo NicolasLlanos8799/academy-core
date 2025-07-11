@@ -12,7 +12,7 @@ return [
   'card'          => '💳',
   'billing'       => '💰',
   'total'         => '💰',
-  'hour_rate'     => '🧮',
+  'hour_rate'     => '💸',
   'user'          => '👤',
   'delete'        => '🗑️',
   'edit'          => '✏️',
