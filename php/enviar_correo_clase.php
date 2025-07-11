@@ -108,7 +108,7 @@ foreach ($destinatarios as [$email, $nombre]) {
 
     // ----------- INICIO MENSAJE HTML (caso CANCELACIÓN personalizado) -------------
     if ($tipo === 'eliminar') {
-        $mensajeHTML = "<div style='color: #000; font-family: sans-serif;'>";
+        $mensajeHTML = "<div style='color: #000; font-family: var(--font-main);'>";
         $mensajeHTML .= "<h3 style='color: #000;'>$tituloCorreo</h3>";
         $mensajeHTML .= "<p style='margin-top:20px; color:#000;'>$mensajeIntro</p>";
         $mensajeHTML .= "<ul style='font-size:15px; padding-left:18px;'>";
@@ -133,7 +133,7 @@ foreach ($destinatarios as [$email, $nombre]) {
 
     } else {
         // ----------- MENSAJE HTML para crear/editar: igual que antes -------------
-        $mensajeHTML = "<div style='color: #000; font-family: sans-serif;'>";
+        $mensajeHTML = "<div style='color: #000; font-family: var(--font-main);'>";
         $mensajeHTML .= "<h3 style='color: #000;'>$tituloCorreo</h3>";
 
         if (!$esProfesor) {
