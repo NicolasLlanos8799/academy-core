@@ -50,7 +50,7 @@ if (isset($_GET['expirada'])) {
             <a href="#" data-bs-toggle="modal" data-bs-target="#modalReset">Forgot your password?</a>
         </p>
 
-        <p id="error-message" style="color: red; margin-top: 10px;"></p>
+        <p id="error-message" style="color: var(--color-danger); margin-top: 10px;"></p>
     </div>
 
     <!-- 🔐 Password Reset Modal -->

@@ -200,25 +200,25 @@ require_once __DIR__ . '/php/helpers.php';
                         <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
                             data-bs-dismiss="modal" aria-label="Close"></button>
                         <h4 class="modal-title mb-4 d-flex align-items-center gap-2" id="modalDetalleClaseLabel">
-                            <span>ℹ️</span> Class Details
+                            <?php echo render_icon('info'); ?> Class Details
                         </h4>
 
                         <!-- Participant & Instructor -->
                         <div class="section">
                             <p><strong><span>👤</span> Participant:</strong> <span id="detalleAlumno"></span></p>
-                            <p><strong><span>🧑‍🏫</span> Instructor:</strong> <span id="detalleProfesor"></span></p>
+                            <p><strong><?php echo render_icon('instructor'); ?> Instructor:</strong> <span id="detalleProfesor"></span></p>
                         </div>
 
                         <!-- Date & Time -->
                         <div class="section">
-                            <p><strong><span>📅</span> Date:</strong> <span id="detalleFecha"></span></p>
-                            <p><strong><span>⏰</span> Time:</strong> <span id="detalleHorario"></span></p>
+                            <p><strong><?php echo render_icon('calendar'); ?> Date:</strong> <span id="detalleFecha"></span></p>
+                            <p><strong><?php echo render_icon('alarm'); ?> Time:</strong> <span id="detalleHorario"></span></p>
                         </div>
 
                         <!-- Contact Info -->
                         <div class="section">
-                            <p><strong><span>✉️</span> Email:</strong> <span id="detalleEmail"></span></p>
-                            <p><strong><span>📞</span> Phone:</strong> <span id="detalleTelefono"></span></p>
+                            <p><strong><?php echo render_icon('email'); ?> Email:</strong> <span id="detalleEmail"></span></p>
+                            <p><strong><?php echo render_icon('phone'); ?> Phone:</strong> <span id="detalleTelefono"></span></p>
                         </div>
 
                         <!-- Payments -->
@@ -228,11 +228,11 @@ require_once __DIR__ . '/php/helpers.php';
                                 <span id="detallePagoEfectivo" class="badge bg-success-subtle text-success">—</span>
                             </p>
                             <p>
-                                <strong><span>💳</span> Card Payment (€):</strong>
+                                <strong><?php echo render_icon('credit_card'); ?> Card Payment (€):</strong>
                                 <span id="detallePagoTarjeta" class="badge bg-primary-subtle text-primary">—</span>
                             </p>
                             <p>
-                                <strong><span>💰</span> Total Amount (€):</strong>
+                                <strong><?php echo render_icon('billing'); ?> Total Amount (€):</strong>
                                 <span id="detalleImportePagado" class="badge bg-warning-subtle text-warning">—</span>
                             </p>
 
@@ -241,7 +241,7 @@ require_once __DIR__ . '/php/helpers.php';
                         <!-- Instructor rate -->
                         <div class="section">
                             <p>
-                                <strong><span>💸</span> Instructor €/hr:</strong>
+                                <strong><?php echo render_icon('money'); ?> Instructor €/hr:</strong>
                                 <span id="detalleTarifaHora" class="badge bg-secondary-subtle text-dark">—</span>
                             </p>
                         </div>
