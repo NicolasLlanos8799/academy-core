@@ -78,7 +78,7 @@ require_once __DIR__ . '/php/helpers.php';
             <div class="d-flex justify-content-md-end justify-content-center mb-3">
                 <button class="btn btn-primary d-flex align-items-center gap-2 boton-add-instructor"
                     data-bs-toggle="modal" data-bs-target="#modalAgregarProfesor">
-                    <?php echo render_icon('instructor'); ?>
+                    <?php echo render_icon('add'); ?>
                     Add Instructor
                 </button>
             </div>
