@@ -25,10 +25,10 @@ body.login-body {
 .login-container {
     background-color: #fff;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 .login-container h2 {
     color: #222;
@@ -51,27 +51,27 @@ body.login-body {
     color: #333;
     border: 1px solid #ddd;
     box-shadow: none;
-    transition: border 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 .login-container input[type="email"]:focus,
 .login-container input[type="password"]:focus {
-    border: 1.5px solid var(--color-primary);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
     outline: none;
 }
 .login-container button {
     width: 100%;
-    padding: 0.75rem;
-    background-color: var(--color-primary);
+    padding: 0.6rem 1.2rem;
+    background-color: #2563eb;
+    color: white;
     border: none;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: bold;
+    border-radius: 0.5rem;
+    font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 .login-container button:hover {
-    background-color: #0056b3;
+    background-color: #1d4ed8;
 }
 .login-container form p,
 .login-container form a {
