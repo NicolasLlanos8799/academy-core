@@ -1109,4 +1109,49 @@ body {
   width: 100%;
   margin: auto;
 }
+/* Estilo base unificado para todos los botones del calendario */
+.fc .fc-button {
+  border-radius: 999px !important;
+  background-color: #1f2937 !important; /* fondo oscuro base */
+  color: white !important;
+  border: none !important;
+  font-size: 0.85rem !important;
+  padding: 6px 14px !important;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  box-shadow: none !important;
+}
 
+/* Hover SOLO para botones NO activos */
+.fc .fc-button:not(.fc-button-active):hover {
+  background-color: #374151 !important;
+}
+
+/* Botón activo (ej. today o vista seleccionada) */
+.fc .fc-button.fc-button-active {
+  background-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* Botón today activo, separado para claridad (aunque usa el mismo color) */
+.fc .fc-today-button.fc-button-active {
+  background-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* Flechas prev / next */
+.fc-prev-button,
+.fc-next-button {
+  width: 38px;
+  height: 38px;
+  font-size: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Íconos dentro de flechas */
+.fc-prev-button .fc-icon,
+.fc-next-button .fc-icon {
+  font-size: 1rem !important;
+}
